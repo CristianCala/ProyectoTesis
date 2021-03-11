@@ -45,7 +45,7 @@ Eficiencia: El programa bajo entorno laravel resulta muy eficiente para el manej
 
 ## Desarrollo y progreso
 
-El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados mientras transcurre la trayectoria de la aplicacion
+El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados mientras transcurre la trayectoria de la aplicacion, se realizaran pruebas unitarias antes de desenvolver el sistema paso a paso
 
 ## Finalidad
 
