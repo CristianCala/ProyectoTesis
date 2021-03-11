@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Equipos;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class EquiposFactory extends Factory
@@ -22,7 +23,11 @@ class EquiposFactory extends Factory
     public function definition()
     {
         return [
-            //
+           'user_id' => User::factory(),
+           'eq_modelo' => $this->faker->word,
+           'eq_marca' => $this->faker->word,
+           'precio' => $this->faker->randomNumber(2),
+           'status' => $this->faker->boolean()
         ];
     }
 }
