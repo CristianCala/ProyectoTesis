@@ -43,4 +43,9 @@ class Equipos extends Component
     {
         $this->resetPage();
     }
+
+    public function updatingQ()
+    {
+        $this->resetPage();
+    }
 }
