@@ -49,10 +49,11 @@ El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados
 
 ## Finalidad
 
-Este proyecto comparte la finalidad de ser usado para propositos educativos asi como profesionales dentro de la materia
+Este proyecto comparte la finalidad de ser usado para propositos educativos asi como profesionales dentro de la materia de informatica.
 
-### Screens
+### Screens preliminares
 
+## Wireframes
 
-## Mockups y Wireframes
+## Mockups
 
