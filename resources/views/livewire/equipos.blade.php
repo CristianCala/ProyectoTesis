@@ -5,7 +5,12 @@
     </div>
     <div class="mt-6"></div>
 
-
+    <div class="flex justify-between">
+      <div></div>
+      <div class="mr-2">
+          <input type="checkbox" class="mr-2 leading-tight" wire:model="active"/>Equipos activos
+      </div>
+    </div>
 <table class="border-separate border border-green-800 ...">
 
     <thead>
