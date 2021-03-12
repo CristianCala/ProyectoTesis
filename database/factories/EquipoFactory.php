@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Equipos;
+use App\Models\Equipo;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class EquiposFactory extends Factory
+class EquipoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Equipos::class;
+    protected $model = Equipo::class;
 
     /**
      * Define the model's default state.

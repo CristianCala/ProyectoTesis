@@ -60,6 +60,6 @@ class User extends Authenticatable
     ];
     public function equipos()
     {
-        return $this->HasMany(\App\Models\Equipos::class);
+        return $this->HasMany(\App\Models\Equipo::class);
     }
 }
