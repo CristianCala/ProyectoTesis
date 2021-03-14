@@ -13,6 +13,8 @@ Este proyecto fue creado en base a Laravel en su version 8.32.1 en conjunto con 
 - [Nodejs(Para traer el NPM)](https://nodejs.org/en/)
 - [Spatie(Para trabajar los roles)](https://spatie.be/docs/laravel-permission/v3/introduction)
 <br>
+
+## Descripcion solicita del proyecto
 Este proyecto data sobre un sistema de gestion e inventario para la gerencia de tecnologia e informacion.
 Se precisa que el sistema procese el registro de cada producto ingresado con las siguientes caracteristicas:
 <br>
@@ -57,3 +59,11 @@ Este proyecto comparte la finalidad de ser usado para propositos educativos asi 
 
 ## Mockups
 
+## Instalacion
+
+1. Clonar el repositorio (por consola claro): https://github.com/ReinKaos95/ProyectoTesis.git
+2. Cambiar al directorio clonado, P.E.: cd ProyectoTesis
+3. Instalar las dependencias de node con npm i o npm install.
+4. Instalar las demas cosas como tailwindcss con npm install tailwindcss
+5. Instalar jetstream con composer require laravel/jetstream (puedes trabajar con Livewire o Inertia)
+6. Correr el proyecto con php artisan serve
