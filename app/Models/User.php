@@ -58,8 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-    public function equipos()
-    {
-        return $this->HasMany(\App\Models\Equipo::class);
-    }
 }
