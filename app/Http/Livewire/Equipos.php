@@ -14,6 +14,17 @@ class Equipos extends Component
     public $active;
     public $q;
 
+    public $sortBy = 'id';
+    public $sortAsc = true;
+
+    //validacion de strings
+    protected $queryStrings = [
+        'active' => ['except' => false],
+        'q'  => ['except' => ''],
+        'sortBy' => ['except' => 'id'],
+        'sortAsc'  => ['except' => true],
+    ];
+
     public function render()
     {   //paginacion para la tabla de equipos
         $equipos = Equipo::where('user_id', auth()->user()->id)
@@ -30,7 +41,9 @@ class Equipos extends Component
         ->when($this->active, function ($query)
         {
             return $query->active();
-        });
+        })
+        //ordenar por ascendente o descendente
+        ->orderBy($this->sortBy, $this->sortAsc ? 'ASC': 'DESC');
         //algoritmo de busqueda
         $query = $equipos->toSql();
         $equipos = $equipos->paginate(10);
@@ -47,5 +60,13 @@ class Equipos extends Component
     public function updatingQ()
     {
         $this->resetPage();
+    }
+
+    public function sortBy($field)
+    {
+        if($field == $this->sortBy){
+            $this->sortAsc = !$this->sortAsc;
+        }
+        $this->sortBy = $field;
     }
 }

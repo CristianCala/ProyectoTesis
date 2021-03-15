@@ -16,11 +16,38 @@
 
     <thead>
     <tr>
-      <th class="w-1/4 ...">ID</th>
-      <th class="w-1/4 ...">Modelo</th>
-      <th class="w-1/4 ...">Marca</th>
-      <th class="w-1/4 ...">precio</th>
+      <th class="w-1/4 ...">
+      <div class="flex items-center">
+      <button wire:click="sortBy('id')">ID
+      </button>
+        <x-sort-icon sortField="id" :sortBy="$sortBy" :sortAsc="$sortAsc" />
+      </div>
+      </th>
+      <th class="w-1/4 ...">
+      <div class="flex items-center">
+      <button wire:click="sortBy('eq_modelo')">Modelo</button>
+      <x-sort-icon sortField="eq_modelo" :sortBy="$sortBy" :sortAsc="$sortAsc" />
+      </div>
+      </th>
+
+
+      <th class="w-1/4 ...">
+      <div class="flex items-center">
+      <button wire:click="sortBy('eq_marca')">Marca</button>
+      <x-sort-icon sortField="eq_marca" :sortBy="$sortBy" :sortAsc="$sortAsc" />
+      </div>
+      </th>
+
+      <th class="w-1/4 ...">
+      <div class="flex items-center">
+      <button wire:click="sortBy('precio')">Precio</button>
+      <x-sort-icon sortField="precio" :sortBy="$sortBy" :sortAsc="$sortAsc" />
+      </div>
+      </th>
+
+      @if($active)
       <th class="w-1/4 ...">status</th>
+      @endif
       <th class="w-1/4 ...">acciones</th>
     </tr>
   </thead>
@@ -33,7 +60,9 @@
           <td class="border border-green-600 ...">{{$key->eq_marca}}</td>
           <td class="border border-green-600 ...">{{$key->eq_modelo}}</td>
           <td class="border border-green-600 ...">{{$key->precio}}</td>
+          @if($active)
           <td class="border border-green-600 ...">{{$key->status ? 'Active' : 'Not-Active'}}</td>
+          @endif
           <td class="border border-green-600 ..."><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
   Editar
 </button><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
