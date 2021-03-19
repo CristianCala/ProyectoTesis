@@ -55,4 +55,18 @@ El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados
 
 ## Mockups y Wireframes
 
-## 
+### Wireframes
+
+![iMac - 1](https://user-images.githubusercontent.com/43525693/111818181-47cce300-88b5-11eb-88b7-de0f8f4249d4.png)
+![iMac - 6](https://user-images.githubusercontent.com/43525693/111818218-51564b00-88b5-11eb-80f0-9259256abf98.png)
+![iMac - 7](https://user-images.githubusercontent.com/43525693/111818226-52877800-88b5-11eb-9c62-f6b35961a6e4.png)
+![iMac - 8](https://user-images.githubusercontent.com/43525693/111818227-52877800-88b5-11eb-80d1-a37b0d9ee888.png)
+![iMac - 9](https://user-images.githubusercontent.com/43525693/111818233-53b8a500-88b5-11eb-8f27-404a89d0ff58.png)
+![Slide 4_3 - 1](https://user-images.githubusercontent.com/43525693/111818235-54513b80-88b5-11eb-9726-3527aef7a662.png)
+![Slide 4_3 - 2](https://user-images.githubusercontent.com/43525693/111818239-54e9d200-88b5-11eb-8765-1250098918f5.png)
+![Slide 4_3 - 3](https://user-images.githubusercontent.com/43525693/111818240-54e9d200-88b5-11eb-93bf-e3cb07b6fa3c.png)
+![iMac - 2](https://user-images.githubusercontent.com/43525693/111818205-4e5b5a80-88b5-11eb-96a5-69cb32f6b13f.png)
+![iMac - 3](https://user-images.githubusercontent.com/43525693/111818210-4f8c8780-88b5-11eb-9dc8-11fb96f98636.png)
+![iMac - 4](https://user-images.githubusercontent.com/43525693/111818213-50251e00-88b5-11eb-8e32-a1e708b7ed39.png)
+![iMac - 5](https://user-images.githubusercontent.com/43525693/111818215-50bdb480-88b5-11eb-9b87-75fb3ab5154d.png)
+
