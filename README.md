@@ -55,7 +55,7 @@ El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados
 
 ## Mockups y Wireframes
 
-### Wireframes
+### Wireframes (More wireframes to come)
 
 ![iMac - 1](https://user-images.githubusercontent.com/43525693/111818181-47cce300-88b5-11eb-88b7-de0f8f4249d4.png)
 ![iMac - 6](https://user-images.githubusercontent.com/43525693/111818218-51564b00-88b5-11eb-80f0-9259256abf98.png)
