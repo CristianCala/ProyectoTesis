@@ -19,6 +19,10 @@
         "lodash": "^4.17.19",
         "postcss": "^8.2.8",
         "postcss-import": "^12.0.1",
-        "tailwindcss": "^2.0.3"
+        "tailwindcss": "^2.0.4"
+    },
+    "dependencies": {
+        "css": "^3.0.0",
+        "tailwind": "^4.0.0"
     }
 }
