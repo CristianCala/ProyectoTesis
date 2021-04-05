@@ -23,7 +23,6 @@
                 </div>
             @endif
 
-           <div class="h-60 w-20 mt-6 ml-6 border-4 border-b-8 bg-gray-400 rounded-sm rounded-b-lg">sdsd</div>
         </div>
     </body>
 </html>
