@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class userController extends Controller
 {
     /**
@@ -17,7 +17,8 @@ class userController extends Controller
      }
     public function index()
     {
-        //
+        $users=User::all();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -27,7 +28,8 @@ class userController extends Controller
      */
     public function create()
     {
-        //
+         $users=User::all();
+        return view('users.create',  compact('users'));
     }
 
     /**
@@ -60,7 +62,7 @@ class userController extends Controller
      */
     public function edit($id)
     {
-        //
+   
     }
 
     /**
@@ -83,6 +85,14 @@ class userController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users=User::findOrFail($id);
+        if ($users->delete()) {
+  return redirect('/admin/users');
+}
+  else{
+   return response()->json([
+       'mensaje'=>'error al eliminar usuario'
+   ]);
+  }
     }
 }
