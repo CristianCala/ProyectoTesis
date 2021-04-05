@@ -18,7 +18,7 @@ class userController extends Controller
     public function index()
     {
         $users=User::all();
-        return view('users.index', compact('users'));
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -29,7 +29,7 @@ class userController extends Controller
     public function create()
     {
          $users=User::all();
-        return view('users.create',  compact('users'));
+        return view('admin.users.create',  compact('users'));
     }
 
     /**

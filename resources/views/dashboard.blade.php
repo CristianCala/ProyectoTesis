@@ -4,6 +4,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    
 
         <!-- Fonts -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">

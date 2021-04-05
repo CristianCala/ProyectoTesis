@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editUser{{$key->id}}">
+<button type="button" class="bg-green-200" data-toggle="modal" data-target="#editUser{{$key->id}}">
   actualizar
 </button>
 

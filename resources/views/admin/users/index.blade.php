@@ -26,7 +26,7 @@
           <td>{{$key->us_tu_id}}</td>
           <td>{{$key->created_at}}</td>
           <td>{{$key->updated_at}}</td>
-          <td>@include('forms.editUser') @include('vistasUsuario.verUsuario')</td>
+          <td>@include('admin.forms.editUser') @include('admin.vistasUsuario.verUsuario')</td>
 
  
         </tr>
