@@ -29,6 +29,7 @@ La interaccion es de forma directa, debido a que son las unicas dos personas que
 ## Desarrollo y progreso
 
 El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados mientras transcurre la trayectoria de la aplicacion
+<br>
 Lista de videos: (https://www.youtube.com/playlist?list=PL68tYPXSXBc_6SbMbTwFOqWqobpbkmcWK)
 ## Finalidad
 
