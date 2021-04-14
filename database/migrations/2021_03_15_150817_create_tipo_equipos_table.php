@@ -15,6 +15,8 @@ class CreateTipoEquiposTable extends Migration
     {
         Schema::create('tipo_equipos', function (Blueprint $table) {
             $table->id();
+            $table->string('teq_nombre');
+            $table->string('teq_descripcion');
             $table->timestamps();
         });
     }

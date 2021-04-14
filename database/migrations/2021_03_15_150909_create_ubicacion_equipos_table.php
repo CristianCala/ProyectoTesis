@@ -15,6 +15,8 @@ class CreateUbicacionEquiposTable extends Migration
     {
         Schema::create('ubicacion_equipos', function (Blueprint $table) {
             $table->id();
+            $table->string('ubeq_nombre');
+            $table->string('ubeq_descripcion');
             $table->timestamps();
         });
     }
