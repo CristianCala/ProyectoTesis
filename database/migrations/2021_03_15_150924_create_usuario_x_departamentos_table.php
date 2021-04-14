@@ -15,6 +15,12 @@ class CreateUsuarioXDepartamentosTable extends Migration
     {
         Schema::create('usuario_x_departamentos', function (Blueprint $table) {
             $table->id();
+            $table->string('usxdp_descripcion');
+            $table->string('usxdp_estatus');
+            $table->integer('usxdp_uscedula');
+            $table->integer('usxdp_dpid');
+            //$table->foreign('usxdp_uscedula')->references('cedula')->on('users');
+            //$table->foreign('usxdp_dpid')->references('dep_id')->on('departamentos');
             $table->timestamps();
         });
     }
