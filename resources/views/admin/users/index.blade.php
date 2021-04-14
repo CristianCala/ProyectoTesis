@@ -1,22 +1,28 @@
+<div>
         <!-- Fonts -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<div class="container mt-6">
 
-<table class="table-fixed">
+<table class="table">
   <thead>
     <tr>
-      <th class="w-1/2 ...">Nombre</th>
-      <th class="w-1/4 ...">Email</th>
-
+      <th>Nombre</th>
+      <th>Email</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-    @if($users)
-        @foreach($users as $key)
-      <td>{{$key->name}}</td>
-      <td>{{$key->email}}</td>
+  
+        @foreach($users as $user)
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$user->name}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$user->email}}</td>
     </tr>
     @endforeach
-        @endif
+
   </tbody>
 </table>
+<div class="mt-4">
+
+</div>
+</div>
+</div>
