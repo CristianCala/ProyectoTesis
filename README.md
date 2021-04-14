@@ -14,38 +14,20 @@ Este proyecto fue creado en base a Laravel en su version 8.32.1 en conjunto con 
 <br>
 Este proyecto data sobre un sistema de gestion e inventario para la gerencia de tecnologia e informacion.
 Se precisa que el sistema procese el registro de cada producto ingresado con las siguientes caracteristicas:
-<br>
-- Antes de entrar al sistema se requiere un usuario, cada usuario debe poseer un rol.
-- <br>
-- De la navegacion por menu.
-- <br>
-- Opciones por rol, asi otorgandoles permisos especificos a ciertos usuarios.
-- <br>
-- Las opciones para mantenimiento sean accedidas por el super usuario, las cuales son, editar, agregar o eliminar
-- <br>
-- Las opciones para los moderadores sean editar o agregar
-- <br>
-- Las opciones para los usuarios regulares sean solo editar
-- <br>
-- Que el sistema se pueda manejar sin tocar las rutas por rol, o sease, rutas protegidas.
-- <br>
-- Que la capacidad de almacenamiento para cada registro sea de forma infinita, autoincremental y secuencial.
-- <br>
-- Procesamiento de archivos y ordenes.
+- [Antes de entrar al sistema se requiere un usuario, cada usuario debe poseer un rol.]
+- [Opciones por rol]
+- [Rutas protegidas]
+- [Procesamiento de archivos y ordenes.]
 <br>
 La interaccion es de forma directa, debido a que son las unicas dos personas que laboran en este departamento y que realizan el trabajo:
-<br>
-Seguridad.
-el sistema nuevo generara una clave de acceso con un hash para asi no permitir la entrada a personas no autorizadas.
-<br>
-Adaptabilidad: En lo que respecta al sistema en cuestion, resulta muy facil adaptarse gracias a que trabaja bajo ambiente de ventanas desplegables y de rutas seguras, y se encuentra en españpl, aparte de poseer una gran gama de ayuda, la adaptabilidad es mas sencilla ya que el programa esta hecho lo mas sencillo posible para evitarle a los usuarios perdidas de tiempo.
-<br>
-Eficiencia: El programa bajo entorno laravel resulta muy eficiente para el manejo de informacion importante, ya que trata de cubrir todas las necesidades del usuario. en cuanto al nuevo sistema, resulta tambien muy eficiente ya que arroja resultados precisos y reportes muy presentables y de la misma forma, precisos.
+- [Seguridad]
+- [Adaptabilidad]
+- [Eficiencia]
 
 ## Desarrollo y progreso
 
 El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados mientras transcurre la trayectoria de la aplicacion
-
+Lista de videos: (https://www.youtube.com/playlist?list=PL68tYPXSXBc_6SbMbTwFOqWqobpbkmcWK)
 ## Finalidad
 
  Este proyecto comparte la finalidad de ser usado para propositos educativos asi como profesionales dentro de la materia de informatica.
