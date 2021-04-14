@@ -22,7 +22,7 @@ class AccesoClienteFactory extends Factory
     public function definition()
     {
         return [
-            'acl_ip' => $this->faker->localIpv4,
+            'acl_ip' => $this->faker->ipv4,
             'acl_descripcion' => $this->faker->sentence,
             'acl_estatus' =>  $this->faker->suffix,
             'acl_pantalla' => Str::random(10),
