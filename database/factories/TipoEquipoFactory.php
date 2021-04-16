@@ -22,8 +22,8 @@ class TipoEquipoFactory extends Factory
     public function definition()
     {
         return [
-            'teq_nombre' =>  $this->faker->name,
-            'teq_descripcion' =>  $this->faker->sentence,
+            'teq_nombre' => $this->faker->name,
+            'teq_descripcion' => $this->faker->sentence,
         ];
     }
 }

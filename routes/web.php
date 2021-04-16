@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\userController;
-use App\Http\Controllers\departamentosController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EquiposController;
+use App\Http\Controllers\AuditoriaController;
+use App\Http\Controllers\PrestamosController;
+use App\Http\Controllers\listController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,5 +25,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('admin/users', userController::class);
-Route::resource('admin/departamentos', departamentosController::class);
+//Rutas de los controladores
+Route::resource('admin/users', UserController::class);
+Route::resource('admin/equipment', EquiposController::class);
+Route::resource('admin/auditoria', AuditoriaController::class);
+Route::resource('admin/prestamos', PrestamosController::class);
+Route::get('admin/pdf/invoice', [listController::class, 'exportInvoice']);

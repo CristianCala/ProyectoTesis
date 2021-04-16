@@ -22,8 +22,8 @@ class HistoricoMovimientoFactory extends Factory
     public function definition()
     {
         return [
-            'id_equipo' => $this->faker->numerify('###'),
-            'id_ubicacion' => $this->faker->address,
+            'id_equipo' => $this->faker->name,
+            'id_ubicacion' => $this->faker->name,
         ];
     }
 }

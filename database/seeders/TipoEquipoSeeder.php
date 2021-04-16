@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class TipoEquipoSeeder extends Seeder
+class tipoEquipoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class TipoEquipoSeeder extends Seeder
      */
     public function run()
     {
-         //\App\Models\TipoEquipo::factory(10)->create();
+        //\App\Models\TipoEquipo::factory(10)->create(); 
     }
 }

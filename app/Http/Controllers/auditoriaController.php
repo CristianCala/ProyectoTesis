@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Auditoria;
 use Illuminate\Http\Request;
 
-class auditoriaController extends Controller
+class AuditoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,9 @@ class auditoriaController extends Controller
      */
     public function index()
     {
-        //
+        $auditorias=Auditoria::all();
+        $auditorias = Auditoria::paginate(5);
+        return view('admin.auditoria.index', compact('auditorias'));
     }
 
     /**

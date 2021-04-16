@@ -22,9 +22,9 @@ class TipoUsuarioFactory extends Factory
     public function definition()
     {
         return [
-            'tu_tipo' => $this->faker->suffix,
-            'tu_descripcion' =>  $this->faker->sentence,
-            'tu_estatus' =>  $this->faker->suffix,
+            'tu_tipo' => $this->faker->name,
+            'tu_descripcion' => $this->faker->sentence,
+            'tu_estatus' => $this->faker->suffix,
         ];
     }
 }

@@ -23,7 +23,7 @@ class DepartamentoFactory extends Factory
     {
         return [
             'dep_nombre' => $this->faker->name,
-            'dep_descripcion' => $this->faker->sentence,
+            'dep_descripcion' => $this->faker->name,
         ];
     }
 }

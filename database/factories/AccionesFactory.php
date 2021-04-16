@@ -22,8 +22,8 @@ class AccionesFactory extends Factory
     public function definition()
     {
         return [
-            'ac_tipo' => $this->faker->suffix,
-            'ac_descripcion' =>  $this->faker->sentence,
+            'ac_tipo' => $this->faker->name,
+            'ac_descripcion' => $this->faker->name,
         ];
     }
 }

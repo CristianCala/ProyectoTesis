@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class AuditoriaSeeder extends Seeder
+class auditoriaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class AuditoriaSeeder extends Seeder
      */
     public function run()
     {
-        //\App\Models\Auditoria::factory(10)->create();
+        //\App\Models\Auditoria::factory(10)->create(); 
     }
 }

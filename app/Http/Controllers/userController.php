@@ -1,20 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\User;
-class userController extends Controller
+use Illuminate\Http\Request;
+
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
- 
     public function index()
     {
         $users=User::all();
+        $users = User::paginate(5);
         return view('admin.users.index', compact('users'));
     }
 
@@ -25,8 +25,8 @@ class userController extends Controller
      */
     public function create()
     {
-         $users=User::all();
-        return view('admin.users.create',  compact('users'));
+        /*$users=User::all();
+        return view('admin.create.index');*/
     }
 
     /**
@@ -59,7 +59,7 @@ class userController extends Controller
      */
     public function edit($id)
     {
-   
+        //
     }
 
     /**
@@ -82,14 +82,6 @@ class userController extends Controller
      */
     public function destroy($id)
     {
-        $users=User::findOrFail($id);
-        if ($users->delete()) {
-  return redirect('/admin/users');
-}
-  else{
-   return response()->json([
-       'mensaje'=>'error al eliminar usuario'
-   ]);
-  }
+        //
     }
 }

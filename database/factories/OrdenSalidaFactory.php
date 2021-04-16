@@ -22,7 +22,7 @@ class OrdenSalidaFactory extends Factory
     public function definition()
     {
         return [
-            'ord_ubicacion' => $this->faker->numerify('###'),
+            'ord_ubicacion' => $this->faker->address,
         ];
     }
 }

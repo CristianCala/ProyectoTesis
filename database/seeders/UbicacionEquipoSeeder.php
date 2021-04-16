@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class UbicacionEquipoSeeder extends Seeder
+class ubicacionEquipoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class UbicacionEquipoSeeder extends Seeder
      */
     public function run()
     {
-       //\App\Models\UbicacionEquipo::factory(10)->create();
+           //\App\Models\UbicacionEquipo::factory(10)->create(); 
     }
 }

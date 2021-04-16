@@ -23,7 +23,7 @@ class UbicacionEquipoFactory extends Factory
     {
         return [
             'ubeq_nombre' => $this->faker->name,
-            'ubeq_descripcion' =>  $this->faker->sentence,
+            'ubeq_descripcion' => $this->faker->sentence,
         ];
     }
 }
