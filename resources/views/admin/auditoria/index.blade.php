@@ -3,22 +3,24 @@
 <head>
 	<title>Ventana hecha con una plantilla Blade</title>
 	 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
 <center>
-	<h1 class="bg-gray-200">Hola</h1>
+	<h1 class="bg-gray-200 text-5xl">Hola</h1>
 <p class="mb-2 mt-2">margen</p>
 
 <div class="container mt-6">
 
 <table class="table">
-  <thead>
+  <thead class="border border-gray-400 bg-gray-200">
     <tr>
       <th>Maquina</th>
       <th>Sistema Operativo</th>
       <th>Direccion I.P.</th>
       <th>Navegador</th>
       <th>Fecha</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -38,7 +40,7 @@
 </table>
 <div class="mt-4">
         {{$auditorias->links()}}
-  <a href="{{url('/dashboard')}}" class="btn bg-blue-400 mt-6">Volver</a>
+        <a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md text-2xl">Volver</a>
 </div>
 </div>
 </center>

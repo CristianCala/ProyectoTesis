@@ -15,7 +15,7 @@ class EquiposController extends Controller
     public function index()
     {
         $equipos=Equipo::all();
-        $equipos = Equipo::paginate(5);
+        $equipos = Equipo::paginate(10);
         return view('admin.equipment.index', compact('equipos'));
     }
 

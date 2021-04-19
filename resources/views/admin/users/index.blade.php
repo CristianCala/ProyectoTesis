@@ -12,7 +12,7 @@
 
 <div class="container mt-6">
 
-<table class="table-fixed rounded-sm">
+<table class="table-fixed">
   <thead class="border border-gray-400 bg-gray-200">
     <tr>
       <th>Nombre</th>
@@ -34,7 +34,7 @@
 </table>
 <div class="mt-4">
 	      {{$users->links()}}
-  <a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md">Volver</a>
+  <a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md text-2xl">Volver</a>
 </div>
 </div>
 </center>

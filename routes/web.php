@@ -5,6 +5,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\equiposController;
 use App\Http\Controllers\auditoriaController;
 use App\Http\Controllers\prestamosController;
+use App\Http\Controllers\departamentosController;
 use App\Http\Controllers\listController;
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::resource('admin/users', userController::class);
 Route::resource('admin/equipment', equiposController::class);
 Route::resource('admin/auditoria', auditoriaController::class);
 Route::resource('admin/prestamos', prestamosController::class);
+Route::resource('admin/departamentos', departamentosController::class);
 Route::get('admin/pdf/invoice', [listController::class, 'exportInvoice']);

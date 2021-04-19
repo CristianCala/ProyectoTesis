@@ -14,7 +14,7 @@ class PrestamosController extends Controller
     public function index()
     {
         $prestamos=PrestamoEquipo::all();
-        $prestamos = PrestamoEquipo::paginate(5);
+        $prestamos = PrestamoEquipo::paginate(10);
         return view('admin.prestamos.index', compact('prestamos'));
     }
 
