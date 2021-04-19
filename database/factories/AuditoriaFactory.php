@@ -22,10 +22,10 @@ class AuditoriaFactory extends Factory
     public function definition()
     {
         return [
-            'au_maquina' => $this->faker->numerify('###'),
-            'au_so' => $this->faker->sentence,
-            'au_ip' =>  $this->faker->localIpv4,
-            'au_navegador' => $this->faker->slug,
+            'au_maquina' => $this->faker->name,
+            'au_so' => $this->faker->name,
+            'au_ip' => $this->faker->localIpv4,
+            'au_navegador' => $this->faker->numerify('###-###-####'),
             'au_fecha' => $this->faker->date,
         ];
     }

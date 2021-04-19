@@ -23,8 +23,8 @@ class PantallaFactory extends Factory
     {
         return [
             'pan_nombre' => $this->faker->name,
-            'pan_descripcion' => $this->faker->sentence,
-            'pan_estatus' =>  $this->faker->suffix,
+            'pan_descripcion' => $this->faker->address,
+            'pan_estatus' => $this->faker->suffix,
         ];
     }
 }

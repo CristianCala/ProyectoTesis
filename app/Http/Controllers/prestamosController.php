@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\PrestamoEquipo;
 use Illuminate\Http\Request;
 
-class prestamosController extends Controller
+class PrestamosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,9 @@ class prestamosController extends Controller
      */
     public function index()
     {
-        //
+        $prestamos=PrestamoEquipo::all();
+        $prestamos = PrestamoEquipo::paginate(5);
+        return view('admin.prestamos.index', compact('prestamos'));
     }
 
     /**

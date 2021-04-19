@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Equipo;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
-class equiposController extends Controller
+class EquiposController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class equiposController extends Controller
      */
     public function index()
     {
-        //
+        $equipos=Equipo::all();
+        $equipos = Equipo::paginate(5);
+        return view('admin.equipment.index', compact('equipos'));
     }
 
     /**
@@ -81,4 +84,11 @@ class equiposController extends Controller
     {
         //
     }
+   /* public function exportInvoice()
+    {
+     $equipos=App\Models\Equipo::get();
+     $pdf = PDF::loadView('admin.pdf.invoice', compact('equipos') );
+     return $pdf->download('invoice.pdf');
+     //return view('admin.pdf.invoice', compact('equipos'));
+    }*/
 }

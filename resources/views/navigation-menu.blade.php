@@ -15,12 +15,20 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ url('admin/users') }}" :active="request()->routeIs('users')">
+                      <x-jet-nav-link href="{{  url('admin/users') }}" :active="request()->routeIs('users')">
                         {{ __('Usuarios') }}
                     </x-jet-nav-link>
+                 <x-jet-nav-link href="{{ url('admin/equipment') }}" :active="request()->routeIs('equipment')">
+                {{ __('Equipos') }}
+            </x-jet-nav-link>
+                <x-jet-nav-link href="{{ url('admin/auditoria') }}" :active="request()->routeIs('auditoria')">
+                {{ __('Auditoria') }}
+            </x-jet-nav-link>
+               <x-jet-nav-link href="{{ url('admin/prestamos') }}" :active="request()->routeIs('prestamos')">
+                {{ __('Prestamos') }}
+            </x-jet-nav-link>
                 </div>
             </div>
-            
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
@@ -145,8 +153,21 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ url('admin/users') }}" :active="request()->routeIs('users')">
+
+                <x-jet-responsive-nav-link href="{{ url('admin/users') }}" :active="request()->routeIs('users')">
                 {{ __('Usuarios') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ url('admin/equipment') }}" :active="request()->routeIs('equipment')">
+                {{ __('Equipos') }}
+            </x-jet-responsive-nav-link>
+
+             <x-jet-responsive-nav-link href="{{ url('admin/auditoria') }}" :active="request()->routeIs('auditoria')">
+                {{ __('Auditoria') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ url('admin/prestamos') }}" :active="request()->routeIs('prestamos')">
+                {{ __('Prestamos') }}
             </x-jet-responsive-nav-link>
         </div>
 

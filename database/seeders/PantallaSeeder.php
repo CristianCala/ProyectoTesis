@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class PantallaSeeder extends Seeder
+class pantallaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class PantallaSeeder extends Seeder
      */
     public function run()
     {
-        //\App\Models\Pantalla::factory(10)->create();
+        //\App\Models\Pantalla::factory(10)->create(); 
     }
 }

@@ -23,8 +23,8 @@ class ModuloFactory extends Factory
     {
         return [
             'mod_nombre' => $this->faker->name,
-            'mod_descripcion' => $this->faker->sentence,
-            'mod_estatus' =>  $this->faker->suffix,
+            'mod_descripcion' => $this->faker->address,
+            'mod_estatus' => $this->faker->suffix,
         ];
     }
 }

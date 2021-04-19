@@ -54,4 +54,3 @@ El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados
 ![iMac - 3](https://user-images.githubusercontent.com/43525693/111818210-4f8c8780-88b5-11eb-9dc8-11fb96f98636.png)
 ![iMac - 4](https://user-images.githubusercontent.com/43525693/111818213-50251e00-88b5-11eb-8e32-a1e708b7ed39.png)
 ![iMac - 5](https://user-images.githubusercontent.com/43525693/111818215-50bdb480-88b5-11eb-9b87-75fb3ab5154d.png)
-

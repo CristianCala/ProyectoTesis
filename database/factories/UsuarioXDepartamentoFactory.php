@@ -23,9 +23,7 @@ class UsuarioXDepartamentoFactory extends Factory
     {
         return [
             'usxdp_descripcion' => $this->faker->sentence,
-            'usxdp_estatus' =>  $this->faker->suffix,
-            'usxdp_uscedula' =>  $this->faker->numerify('########'),
-            'usxdp_dpid' =>  $this->faker->numerify('###'),
+            'usxdp_estatus' => $this->faker->suffix,
         ];
     }
 }
