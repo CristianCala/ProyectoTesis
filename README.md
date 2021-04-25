@@ -26,11 +26,6 @@ La interaccion es de forma directa, debido a que son las unicas dos personas que
 - [Adaptabilidad]
 - [Eficiencia]
 
-## Desarrollo y progreso
-
-El desarrollo de esta aplicacion se mostrara paulatinamente con videos mostrados mientras transcurre la trayectoria de la aplicacion
-<br>
-- [Lista de videos](https://www.youtube.com/playlist?list=PL68tYPXSXBc_6SbMbTwFOqWqobpbkmcWK)
 ## Finalidad
 
  Este proyecto comparte la finalidad de ser usado para propositos educativos asi como profesionales dentro de la materia de informatica.
