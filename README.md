@@ -33,7 +33,14 @@ La interaccion es de forma directa, debido a que son las unicas dos personas que
 ### Screens
 
 
-## Mockups y Wireframes
+## instalacion
+La instalaccion es muy sencilla
+```
+1. git clone (Enlace del proyecto)
+2. cd ProyectoTesis
+3. php artisan serve
+4. composer update (En caso de ser necesario)
+```
 
 ### Wireframes (More wireframes to come, wireframes can vary)
 
