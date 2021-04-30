@@ -1,10 +1,10 @@
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verUser{{$key->id}}">
+<button type="button" class="mb-4 bg-blue-400 rounded-md" data-toggle="modal" data-target="#verUser{{$key->id}}">
   Informacion
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="verUser{{$key->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade bg-black bg-opacity-50 inset-0 absolute flex justify-center items-center" id="verUser{{$key->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -14,13 +14,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <img src="../images/{{$key->photos}}" width="150" />
            <p>Nombre: {{$key->name}}</p>
-         <p>Apellido {{$key->surname}}</p>
-         <p>Cedula: {{$key->cedula}}</p>
-         <p>Usuario: {{$key->user}}</p>
          <p>Correo: {{$key->email}}</p>
-         <p>Estado actual: {{$key->estatus}}</p>
+          <p>Contraseña: {{$key->password}}</p>
           </div>
       </div>
     </div>

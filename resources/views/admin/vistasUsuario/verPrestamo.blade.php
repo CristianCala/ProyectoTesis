@@ -1,5 +1,5 @@
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verPrestamo{{$info->id}}">
+<button type="button" class="bg-blue-400 rounded-md" data-toggle="modal" data-target="#verPrestamo{{$info->id}}">
   Informacion
 </button>
 
@@ -18,7 +18,7 @@
           <p>Fecha de Salida: {{$info->pres_fecha_salida}}</p>
           <p>Fecha de Entrada{{$info->pres_fecha_entrada}}</p>
           <p>Estado: {{$info->pres_estatus}}</p>
-          <a align="center" href="{{ route('invoice.pdf') }}">Imprimir comprobante</a>
+          <a align="center">Imprimir comprobante</a>
           </div>
       </div>
     </div>
