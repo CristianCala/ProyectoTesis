@@ -28,9 +28,11 @@ class EquiposController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
-        //
+        $equipos=Equipo::all();
+        return view('admin.equipment.create', compact('equipos'));
     }
 
     /**
@@ -41,7 +43,17 @@ class EquiposController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $equipos = new Equipo;
+        $equipos->eq_modelo = $request->eq_modelo;
+        $equipos->eq_marca = $request->eq_marca;
+        $equipos->eq_serial = $request->eq_serial;
+        $equipos->eq_nbiennacional = $request->eq_nbiennacional;
+         $equipos->eq_estatus = $request->eq_estatus;
+            if ($equipos->save()) {
+        return redirect('/admin/equipment');
+        }
     }
 
     /**
