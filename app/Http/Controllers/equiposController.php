@@ -43,14 +43,20 @@ class EquiposController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request->validate([
+            'eq_modelo' => 'required|max:24',
+            'eq_marca' => 'required|max:24',
+            'eq_serial' => 'required|integer|digits:6',
+            'eq_nbiennacional' => 'required|integer|min:1|digits:5',
+            'eq_estatus' => 'required|accepted'
+        ]);
 
         $equipos = new Equipo;
         $equipos->eq_modelo = $request->eq_modelo;
         $equipos->eq_marca = $request->eq_marca;
         $equipos->eq_serial = $request->eq_serial;
         $equipos->eq_nbiennacional = $request->eq_nbiennacional;
-         $equipos->eq_estatus = $request->eq_estatus;
+        $equipos->eq_estatus = $request->eq_estatus;
             if ($equipos->save()) {
         return redirect('/admin/equipment');
         }

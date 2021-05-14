@@ -20,7 +20,7 @@ class CreateEquiposTable extends Migration
             $table->string('eq_serial');
             //$table->integer('eq_tequid')->references('id')->on('tipo_equipos');
             $table->string('eq_nbiennacional');
-            $table->string('eq_estatus');
+            $table->boolean('eq_estatus');
             //$table->integer('departamentos_dep_id')->references('id')->on('departamentos');
             //$table->integer('ubicacion_equipo_ubeq')->references('ubeq_id')->on('ubicacion_equipos');
             $table->timestamps();
