@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar nuevo equipo</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div class="min-h-screen py-6 flex flex-col justify-center sm:py-12">
-    <div class="container bg-gray-200 flex flex-col justify-center sm:max-w-xl sm:mx-auto max-w-sm sm:rounded-3xl overflow-hidden shadow-lg">
-    <div class="card relative py-3 sm:max-w-xl sm:mx-auto ">
-    <div class="formWrap">
-    <form action="{{url('/admin/equipment')}}" method="post">
+<!-- Button trigger modal -->
+<button type="button" class="inline-block font-normal text-center px-3 py-2 leading-normal text-base rounded cursor-pointer text-white bg-blue-600" data-toggle="modal" data-target="#exampleModalTwo">
+Registrar equipo
+</button>
+
+<!-- Modal -->
+<div class="modal hidden fixed top-0 left-0 w-full h-full outline-none fade" id="exampleModalTwo" tabindex="-1" role="dialog">
+  <div class="modal-dialog relative w-auto pointer-events-none max-w-lg my-8 mx-auto px-4 sm:px-0" role="document">
+    <div class="relative flex flex-col w-full pointer-events-auto bg-white border border-gray-300 rounded-lg">
+      <div class="flex items-start justify-between p-4 border-b border-gray-300 rounded-t">
+        <h5 class="mb-0 text-lg leading-normal">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="relative flex p-4">
+<form action="{{url('/admin/equipment')}}" method="post">
     @csrf
     <div class="mt-4 text-center">Registro de equipos</div>
 
@@ -31,7 +31,7 @@
     <br>
     @enderror
      <div class="mt-8 flex flex-col">
-      <label for="email" value="{{ __('eq_marca') }}">Marca</label>
+      <label for="text" value="{{ __('eq_marca') }}">Marca</label>
        <input type="text"id="eq_marca" class="block mt-1 w-full" name="eq_marca" :value="old('eq_marca')"  autofocus>
      </div>
    @error('eq_serial')
@@ -58,9 +58,9 @@
     <br>
     @enderror
                     <div class="mt-8 flex flex-col">
-                    	<center>
-                    	<label for="text" value="{{ __('eq_estatus') }}">Estado</label>
-                    	<fieldset>
+                      <center>
+                      <label for="text" value="{{ __('eq_estatus') }}">Estado</label>
+                      <fieldset>
                         <input id="eq_estatus" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Activo
                         <input id="eq_estatus" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Inactivo
                         </fieldset>
@@ -68,12 +68,8 @@
                     </div>
         <button>Registrar</button>
     </form>
+      </div>
+     
     </div>
-    <div class="mt-4">
-            <a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md text-2xl">Volver</a>
+  </div>
 </div>
-    </div>
-    </div>
-    </div>
-</body>
-</html>

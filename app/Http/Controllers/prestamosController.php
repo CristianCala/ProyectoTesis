@@ -29,7 +29,9 @@ class PrestamosController extends Controller
      */
     public function create()
     {
-        //
+          $users=User::all();
+    $id=Equipos::all()->pluck('id');
+    return view('admin.prestamos.create', compact('users', 'id'));
     }
 
     /**
@@ -40,7 +42,15 @@ class PrestamosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $prestamos = new PrestamoEquipo;
+       $prestamos->pres_salida = $request->pres_salida;
+       $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
+       $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
+       $prestamos->pres_estatus = $request->pres_estatus;
+       if ($prestamos->save()) {
+           
+       return redirect('/admin/prestamos');
+       } 
     }
 
     /**
@@ -51,7 +61,8 @@ class PrestamosController extends Controller
      */
     public function show($id)
     {
-        //
+       $prestamos=PrestamoEquipo::findOrFail($id);
+   return view('admin.prestamos.edit', compact('prestamos'/*, 'users', 'tequid'*/));
     }
 
     /**
@@ -62,7 +73,10 @@ class PrestamosController extends Controller
      */
     public function edit($id)
     {
-        //
+  
+    $prestamos=PrestamoEquipo::findOrFail($id);
+   return view('admin.prestamos.edit', compact('prestamos'/*, 'users', 'tequid'*/));
+      
     }
 
     /**
@@ -74,7 +88,18 @@ class PrestamosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $prestamos=PrestamoEquipo::findOrFail($id);
+       $prestamos->pres_salida = $request->pres_salida;
+       $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
+       $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
+       $prestamos->pres_estatus = $request->pres_estatus;
+       //$prestamos->usuarios_us_id = $request->usuarios_us_id;
+       //$prestamos->equipos_eq_id = $request->equipos_eq_id;
+
+           if ($prestamos->save()) {
+           
+       return redirect('/admin/prestamos');
+        } 
     }
 
     /**
@@ -85,6 +110,7 @@ class PrestamosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        PrestamoEquipo::destroy($id);
+      return back();
     }
 }

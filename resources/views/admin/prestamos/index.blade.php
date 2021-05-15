@@ -11,16 +11,15 @@
 </head>
 <body>
 <center>
-  <h1 class="bg-gray-200">Configuracion de Usuarios</h1>
+  <h1 class="bg-gray-200">Configuracion de Prestamos</h1>
 <p class="mb-2 mt-2">prestamos listados</p>
 
 <div class="container mt-6">
-
+@include('admin.formsCreator.crearPrestamo')
 <table class="table-fixed">
   <thead class="border border-gray-400 bg-gray-200">
     <tr>
       <th>Nombre</th>
-
       <th>Acciones</th>
     </tr>
   </thead>
@@ -29,7 +28,7 @@
     @if(!empty($prestamos) && $prestamos->count())
         @foreach($prestamos as $info)
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$info->pres_salida}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800"><button class="bg-yellow-200 rounded-md">Actualizar</button>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editPrestamo')
       @include('admin.vistasUsuario.verPrestamo')</td>
     </tr>
     @endforeach

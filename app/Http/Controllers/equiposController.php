@@ -81,7 +81,11 @@ class EquiposController extends Controller
      */
     public function edit($id)
     {
-        //
+      $equipment=Equipo::findOrFail($id);
+        //$tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
+        //$departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');
+        return view('admin.equipment.edit', compact('equipment'/*, 'tipoEquipo', 'departamentos'*/));
+
     }
 
     /**
@@ -93,7 +97,18 @@ class EquiposController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $equipment=Equipo::findOrFail($id);
+       $equipment->eq_modelo = $request->eq_modelo;
+       $equipment->eq_marca = $request->eq_marca;
+       $equipment->eq_serial = $request->eq_serial;
+       //$equipment->eq_tequid = $request->eq_tequid;
+       $equipment->eq_nbiennacional = $request->eq_nbiennacional;
+       //$equipment->departamentos_dep_id = $request->departamentos_dep_id;
+       //$equipment->eq_tequid = $request->eq_tequid;
+        $equipment->eq_estatus = $request->eq_estatus;
+           if ($equipment->save()) {
+       return redirect('/admin/equipment');
+       } 
     }
 
     /**
@@ -104,7 +119,8 @@ class EquiposController extends Controller
      */
     public function destroy($id)
     {
-        //
+           Equipo::destroy($id);
+      return back();
     }
    /* public function exportInvoice()
     {

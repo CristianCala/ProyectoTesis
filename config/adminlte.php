@@ -229,15 +229,7 @@ return [
             'search' => true,
             'topnav' => true,
         ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'Opciones'],
-        [
+           [
             'text' => 'Registrar usuarios',
             'url'  => 'admin/users',
             'icon' => 'fas fa-fw fa-user',
@@ -245,22 +237,33 @@ return [
         [
             'text' => 'Registrar equipos',
             'url'  => 'admin/equipment',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-desktop',
         ],
+        /*['header' => 'Opciones'],
+        [laptop-house
+            'text' => 'Registrar usuarios',
+            'url'  => 'admin/users',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Registrar equipos',
+            'url'  => 'admin/equipment/create',
+            'icon' => 'fas fa-fw fa-lock',
+        ],*/
         ['header' => 'Secundario'],
         [
             'text'       => 'Auditoria',
-            'icon_color' => 'red',
+            'icon'       => 'fas fa-laptop-house',
             'url'        => 'admin/auditoria',
         ],
         [
-            'text'       => 'Departamento',
-            'icon_color' => 'yellow',
+            'text'       => 'Departamentos',
+            'icon'       => 'far fa-building',
             'url'        => 'admin/departamentos',
         ],
         [
             'text'       => 'Prestamos',
-            'icon_color' => 'cyan',
+            'icon'       => 'fas fa-address-book',
             'url'        => 'admin/prestamos',
         ],
     ],
