@@ -119,7 +119,7 @@ class EquiposController extends Controller
      */
     public function destroy($id)
     {
-           Equipo::destroy($id);
+    Equipo::destroy($id);
       return back();
     }
    /* public function exportInvoice()

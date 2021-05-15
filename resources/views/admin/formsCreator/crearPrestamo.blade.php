@@ -12,7 +12,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="relative flex p-4">
-       <form action="{{url('/admin/equipment')}}" method="post">
+       <form action="{{url('/admin/prestamos')}}" method="post">
     @csrf
     <div class="mt-4 text-center">Registro de Prestamos</div>
 

@@ -17,9 +17,9 @@ class CreateEquiposTable extends Migration
           $table->id();
             $table->string('eq_modelo');
             $table->string('eq_marca');
-            $table->string('eq_serial');
+            $table->string('eq_serial')->unique();
             //$table->integer('eq_tequid')->references('id')->on('tipo_equipos');
-            $table->string('eq_nbiennacional');
+            $table->string('eq_nbiennacional')->unique();
             $table->boolean('eq_estatus');
             //$table->integer('departamentos_dep_id')->references('id')->on('departamentos');
             //$table->integer('ubicacion_equipo_ubeq')->references('ubeq_id')->on('ubicacion_equipos');

@@ -29,7 +29,7 @@ class PrestamosController extends Controller
      */
     public function create()
     {
-          $users=User::all();
+    $users=User::all();
     $id=Equipos::all()->pluck('id');
     return view('admin.prestamos.create', compact('users', 'id'));
     }
@@ -42,7 +42,7 @@ class PrestamosController extends Controller
      */
     public function store(Request $request)
     {
-         $prestamos = new PrestamoEquipo;
+       $prestamos = new PrestamoEquipo;
        $prestamos->pres_salida = $request->pres_salida;
        $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
        $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
