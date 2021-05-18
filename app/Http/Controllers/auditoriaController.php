@@ -80,7 +80,8 @@ class AuditoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+       $auditorias=Auditoria::findOrFail($id);
+        return view('admin.equipment.edit', compact('equipment'));
     }
 
     /**

@@ -17,7 +17,7 @@ class CreateHistoricoMovimientosTable extends Migration
             $table->id();
             $table->string('id_equipo');
             $table->string('id_ubicacion');
-               //$table->integer('equipos_eq_id')->references('id')->on('equipos');
+            $table->integer('equipos_eq_id')->references('id')->on('equipos');
             $table->timestamps();
         });
     }

@@ -17,7 +17,10 @@ class UsuarioDepartamentosController extends Controller
     }
     public function index()
     {
-        //
+     $dept['dept']=UsuarioXDepartamento::JOIN("departamentos","departamentos.dep_id","=","usuario_x_departamentos.usxdp_dpid")
+                                    -> orderBy('usuario_x_departamentos.usxdp_dpid', 'asc')
+                                    -> paginate(8); 
+        return view('admin.usuariosxdepartamento.index', $dept );
     }
 
     /**
@@ -83,6 +86,7 @@ class UsuarioDepartamentosController extends Controller
      */
     public function destroy($id)
     {
-        //
+           UsuarioXDepartamento::destroy($id);
+      return back();
     }
 }

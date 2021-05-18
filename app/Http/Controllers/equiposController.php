@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Equipo;
+use App\Models\TipoEquipo;
+use App\Models\Departamento;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
 
@@ -18,10 +20,13 @@ class EquiposController extends Controller
     }
     public function index()
     {
-        $equipos=Equipo::all();
-        $equipos = Equipo::paginate(10);
-        return view('admin.equipment.index', compact('equipos'));
-    }
+        $equipment = Equipo::paginate(10);
+        $equipment['equixte']=Equipos::JOIN("tipo_equipos","tipo_equipos.teq_id","=","equipos.eq_tequid")
+                                    -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
+                                    -> SELECT("id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
+                                    -> orderBy('equipos.id', 'asc')
+                                    -> paginate(8);           
+            return view('admin.equipment.index', $equipment );
 
     /**
      * Show the form for creating a new resource.
@@ -31,8 +36,9 @@ class EquiposController extends Controller
     
     public function create()
     {
-        $equipos=Equipo::all();
-        return view('admin.equipment.create', compact('equipos'));
+      $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
+      $departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');
+       return view('admin.equipment.create', compact('tipoEquipo', 'departamentos'));
     }
 
     /**
@@ -51,12 +57,15 @@ class EquiposController extends Controller
             'eq_estatus' => 'required|accepted'
         ]);
 
-        $equipos = new Equipo;
-        $equipos->eq_modelo = $request->eq_modelo;
-        $equipos->eq_marca = $request->eq_marca;
-        $equipos->eq_serial = $request->eq_serial;
-        $equipos->eq_nbiennacional = $request->eq_nbiennacional;
-        $equipos->eq_estatus = $request->eq_estatus;
+    $equipment = new Equipos;
+       $equipment->eq_modelo = $request->eq_modelo;
+       $equipment->eq_marca = $request->eq_marca;
+       $equipment->eq_serial = $request->eq_serial;
+       $equipment->eq_tequid = $request->eq_tequid;
+       $equipment->eq_nbiennacional = $request->eq_nbiennacional;
+       $equipment->departamentos_dep_id = $request->departamentos_dep_id;
+       $equipment->eq_tequid = $request->eq_tequid;
+        $equipment->eq_estatus = $request->eq_estatus;
             if ($equipos->save()) {
         return redirect('/admin/equipment');
         }
@@ -81,10 +90,10 @@ class EquiposController extends Controller
      */
     public function edit($id)
     {
-      $equipment=Equipo::findOrFail($id);
-        //$tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
-        //$departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');
-        return view('admin.equipment.edit', compact('equipment'/*, 'tipoEquipo', 'departamentos'*/));
+            $equipment=Equipo::findOrFail($id);
+          $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
+          $departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');
+          return view('admin.equipment.edit', compact('equipment', 'tipoEquipo', 'departamentos'));
 
     }
 
@@ -101,10 +110,10 @@ class EquiposController extends Controller
        $equipment->eq_modelo = $request->eq_modelo;
        $equipment->eq_marca = $request->eq_marca;
        $equipment->eq_serial = $request->eq_serial;
-       //$equipment->eq_tequid = $request->eq_tequid;
+       $equipment->eq_tequid = $request->eq_tequid;
        $equipment->eq_nbiennacional = $request->eq_nbiennacional;
-       //$equipment->departamentos_dep_id = $request->departamentos_dep_id;
-       //$equipment->eq_tequid = $request->eq_tequid;
+       $equipment->departamentos_dep_id = $request->departamentos_dep_id;
+       $equipment->eq_tequid = $request->eq_tequid;
         $equipment->eq_estatus = $request->eq_estatus;
            if ($equipment->save()) {
        return redirect('/admin/equipment');
