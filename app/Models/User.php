@@ -24,9 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+          'name', 'surname', 'cedula', 'email', 'user', 'password', 'estatus', 'photos', 
     ];
 
     /**
@@ -72,5 +70,20 @@ class User extends Authenticatable
     public function adminlte_profile_url()
     {
          return 'profile/username';
+    }
+       public function departamentos()
+    {
+        return $this->belongsToMany(Departamento::class, 'usuario_x_departamentos' , 'usxdp_uscedula', 'usxdp_dpid');
+    }
+
+        public function role()
+    {
+        return $this->belongsTo(rol::class);
+    }
+
+   public function tipo(){
+        
+      return $this->belongsTo(TipoUsuario::class);
+
     }
 }
