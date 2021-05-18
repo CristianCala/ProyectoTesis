@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\AccesoClientes;
+use App\Models\rol;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class AccesoClientesFactory extends Factory
+class RolFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = AccesoClientes::class;
+    protected $model = rol::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,7 @@ class AccesoClientesFactory extends Factory
     public function definition()
     {
         return [
-            'acl_ip' => $this->faker->localIpv4,
-            'acl_descripcion' => $this->faker->sentence,
-            'acl_estatus' => $this->faker->suffix,
-            'acl_pantalla' => $this->faker->name,
+            //
         ];
     }
 }
