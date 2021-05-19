@@ -34,6 +34,22 @@
       <label for="pres_fecha_entrada" value="{{ __('pres_fecha_salida') }}">Marca</label>
        <input type="date" id="pres_fecha_salida" class="block mt-1 w-full" name="pres_fecha_salida" :value="old('pres_fecha_salida')"  autofocus>
      </div>
+     <!--<div class="mt-8 flex flex-col">
+                <select class="form-control form-select " name="usuarios_us_id" >
+                            <option value="">Seleccione usuario</option>
+                           {{--  @foreach($users as $key)
+                                <option value="{{$key->id}}">{{$key->user}}</option>
+                            @endforeach--}}
+                        </select>
+     </div>
+     <div class="mt-8 flex flex-col">
+                <select class="form-control form-select " name="equipos_eq_id" >
+             <option value="">Seleccione Equipo</option>
+                            {{-- @foreach($id as $key => $value)
+             <option value="{{$value}}">{{$value}}</option>
+                            @endforeach--}}
+       </select>
+           </div>-->
    @error('pres_fecha_entrada')
     <br>
     <small>{{$message}}</small>

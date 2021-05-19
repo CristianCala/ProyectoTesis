@@ -25,8 +25,8 @@
   </thead>
   <tbody>
     <tr>
-    @if(!empty($equipos) && $equipos->count())
-        @foreach($equipos as $key)
+    @if(!empty($equipment) && $equipment->count())
+        @foreach($equipment as $key)
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_serial}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo')  @include('admin.vistasUsuario.verEquipo')</td>
     </tr>
@@ -35,7 +35,7 @@
   </tbody>
 </table>
 <div class="mt-4">
-        {{$equipos->links()}}
+        {{$equipment->links()}}
   <a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md text-2xl">Volver</a>
 </div>
 </div>
