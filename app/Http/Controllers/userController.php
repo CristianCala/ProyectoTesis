@@ -29,8 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        /*$users=User::all();
-        return view('admin.create.index');*/
+        $users=User::all();
+        return view('admin.create.index');
     }
 
     /**
@@ -41,7 +41,27 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([    
+        'name' => 'required|max:24',
+        'email' => 'required|max:24',
+        'password' => 'required|max:24'
+        //'eq_nbiennacional' => 'required|integer|min:1|digits:5',
+        //'eq_estatus' => 'required|accepted'
+            ]);
+
+        $users = new User;
+        $users->name = $request->name;
+        //$users->surname = $request->surname;
+        //$users->cedula = $request->cedula;
+        //$users->user = $request->user;
+        $users->email = $request->email;
+        //$users->estatus = $request->estatus;
+        //$users->photos = $nombre;
+        $users->password = bcrypt($request->password);
+        if ($users->save()) {
+         //$users->assignRole($request->rol);
+        return redirect('/admin/users');
+        }
     }
 
     /**
@@ -63,7 +83,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users=User::findOrFail($id);
+        //$roles=Rol::all()->pluck('id', 'rol_tipo');
+       return view('admin.users.edit', compact('users'));
     }
 
     /**
@@ -75,8 +97,23 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $users=User::findOrFail($id);
+
+        $users->name = $request->name;
+        //$users->surname = $request->surname;
+       //$users->cedula = $request->cedula;
+        //$users->user = $request->user;
+        $users->email = $request->email;
+           //$users->estatus = $request->estatus;
+        if ($users->password != null) {
+        $users->password = $request->password;
+        }
+        //$users->syncRoles($request->rol);
+        $users->save();
+        
+        return redirect('/admin/users');
+     }
+    
 
     /**
      * Remove the specified resource from storage.

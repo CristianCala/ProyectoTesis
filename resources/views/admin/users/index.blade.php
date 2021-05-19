@@ -15,7 +15,7 @@
 <p class="mb-2 mt-2">Usuarios listados</p>
 
 <div class="container mt-6">
-
+@include('admin.formsCreator.crearUsuario')
 <table class="table-fixed">
   <thead class="border border-gray-400 bg-gray-200">
     <tr>
