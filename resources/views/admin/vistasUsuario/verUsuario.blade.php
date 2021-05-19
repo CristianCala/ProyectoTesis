@@ -1,4 +1,3 @@
-
 <button type="button" class="mb-4 bg-blue-400 rounded-md" data-toggle="modal" data-target="#verUser{{$key->id}}">
   Informacion
 </button>
@@ -16,7 +15,6 @@
       <div class="modal-body">
            <p>Nombre: {{$key->name}}</p>
          <p>Correo: {{$key->email}}</p>
-          <p>Contraseña: {{$key->password}}</p>
           </div>
       </div>
     </div>

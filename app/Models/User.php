@@ -24,9 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+          'name', 'email', 'password',
     ];
 
     /**
@@ -58,4 +56,34 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function adminlte_image()
+    {
+         return 'https://picsum.photos/300/300';
+    }
+
+        public function adminlte_desc()
+    {
+         return 'Admin';
+    }
+
+    public function adminlte_profile_url()
+    {
+         return 'profile/username';
+    }
+       public function departamentos()
+    {
+        return $this->belongsToMany(Departamento::class, 'usuario_x_departamentos' , 'usxdp_uscedula', 'usxdp_dpid');
+    }
+
+        public function role()
+    {
+        return $this->belongsTo(rol::class);
+    }
+
+   public function tipo(){
+        
+      return $this->belongsTo(TipoUsuario::class);
+
+    }
 }

@@ -29,7 +29,8 @@ class AuditoriaController extends Controller
      */
     public function create()
     {
-        //
+         $auditorias=Auditoria::all();
+        return view('admin.auditoria.create', compact('auditorias'));
     }
 
     /**
@@ -40,7 +41,24 @@ class AuditoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+          'au_ip' => 'required|ip',
+        'au_maquina' => 'required|max:24',
+            'au_so' => 'required|max:24',
+            'au_navegador' => 'required|max:24',
+            'au_fecha' => 'required|date',
+        ]);
+
+        $auditorias = new Auditoria;
+        $auditorias->au_maquina = $request->au_maquina;
+        $auditorias->au_so = $request->au_so;
+        $auditorias->au_ip = $request->au_ip;
+        $auditorias->au_navegador = $request->au_navegador;
+        $auditorias->au_fecha = $request->au_fecha;
+           if ($auditorias->save()) {
+           
+       return redirect('/admin/auditoria');
+        } 
     }
 
     /**
@@ -62,7 +80,8 @@ class AuditoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+       $auditorias=Auditoria::findOrFail($id);
+        return view('admin.equipment.edit', compact('equipment'));
     }
 
     /**
@@ -74,7 +93,16 @@ class AuditoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $auditorias = Auditoria::findOrFail($id);
+        $auditorias->au_maquina = $request->au_maquina;
+        $auditorias->au_so = $request->au_so;
+        $auditorias->au_ip = $request->au_ip;
+        $auditorias->au_navegador = $request->au_navegador;
+        $auditorias->au_fecha = $request->au_fecha;
+           if ($auditorias->save()) {
+           
+       return redirect('/admin/auditoria');
+        } 
     }
 
     /**
@@ -85,6 +113,9 @@ class AuditoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+    Auditoria::destroy($id);
+      return back();
     }
+
+
 }

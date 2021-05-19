@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Ayuda;
 use Illuminate\Http\Request;
 
 class AyudaController extends Controller
@@ -17,7 +17,8 @@ class AyudaController extends Controller
     }
     public function index()
     {
-        //
+        $ayuda=Ayuda::all();
+        return view('admin.ayuda.index', compact('ayuda'));
     }
 
     /**

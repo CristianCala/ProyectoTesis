@@ -20,5 +20,8 @@
           <p>Estado: {{$info->pres_estatus}}</p>
           <a align="center">Imprimir comprobante</a>
           </div>
+          <center>
+          @include('admin.prestamos.delete',['prestamos'=>$info])
+          </center>
       </div>
     </div>

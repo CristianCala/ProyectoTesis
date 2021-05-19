@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\PrestamoEquipo;
+use App\Models\User;
+use App\Models\Equipo;
 use Illuminate\Http\Request;
 
 class PrestamosController extends Controller
@@ -17,8 +19,12 @@ class PrestamosController extends Controller
     }
     public function index()
     {
-        $prestamos=PrestamoEquipo::all();
         $prestamos = PrestamoEquipo::paginate(10);
+       /*$prestamos['prestamo']=PrestamoEquipo::JOIN("equipos","equipos.id","=","prestamo_equipos.equipos_eq_id")
+                                    -> JOIN("users","users.id","=","prestamo_equipos.usuarios_us_id")
+                                    -> orderBy('prestamo_equipos.id', 'asc')
+                                    -> paginate(8); 
+            return view('admin.prestamos.index', $prestamos );*/
         return view('admin.prestamos.index', compact('prestamos'));
     }
 
@@ -29,7 +35,10 @@ class PrestamosController extends Controller
      */
     public function create()
     {
-        //
+      /*
+    $users=User::all();
+    $id=Equipo::all()->pluck('id');
+    return view('admin.prestamos.create', compact('users', 'id'));*/
     }
 
     /**
@@ -40,7 +49,18 @@ class PrestamosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $prestamos = new PrestamoEquipo;
+       $prestamos->pres_salida = $request->pres_salida;
+       $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
+       $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
+       $prestamos->pres_estatus = $request->pres_estatus;
+       //$prestamos->usuarios_us_id = $request->usuarios_us_id;
+       //$prestamos->equipos_eq_id = $request->equipos_eq_id;
+
+       if ($prestamos->save()) {
+           
+       return redirect('/admin/prestamos');
+       } 
     }
 
     /**
@@ -51,7 +71,7 @@ class PrestamosController extends Controller
      */
     public function show($id)
     {
-        //
+     
     }
 
     /**
@@ -62,8 +82,15 @@ class PrestamosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $prestamos=PrestamoEquipo::findOrFail($id);
+   return view('admin.prestamos.edit', compact('prestamos'/*, 'users', 'tequid'*/));
+      /*
+    $prestamos=PrestamoEquipo::findOrFail($id);
+    $users=User::all()->pluck('user');
+    $tequid=Equipos::all()->pluck('eq_id');
+    return view('admin.prestamos.edit', compact('prestamos', 'users', 'tequid'));*/
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -72,9 +99,21 @@ class PrestamosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
-        //
+  $prestamos=PrestamoEquipo::findOrFail($pres_id);
+       $prestamos->pres_salida = $request->pres_salida;
+       $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
+       $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
+       $prestamos->pres_estatus = $request->pres_estatus;
+       //$prestamos->usuarios_us_id = $request->usuarios_us_id;
+       //$prestamos->equipos_eq_id = $request->equipos_eq_id;
+
+           if ($prestamos->save()) {
+           
+       return redirect('/admin/prestamos');
+       } 
     }
 
     /**
@@ -85,6 +124,7 @@ class PrestamosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        PrestamoEquipo::destroy($id);
+      return back();
     }
 }
