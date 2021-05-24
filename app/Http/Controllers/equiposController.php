@@ -20,7 +20,7 @@ class EquiposController extends Controller
     }
     public function index()
     {
-        $equipment=Equipo::all();
+        $equipment=Equipo::orderBy('id', 'DESC')->get();
         $equipment = Equipo::paginate(10);
         /*$equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.eq_tequid")
                                     -> JOIN("departamentos","departamentos.id","=","equipos.departamentos_dep_id")
@@ -69,9 +69,9 @@ class EquiposController extends Controller
        $equipment->eq_nbiennacional = $request->eq_nbiennacional;
        //$equipment->departamentos_dep_id = $request->departamentos_dep_id;
         $equipment->eq_estatus = $request->eq_estatus;
-            if ($equipment->save()) {
-        return redirect('/admin/equipment');
-        }
+         $equipment->save();
+         return redirect('/admin/equipment');
+         //return response->json($equipment);
     }
 
     /**

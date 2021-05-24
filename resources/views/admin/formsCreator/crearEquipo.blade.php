@@ -12,7 +12,7 @@ Registrar equipo
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="relative flex p-4">
-<form action="{{url('/admin/equipment')}}" method="post">
+<form action="{{url('/admin/equipment')}}" method="post" id="equipoFrm">
     @csrf
     <div class="mt-4 text-center">Registro de equipos</div>
 
