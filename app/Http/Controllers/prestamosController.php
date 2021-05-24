@@ -102,7 +102,7 @@ class PrestamosController extends Controller
 
     public function update(Request $request, $id)
     {
-  $prestamos=PrestamoEquipo::findOrFail($pres_id);
+  $prestamos=PrestamoEquipo::findOrFail($id);
        $prestamos->pres_salida = $request->pres_salida;
        $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
        $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;

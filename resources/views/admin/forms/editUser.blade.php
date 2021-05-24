@@ -24,22 +24,8 @@
                         <input id="email" type="email" class="form-control" name="email" value="{{$key->email}}" required>
                         </div>
                       </div>
-
-                         <div class="form-row">
-                        <div class="form-group col-md-6">
-                        <input id="password" type="password" class="form-control" name="password" value="{{$key->password}}"required>
-                        </div>
                             <br>
                         <div class="form-row">
-
-                    </div>
-                    <br>
-                    <br>
-                        <div class="form-group col-md-12">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" value="{{$key->password}}" required>
-                        </div>
-                      <br>
-                    <br>
                     </div>    
       </div>
       <div class="modal-footer">

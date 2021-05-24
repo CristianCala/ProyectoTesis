@@ -22,8 +22,8 @@
     <small>{{$message}}</small>
     <br>
     @enderror
-      <label for="text" value="{{ __('name') }}">Modelo</label>
-         <input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  autofocus>
+    <label for="name" value="{{ __('Name') }}">Nombre</label>
+                    <input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  autofocus autocomplete="name">
     </div>
        @error('email')
     <br>
@@ -32,7 +32,7 @@
     @enderror
      <div class="mt-8 flex flex-col">
      <label for="email" value="{{ __('Email') }}">Email</label>
-    <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+    <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"  />
         </div>
    @error('password')
     <br>
@@ -40,8 +40,8 @@
     <br>
     @enderror
                     <div class="mt-8 flex flex-col">
-                    <label for="password" value="{{ __('Password') }}">Confirm Password</label>
-                    <input  id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                    <label for="password" value="{{ __('Password') }}">Password</label>
+                    <input  id="password" class="block mt-1 w-full" type="password" name="password"  autocomplete="new-password" />
                     </div>
       @error('password_confirmation')
     <br>
@@ -50,7 +50,7 @@
     @enderror
                     <div class="mt-8 flex flex-col">
                     <label for="password_confirmation" value="{{ __('Confirm Password') }}">Confirm Password</label>
-                    <input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                    <input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation"  autocomplete="new-password" />
                     </div>
         <button>Registrar</button>
     </form>

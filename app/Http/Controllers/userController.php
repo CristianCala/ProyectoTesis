@@ -105,9 +105,9 @@ class UserController extends Controller
         //$users->user = $request->user;
         $users->email = $request->email;
            //$users->estatus = $request->estatus;
-        if ($users->password != null) {
+        /*if ($users->password != null) {
         $users->password = $request->password;
-        }
+        }*/
         //$users->syncRoles($request->rol);
         $users->save();
         
