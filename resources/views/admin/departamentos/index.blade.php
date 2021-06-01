@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ventana hecha con una plantilla blade</title>
-          <!-- Fonts -->
-          <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content')
 <center>
-	<h1 class="bg-gray-200 text-6xl">Hola</h1>
+  <h1>Hola</h1>
 <p class="mb-2 mt-2">margen</p>
 
 <div class="container mt-6">
@@ -42,5 +36,13 @@
 </div>
 
 </center>
-</body>
-</html>
+@stop
+
+@section('css')
+          <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop 
+

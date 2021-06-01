@@ -71,7 +71,7 @@ class User extends Authenticatable
     {
          return 'profile/username';
     }
-       public function departamentos()
+     /*  public function departamentos()
     {
         return $this->belongsToMany(Departamento::class, 'usuario_x_departamentos' , 'usxdp_uscedula', 'usxdp_dpid');
     }
@@ -85,5 +85,5 @@ class User extends Authenticatable
         
       return $this->belongsTo(TipoUsuario::class);
 
-    }
+    }*/
 }

@@ -1,10 +1,19 @@
 @extends('adminlte::page')
 
+<<<<<<< HEAD
+@section('title', 'Prestamos')
+
+
+@section('content')
+   <center>
+  <h1>Configuracion de Prestamos</h1>
+=======
 @section('title', 'Dashboard')
 
 @section('content')
 <center>
   <h1 class="bg-gray-200">Configuracion de Prestamos</h1>
+>>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
 <p class="mb-2 mt-2">prestamos listados</p>
 
 <div class="container mt-6">
@@ -37,7 +46,11 @@
 @stop
 
 @section('css')
+<<<<<<< HEAD
+     <link rel="stylesheet" href="/css/admin_custom.css">
+=======
     <link rel="stylesheet" href="/css/admin_custom.css">
+>>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -49,3 +62,7 @@
 @section('js')
     <script> console.log('Hi!'); </script>
 @stop 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80

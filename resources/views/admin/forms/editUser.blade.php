@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+<button class="bg-yellow-200 editBtn">Edicion</button>  
+
+
+<div class="modal fade" id="candidatoEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar Usuario</h5>
+=======
 <button type="button" class="bg-yellow-200" data-toggle="modal" data-target="#editAuditoria{{$key->id}}">
   actualizar
 </button>
@@ -8,10 +18,30 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Editar Auditoria</h5>
+>>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+<<<<<<< HEAD
+      <form id="editFrmID">
+        @csrf
+        @method('PUT')
+            <input type="hidden" name="id" id="id">
+        <div class="modal-body">
+          <div class="form-group">
+          <label>Nombre</label>
+          <input class="form-control" type="text" name="name" placeholder="name" id="name">
+        </div>
+          <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" type="text" name="email" placeholder="email" id="email">
+        </div>
+        </div>
+          <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+=======
       <div class="modal-body">
       <form class="form-horizontal" method="POST" action="{{Route('users.update',$key->id)}}">
                         {{ csrf_field() }}
@@ -37,7 +67,9 @@
                             </div>
                         </div>
                     </form>
+>>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
       </div>
+      </form>
     </div>
   </div>
 </div>

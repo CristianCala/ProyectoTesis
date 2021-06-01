@@ -1,10 +1,15 @@
 @extends('adminlte::page')
 
+<<<<<<< HEAD
+@section('title', 'Equipos')
+
+=======
 @section('title', 'Dashboard')
+>>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
 
 @section('content')
 <center>
-  <h1 class="bg-gray-200">Menu de equipos</h1>
+  <h1>Menu de equipos</h1>
 <p class="mb-2 mt-2">Equipos listados</p>
 
 <div class="container mt-6">
@@ -36,7 +41,11 @@
 @stop
 
 @section('css')
+<<<<<<< HEAD
+      <link rel="stylesheet" href="/css/admin_custom.css">
+=======
     <link rel="stylesheet" href="/css/admin_custom.css">
+>>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -46,6 +55,13 @@
 @stop
 
 @section('js')
+<<<<<<< HEAD
+      <script> console.log('Hi!'); </script>
+    <!--<script src="{{ asset('js/ajax.js') }}"></script>-->
+@stop 
+
+=======
     <script> console.log('Hi!'); </script>
     <!--<script src="{{ asset('js/ajax.js') }}"></script>-->
 @stop 
+>>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80

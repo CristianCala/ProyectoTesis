@@ -27,9 +27,24 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //Rutas de los controladores
+;
+
+Route::resource('admin/users', userController::class);
+//Comunicacion con el protocolo AJAX
+
+Route::get('/usersLoad', [userController::class, 'loadAjax']);
+
+Route::post('/usersAdd', [userController::class, 'store']);
+
+Route::put('/usersUpdate/{id}', [userController::class, 'update']);
+
+Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
+
+/*
 Route::resource('admin/users', userController::class);
 Route::resource('admin/equipment', equiposController::class);
 Route::resource('admin/auditoria', auditoriaController::class);
 Route::resource('admin/prestamos', prestamosController::class);
 Route::resource('admin/departamentos', departamentosController::class);
 Route::get('admin/pdf/invoice', [listController::class, 'exportInvoice']);
+*/
