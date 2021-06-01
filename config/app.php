@@ -164,10 +164,6 @@ return [
         //Spatie\Permission\PermissionServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         //BeyondCode\ErdGenerator\ErdGeneratorServiceProvider::class,
-<<<<<<< HEAD
-
-=======
->>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
 
 
         /*
