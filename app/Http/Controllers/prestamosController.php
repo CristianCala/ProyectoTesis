@@ -56,11 +56,8 @@ class PrestamosController extends Controller
        $prestamos->pres_estatus = $request->pres_estatus;
        //$prestamos->usuarios_us_id = $request->usuarios_us_id;
        //$prestamos->equipos_eq_id = $request->equipos_eq_id;
+       $prestamos->save();
 
-       if ($prestamos->save()) {
-           
-       return redirect('/admin/prestamos');
-       } 
     }
 
     /**
@@ -109,11 +106,8 @@ class PrestamosController extends Controller
        $prestamos->pres_estatus = $request->pres_estatus;
        //$prestamos->usuarios_us_id = $request->usuarios_us_id;
        //$prestamos->equipos_eq_id = $request->equipos_eq_id;
-
-           if ($prestamos->save()) {
-           
-       return redirect('/admin/prestamos');
-       } 
+         $prestamos->save();
+       
     }
 
     /**
@@ -124,7 +118,8 @@ class PrestamosController extends Controller
      */
     public function destroy($id)
     {
-        PrestamoEquipo::destroy($id);
-      return back();
+      $prestamos = Equipo::find($id);
+      $prestamos->delete();
+      return $prestamos; 
     }
 }

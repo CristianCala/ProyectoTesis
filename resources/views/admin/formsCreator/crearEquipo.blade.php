@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#equipoModal">
-  Launch demo modal
+ Registrar equipos
 </button>
 <!-- add Modal -->
 <div class="modal fade" id="equipoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

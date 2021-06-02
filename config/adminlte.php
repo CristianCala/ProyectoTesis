@@ -239,6 +239,11 @@ return [
             'url'  => 'admin/equipment',
             'icon' => 'fas fa-fw fa-desktop',
         ],
+        [
+            'text'       => 'Prestamos',
+            'icon'       => 'fas fa-address-book',
+            'url'        => 'admin/prestamos',
+        ],
         /*['header' => 'Opciones'],
         [laptop-house
             'text' => 'Registrar usuarios',
@@ -250,7 +255,7 @@ return [
             'url'  => 'admin/equipment/create',
             'icon' => 'fas fa-fw fa-lock',
         ],*/
-        ['header' => 'Secundario'],
+        ['header' => 'Inactivo'],
         [
             'text'       => 'Auditoria',
             'icon'       => 'fas fa-laptop-house',
@@ -260,11 +265,6 @@ return [
             'text'       => 'Departamentos',
             'icon'       => 'far fa-building',
             'url'        => 'admin/departamentos',
-        ],
-        [
-            'text'       => 'Prestamos',
-            'icon'       => 'fas fa-address-book',
-            'url'        => 'admin/prestamos',
         ],
     ],
 

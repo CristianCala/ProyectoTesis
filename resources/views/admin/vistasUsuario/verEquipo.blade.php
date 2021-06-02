@@ -19,7 +19,7 @@
           <p>Fecha de Entrada: {{$key->eq_nbiennacional}}</p>
           <p>Estado: {{$key->eq_estatus}}</p>
           <!--<a align="center">Imprimir comprobante</a>-->
-          @include('admin.equipment.delete',['equipos'=>$key])
+          @include('admin.equipment.delete')
           </div>
       </div>
     </div>

@@ -33,11 +33,8 @@ Route::resource('admin/users', userController::class);
 //Comunicacion con el protocolo AJAX
 
 Route::get('/usersLoad', [userController::class, 'loadAjax']);
-
 Route::post('/usersAdd', [userController::class, 'store']);
-
 Route::put('/usersUpdate/{id}', [userController::class, 'update']);
-
 Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
 
 
@@ -45,19 +42,23 @@ Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
 Route::resource('admin/equipment', equiposController::class);
 
 //Comunicacion con el protocolo AJAX
-
 Route::get('/equiposLoad', [equiposController::class, 'loadAjax']);
-
 Route::post('/equiposAdd', [equiposController::class, 'store']);
-
 Route::put('/equiposUpdate/{id}', [equiposController::class, 'update']);
-
 Route::delete('/equiposDelete/{id}', [equiposController::class, 'destroy']);
 
+//Ruta principal de los prestamos
+Route::resource('admin/prestamos', prestamosController::class);
+
+
+//Comunicacion con el protocolo AJAX
+Route::get('/prestamosLoad', [prestamosController::class, 'loadAjax']);
+Route::post('/prestamosAdd', [prestamosController::class, 'store']);
+Route::put('/prestamosUpdate/{id}', [prestamosController::class, 'update']);
+Route::delete('/prestamosDelete/{id}', [prestamosController::class, 'destroy']);
 
 /*
 Route::resource('admin/auditoria', auditoriaController::class);
-Route::resource('admin/prestamos', prestamosController::class);
 Route::resource('admin/departamentos', departamentosController::class);
 Route::get('admin/pdf/invoice', [listController::class, 'exportInvoice']);
 */

@@ -1,20 +1,20 @@
 
-/*Ajax para la edicion y creacion de equipos*/
+/*Ajax para la creacion, edicion y eliminacion de prestamos*/
 
 
 $(document).ready(function() {
 
     //Comunicacion con el formulario
-    $('#addForm').on('submit', function(e) {
+    $('#prestamoFrm').on('submit', function(e) {
         e.preventDefault();
         //Ajax con la informacion para crear
         $.ajax({
             type: "POST",
-            url: "/equiposAdd",
-            data: $('#addForm').serialize(),
+            url: "/prestamosAdd",
+            data: $('#prestamoFrm').serialize(),
             success: function(response) {
                 console.log(response)
-                $('#equipoModal').modal('hide')
+                $('#equipoprestamoModalModal').modal('hide')
                 alert('Data Saved');
                 location.reload();
             },
@@ -25,10 +25,11 @@ $(document).ready(function() {
         });
     });
 });
+
 //Edicion del equipo
 $(document).ready(function() {
 	$('.editBtn').on('click', function() {
-		$('#editEquipo').modal('show');
+		$('#editPrestamo').modal('show');
 
 		//Recibir el value 
 		$tr = $(this).closest('tr');
@@ -40,25 +41,24 @@ $(document).ready(function() {
 			console.log(data);
 		//validacion de data desde el ID
 		$('#id').val(data[0]);
-		$('#eq_modelo').val(data[1]);
-		$('#eq_marca').val(data[2]);
-		$('#eq_serial').val(data[3]);
-		$('#eq_nbiennacional').val(data[4]);
-        $('#eq_estatus').val(data[5]);
+		$('#pres_salida').val(data[1]);
+		$('#pres_fecha_salida').val(data[2]);
+		$('#pres_fecha_entrada').val(data[3]);
+		$('#pres_estatus').val(data[4]);
 
 				//Comunicacion con el formulario
-		$('#editFormID').on('submit', function(e) {
+		$('#prestamoEdit').on('submit', function(e) {
 			e.preventDefault();
 
 			var id = $('#id').val();
 			//Ajax con la informacion para crear
 			$.ajax({
 				type: "PUT",
-				url: "/equiposUpdate/"+id,
-				data: $('#editFormID').serialize(),
+				url: "/prestamosUpdate/"+id,
+				data: $('#prestamoEdit').serialize(),
 				success: function(response) {
 					console.log(response)
-					$('#editEquipo').modal('hide')
+					$('#editPrestamo').modal('hide')
 					alert('Data Updated');
 					//Recarga asincronica AJAX
 					location.reload();
@@ -74,11 +74,12 @@ $(document).ready(function() {
 	});
 });
 
+
 //Eliminacion del equipo (Funcion de prueba)
 
 $(document).ready(function() {
 	$('.deleteBtn').on('click', function() {
-		$('#equipoDelete').modal('show');
+		$('#prestamoDelete').modal('show');
 
 		//Recibir el value 
 		$tr = $(this).closest('tr');
@@ -92,18 +93,18 @@ $(document).ready(function() {
 		$('#delete_id').val(data[0]);
 
 				//Comunicacion con el formulario
-		$('#deleteFormID').on('submit', function(e) {
+		$('#prestamoDeleteID').on('submit', function(e) {
 			e.preventDefault();
 
 			var id = $('#delete_id').val();
 			//Ajax con la informacion para crear
 			$.ajax({
 				type: "DELETE",
-				url: "/equiposDelete/"+id,
-				data: $('#deleteFormID').serialize(),
+				url: "/prestamosDelete/"+id,
+				data: $('#prestamoDeleteID').serialize(),
 				success: function(response) {
 					console.log(response)
-					$('#equipoDelete').modal('hide')
+					$('#prestamoDelete').modal('hide')
 					alert('Data Eliminated');
 					//Recarga asincronica AJAX
 					window.location.reload();

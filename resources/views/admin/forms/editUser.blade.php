@@ -1,7 +1,7 @@
 <button class="bg-yellow-200 editBtn">Edicion</button>  
 
 
-<div class="modal fade" id="candidatoEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="userEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

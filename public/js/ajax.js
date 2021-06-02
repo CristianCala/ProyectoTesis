@@ -14,9 +14,9 @@ $(document).ready(function() {
                 data: $('#addFrm').serialize(),
                 success: function(response) {
                     console.log(response)
-                    $('#candidatoDataModal').modal('hide')
+                    $('#userModal').modal('hide')
                     alert('Data Saved');
-                    window.location.reload();
+                    location.reload();
                 },
                 error: function(error) {
                     console.log(error)
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('.editBtn').on('click', function() {
-        $('#candidatoEditModal').modal('show');
+        $('#userEdit').modal('show');
 
         //Recibir el value 
         $tr = $(this).closest('tr');
@@ -57,10 +57,10 @@ $(document).ready(function() {
                 data: $('#editFrmID').serialize(),
                 success: function(response) {
                     console.log(response)
-                    $('#candidatoEditModal').modal('hide')
+                    $('#userEdit').modal('hide')
                     alert('Data Updated');
                     //Recarga asincronica AJAX
-                    window.location.reload();
+                    location.reload();
                 },
                 error: function(error) {
                     console.log(error)
