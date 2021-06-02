@@ -20,7 +20,7 @@ class EquiposController extends Controller
     }
     public function index()
     {
-        $equipment=Equipo::orderBy('id', 'DESC')->get();
+
         $equipment = Equipo::paginate(10);
         /*$equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.eq_tequid")
                                     -> JOIN("departamentos","departamentos.id","=","equipos.departamentos_dep_id")
@@ -40,9 +40,9 @@ class EquiposController extends Controller
     {
       /*$tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
       $departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');
-       return view('admin.equipment.create', compact('tipoEquipo', 'departamentos'));*/
+       return view('admin.equipment.create', compact('tipoEquipo', 'departamentos'));
         $equipment=Equipo::all();
-        return view('admin.equipment.create', compact('equipment'));
+        return view('admin.equipment.create', compact('equipment'));*/
     }
 
     /**
@@ -70,8 +70,6 @@ class EquiposController extends Controller
        //$equipment->departamentos_dep_id = $request->departamentos_dep_id;
         $equipment->eq_estatus = $request->eq_estatus;
          $equipment->save();
-         return redirect('/admin/equipment');
-         //return response->json($equipment);
     }
 
     /**
@@ -93,10 +91,10 @@ class EquiposController extends Controller
      */
     public function edit($id)
     {
-            $equipment=Equipo::findOrFail($id);
+        //    $equipment=Equipo::findOrFail($id);
          /* $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
           $departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');*/
-          return view('admin.equipment.edit', compact('equipment'/*, 'tipoEquipo', 'departamentos'*/));
+         // return view('admin.equipment.edit', compact('equipment'/*, 'tipoEquipo', 'departamentos'*/));
 
     }
 
@@ -117,9 +115,7 @@ class EquiposController extends Controller
        $equipment->eq_nbiennacional = $request->eq_nbiennacional;
        //$equipment->departamentos_dep_id = $request->departamentos_dep_id;
         $equipment->eq_estatus = $request->eq_estatus;
-           if ($equipment->save()) {
-       return redirect('/admin/equipment');
-       } 
+        $equipment->save();
     }
 
     /**
@@ -130,8 +126,9 @@ class EquiposController extends Controller
      */
     public function destroy($id)
     {
-    Equipo::destroy($id);
-      return back();
+        $equipment = Equipo::find($id);
+        $equipment->delete();
+        return $equipment; 
     }
    /* public function exportInvoice()
     {

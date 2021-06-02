@@ -58,18 +58,11 @@ class UserController extends Controller
         //$users->estatus = $request->estatus;
         //$users->photos = $nombre;
         $users->password = bcrypt($request->password);
-<<<<<<< HEAD
         $users->save();
         /*if ($users->save()) {
          //$users->assignRole($request->rol);
         return redirect('/admin/users');
         }*/
-=======
-        if ($users->save()) {
-         //$users->assignRole($request->rol);
-        return redirect('/admin/users');
-        }
->>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
     }
 
     /**
@@ -118,11 +111,6 @@ class UserController extends Controller
         }*/
         //$users->syncRoles($request->rol);
         $users->save();
-<<<<<<< HEAD
-=======
-        
-        return redirect('/admin/users');
->>>>>>> 070bdc088875dc6afdc42bf8d91d687df636ef80
      }
     
 

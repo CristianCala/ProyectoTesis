@@ -27,8 +27,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //Rutas de los controladores
-;
 
+//Ruta principal de los usuarios
 Route::resource('admin/users', userController::class);
 //Comunicacion con el protocolo AJAX
 
@@ -40,9 +40,22 @@ Route::put('/usersUpdate/{id}', [userController::class, 'update']);
 
 Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
 
-/*
-Route::resource('admin/users', userController::class);
+
+//Ruta principal de los equipos
 Route::resource('admin/equipment', equiposController::class);
+
+//Comunicacion con el protocolo AJAX
+
+Route::get('/equiposLoad', [equiposController::class, 'loadAjax']);
+
+Route::post('/equiposAdd', [equiposController::class, 'store']);
+
+Route::put('/equiposUpdate/{id}', [equiposController::class, 'update']);
+
+Route::delete('/equiposDelete/{id}', [equiposController::class, 'destroy']);
+
+
+/*
 Route::resource('admin/auditoria', auditoriaController::class);
 Route::resource('admin/prestamos', prestamosController::class);
 Route::resource('admin/departamentos', departamentosController::class);
