@@ -14,32 +14,24 @@
   <thead class="border border-gray-400 bg-gray-200">
     <tr>
     <th>#</th>
-    <th>Modelo</th>
-    <th>Marca</th>
-      <th>Serial</th>
-      <th>N° Bien Nacional</th>
       <th>Serial</th>
       <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-    @if(!empty($equipment) && $equipment->count())
-        @foreach($equipment as $key)
+    @if(!empty($equixte) && $equipment->count())
+        @foreach($equixte as $key)
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_modelo}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_marca}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_serial}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_nbiennacional}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_estatus}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo')  @include('admin.vistasUsuario.verEquipo')</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo')  @include('admin.vistasUsuario.verEquipo') @include('admin.equipment.delete')</td>
     </tr>
     @endforeach
     @endif
   </tbody>
 </table>
 <div class="mt-4">
-        {{$equipment->links()}}
+       
   <a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md text-2xl">Volver</a>
 </div>
 </div>

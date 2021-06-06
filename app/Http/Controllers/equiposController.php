@@ -20,15 +20,16 @@ class EquiposController extends Controller
     }
     public function index()
     {
+            //Aca nos encargamos de extraer datos de las tablas relacionales entre  las tablas Equipo, Tipo de equipos y departamentos
 
-        $equipment = Equipo::paginate(10);
-        /*$equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.eq_tequid")
-                                    -> JOIN("departamentos","departamentos.id","=","equipos.departamentos_dep_id")
+
+        $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
+        $equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.eq_tequid")
+
                                     -> SELECT("id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
                                     -> orderBy('equipos.id', 'asc')
-                                    -> paginate(8);           
-            return view('admin.equipment.index', $equipment );*/
-            return view('admin.equipment.index', compact('equipment'));
+                                    -> paginate(8);         
+            return view('admin.equipment.index', compact('equipment', 'tipoEquipo'));
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +39,7 @@ class EquiposController extends Controller
     }
     public function create()
     {
-      /*$tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
+     /* $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
       $departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');
        return view('admin.equipment.create', compact('tipoEquipo', 'departamentos'));
         $equipment=Equipo::all();
@@ -65,7 +66,7 @@ class EquiposController extends Controller
        $equipment->eq_modelo = $request->eq_modelo;
        $equipment->eq_marca = $request->eq_marca;
        $equipment->eq_serial = $request->eq_serial;
-       //$equipment->eq_tequid = $request->eq_tequid;
+       $equipment->eq_tequid = $request->eq_tequid;
        $equipment->eq_nbiennacional = $request->eq_nbiennacional;
        //$equipment->departamentos_dep_id = $request->departamentos_dep_id;
         $equipment->eq_estatus = $request->eq_estatus;
@@ -111,7 +112,7 @@ class EquiposController extends Controller
        $equipment->eq_modelo = $request->eq_modelo;
        $equipment->eq_marca = $request->eq_marca;
        $equipment->eq_serial = $request->eq_serial;
-       //$equipment->eq_tequid = $request->eq_tequid;
+       $equipment->eq_tequid = $request->eq_tequid;
        $equipment->eq_nbiennacional = $request->eq_nbiennacional;
        //$equipment->departamentos_dep_id = $request->departamentos_dep_id;
         $equipment->eq_estatus = $request->eq_estatus;
@@ -130,11 +131,11 @@ class EquiposController extends Controller
         $equipment->delete();
         return $equipment; 
     }
-   /* public function exportInvoice()
+    public function exportInvoice()
     {
      $equipos=App\Models\Equipo::get();
      $pdf = PDF::loadView('admin.pdf.invoice', compact('equipos') );
      return $pdf->download('invoice.pdf');
      //return view('admin.pdf.invoice', compact('equipos'));
-    }*/
+    }
 }

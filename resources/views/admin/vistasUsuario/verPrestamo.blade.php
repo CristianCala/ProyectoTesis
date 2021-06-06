@@ -22,7 +22,6 @@
       </div>
       <div class="modal-footer">
       <a align="center" class="btn btn-primary">Imprimir comprobante</a>
-      @include('admin.prestamos.delete',['prestamos'=>$info])
       </div>
     </div>
   </div>
