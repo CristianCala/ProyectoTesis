@@ -23,7 +23,7 @@ class EquiposController extends Controller
             //Aca nos encargamos de extraer datos de las tablas relacionales entre  las tablas Equipo, Tipo de equipos y departamentos
 
 
-        $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
+        $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'id');
         $equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.eq_tequid")
 
                                     -> SELECT("id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")

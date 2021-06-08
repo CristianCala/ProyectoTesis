@@ -19,12 +19,14 @@ class PrestamosController extends Controller
     }
     public function index()
     {
+          $users=User::all();
+          
         //$prestamos = PrestamoEquipo::paginate(10);
-       $prestamos['prestamos']=PrestamoEquipo::JOIN("equipos","equipos.id","=","prestamo_equipos.equipos_eq_id ")
+       $prestamos['prestamos']=PrestamoEquipo::JOIN("users","users.id","=","prestamo_equipos.usuarios_us_id")
                                     
                                     -> orderBy('prestamo_equipos.id', 'asc')
                                     -> paginate(8); 
-            return view('admin.prestamos.index', $prestamos );
+            return view('admin.prestamos.index', $prestamos, compact('users') );
         //return view('admin.prestamos.index', compact('prestamos')); 
     }
 
@@ -35,10 +37,10 @@ class PrestamosController extends Controller
      */
     public function create()
     {
-      /*
-    $users=User::all();
+
+
     $id=Equipo::all()->pluck('id');
-    return view('admin.prestamos.create', compact('users', 'id'));*/
+    return view('admin.prestamos.create', compact('users', 'id'));
     }
 
     /**
@@ -55,7 +57,7 @@ class PrestamosController extends Controller
        $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
        $prestamos->pres_estatus = $request->pres_estatus;
        $prestamos->usuarios_us_id = $request->usuarios_us_id;
-       $prestamos->equipos_eq_id = $request->equipos_eq_id;
+       //$prestamos->equipos_eq_id = $request->equipos_eq_id;
        $prestamos->save();
 
     }
@@ -105,7 +107,7 @@ class PrestamosController extends Controller
        $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
        $prestamos->pres_estatus = $request->pres_estatus;
        $prestamos->usuarios_us_id = $request->usuarios_us_id;
-       $prestamos->equipos_eq_id = $request->equipos_eq_id;
+       //$prestamos->equipos_eq_id = $request->equipos_eq_id;
          $prestamos->save();
        
     }
