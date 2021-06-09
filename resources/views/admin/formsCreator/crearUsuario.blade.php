@@ -17,47 +17,84 @@ Registrar Usuario
         @csrf
     <div class="modal-body">
         <div class="form-group">
-    @error('name')
+        @error('nombre')
     <br>
     <small>{{$message}}</small>
     <br>
     @enderror
-    <label for="name" value="{{ __('Name') }}">Nombre</label>
-        <input id="name" class="form-control" type="text" name="name" :value="old('name')"  autofocus autocomplete="name">
+                    <label for="nombre" value="{{ __('nombre') }}">Nombre</label>
+                    <input id="nombre" class="block mt-1 w-full" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name">
         </div>
-</div>
-        <div class="form-group">
-          @error('email')
+<div class="form-group">
+@error('apellido')
     <br>
     <small>{{$message}}</small>
     <br>
     @enderror
-
-     <label for="email" value="{{ __('Email') }}">Email</label>
-    <input id="email" class="form-control"type="email" name="email" :value="old('email')"  />
-
+                    <label for="apellido" value="{{ __('apellido') }}">Apellido</label>
+                    <input id="apellido" class="block mt-1 w-full" type="text" name="apellido" :value="old('apellido')" required autofocus autocomplete="apellido">
 </div>
-        <div class="form-group">
-         @error('password')
+
+<div class="form-group">
+@error('cedula')
     <br>
     <small>{{$message}}</small>
     <br>
     @enderror
+                    <label for="cedula" value="{{ __('cedula') }}">Cedula</label>
+                    <input id="cedula" class="block mt-1 w-full" type="text" name="cedula" :value="old('cedula')" required />
+</div>
 
-    <label for="password" value="{{ __('Password') }}">Password</label>
-    <input  id="password" class="form-control"type="password" name="password"  autocomplete="new-password" />
+        <div class="form-group">
+        @error('email')
+    <br>
+    <small>{{$message}}</small>
+    <br>
+    @enderror
+                    <label for="email" value="{{ __('Email') }}">Email</label>
+                    <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+
+</div>
+
+<div class="form-group">
+@error('usuario')
+    <br>
+    <small>{{$message}}</small>
+    <br>
+    @enderror
+                    <label for="usuario" value="{{ __('usuario') }}">Usuario</label>
+                    <input id="usuario" class="block mt-1 w-full" type="text" name="usuario" :value="old('usuario')" required />
+</div>
+
+        <div class="form-group">
+        @error('password')
+    <br>
+    <small>{{$message}}</small>
+    <br>
+    @enderror
+                    <label for="password" value="{{ __('Password') }}">Confirm Password</label>
+                    <input  id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
       </div>
+
         <div class="form-group">
      @error('password_confirmation')
         <br>
         <small>{{$message}}</small>
         <br>
         @enderror
-        <label for="password_confirmation" value="{{ __('Confirm Password') }}">Confirm Password</label>
-          <input id="password_confirmation" class="form-control"type="password" name="password_confirmation"  autocomplete="new-password" />
+            <label for="password_confirmation" value="{{ __('Confirm Password') }}">Confirm Password</label>
+                    <input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
-
-
+            <div class="mt-8 flex flex-col">
+                      <center>
+                      <label for="text" value="{{ __('estatus') }}">Estado</label>
+                      <fieldset>
+                        <input id="estatus" type="checkbox" name="estatus" :value="old('estatus')"  autofocus />Activo
+                        <input id="estatus" type="checkbox" name="estatus" :value="old('estatus')"  autofocus />Inactivo
+                        </fieldset>
+                        </center>
+                    </div>
+</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>

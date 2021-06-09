@@ -33,7 +33,7 @@
     <br>
     @enderror
                     <label for="apellido" value="{{ __('apellido') }}">Apellido</label>
-                    <input id="apellido" class="block mt-1 w-full" type="text" name="apellido" :value="old('apellido')" required autofocus autocomplete="name">
+                    <input id="apellido" class="block mt-1 w-full" type="text" name="apellido" :value="old('apellido')" required autofocus autocomplete="apellido">
                 </div>
 
                 <div class="mt-8 flex flex-col">
@@ -72,7 +72,7 @@
     <small>{{$message}}</small>
     <br>
     @enderror
-                    <label for="password" value="{{ __('Password') }}">Confirm Password</label>
+                    <label for="password" value="{{ __('Password') }}">Password</label>
                     <input  id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
                 </div>
 
