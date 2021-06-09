@@ -15,6 +15,14 @@
       <form id="addForm">
         @csrf
     <div class="modal-body">
+      <div class="form-group">
+         <select class="form-control form-select " name="eq_tequid" >
+                            <option value="">Seleccione Equipo</option>
+                            @foreach($tipoEquipo as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                        </select>
+      </div>
         <div class="form-group">
         @error('eq_modelo')
     <br>
