@@ -35,11 +35,20 @@
        <input type="date" id="pres_fecha_salida" class="block mt-1 w-full" name="pres_fecha_salida" :value="old('pres_fecha_salida')"  autofocus>
         </div>
         <div class="form-group">
-        <label for="text" value="{{ __('eq_tequid') }}">Usuario a prestar</label>
+        <label for="text" value="{{ __('usuarios_us_id') }}">Usuario a prestar</label>
            <select class="form-control form-select " name="usuarios_us_id" >
                             <option value="">Seleccione usuario</option>
                             @foreach($users as $key)
                                 <option value="{{$key->id}}">{{$key->user}}</option>
+                            @endforeach
+                        </select>
+        </div>
+        <div class="form-group">
+        <label for="text" value="{{ __('equipos_eq_id') }}">Equipo a prestar</label>
+                             <select class="form-control form-select " name="equipos_eq_id" >
+                            <option value="">Seleccione Equipo</option>
+                            @foreach($id as $key => $value)
+                                <option value="{{$value}}">{{$value}}</option>
                             @endforeach
                         </select>
         </div>
