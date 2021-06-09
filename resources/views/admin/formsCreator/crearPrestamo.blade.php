@@ -1,7 +1,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#prestamoModal">
- Registrar equipos
+ Registrar prestamos
 </button>
 <!-- add Modal -->
 <div class="modal fade" id="prestamoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -22,7 +22,7 @@
     <small>{{$message}}</small>
     <br>
     @enderror
-      <label for="text" value="{{ __('pres_salida') }}">Modelo</label>
+      <label for="text" value="{{ __('pres_salida') }}">Codigo de salida</label>
          <input id="pres_salida" class="block mt-1 w-full" type="text" name="pres_salida" :value="old('pres_salida')"  autofocus>   
         </div>
         <div class="form-group">
@@ -31,17 +31,25 @@
     <small>{{$message}}</small>
     <br>
     @enderror
-      <label for="pres_fecha_entrada" value="{{ __('pres_fecha_salida') }}">Marca</label>
+      <label for="pres_fecha_entrada" value="{{ __('pres_fecha_salida') }}">Fecha de Salida</label>
        <input type="date" id="pres_fecha_salida" class="block mt-1 w-full" name="pres_fecha_salida" :value="old('pres_fecha_salida')"  autofocus>
         </div>
- 
+        <div class="form-group">
+        <label for="text" value="{{ __('eq_tequid') }}">Usuario a prestar</label>
+           <select class="form-control form-select " name="usuarios_us_id" >
+                            <option value="">Seleccione usuario</option>
+                            @foreach($users as $key)
+                                <option value="{{$key->id}}">{{$key->user}}</option>
+                            @endforeach
+                        </select>
+        </div>
         <div class="form-group">
         @error('pres_fecha_entrada')
     <br>
     <small>{{$message}}</small>
     <br>
     @enderror
-        <label for="pres_fecha_entrada" value="{{ __('pres_fecha_entrada') }}">Serial</label>
+        <label for="pres_fecha_entrada" value="{{ __('pres_fecha_entrada') }}">Fecha de entrada</label>
         <input id="pres_fecha_entrada" class="block mt-1 w-full" type="date" name="pres_fecha_entrada" :value="old('pres_fecha_entrada')"  autofocus>
      </div>
 

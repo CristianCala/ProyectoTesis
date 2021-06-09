@@ -1,4 +1,4 @@
-<button class="btn btn-danger deleteBtn">Eliminacion</button>
+<button class="rounded-md bg-red-400 deleteBtn">Eliminacion</button>
 
 <!-- delete Modal -->
 <div class="modal fade" id="prestamoDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

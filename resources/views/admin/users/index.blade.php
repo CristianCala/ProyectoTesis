@@ -17,7 +17,7 @@
   <thead class="border border-gray-400 bg-gray-200">
     <tr>
       <th>#</th>
-      <th>Nombre</th>
+      <th>usuario</th>
       <th>Email</th>
       <th>Acciones</th>
     </tr>
@@ -27,7 +27,7 @@
     @if(!empty($users) && $users->count())
         @foreach($users as $key)
          <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->name}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->usuario}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->email}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editUser')  @include('admin.vistasUsuario.verUsuario')</td>
     </tr>

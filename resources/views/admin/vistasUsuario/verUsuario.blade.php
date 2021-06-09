@@ -16,12 +16,15 @@ Informacion
         </button>
       </div>
       <div class="modal-body">
-      <p>Nombre: {{$key->name}}</p>
+      <p>Nombre: {{$key->nombre}}</p>
+         <p>Apellido: {{$key->apellido}}</p>
+         <p>Cedula: {{$key->cedula}}</p>
          <p>Correo: {{$key->email}}</p>
+         <p>Usuario: {{$key->usuario}}</p>
+         <p>Estado: {{$key->estatus}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

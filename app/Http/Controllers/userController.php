@@ -42,21 +42,22 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([    
-        'name' => 'required|max:24',
-        'email' => 'required|max:24',
+        'nombre' => 'required|max:24',
+        'apellido' => 'required|max:24',
+        'cedula' => 'required|max:24',
+        'email' => 'required|max:35',
+        'usuario' => 'required|max:24',
+        'estatus' => 'required|accepted',
         'password' => 'required|max:24'
-        //'eq_nbiennacional' => 'required|integer|min:1|digits:5',
-        //'eq_estatus' => 'required|accepted'
             ]);
 
         $users = new User;
-        $users->name = $request->name;
-        //$users->surname = $request->surname;
-        //$users->cedula = $request->cedula;
-        //$users->user = $request->user;
+        $users->nombre = $request->nombre;
+        $users->apellido = $request->apellido;
+       $users->cedula = $request->cedula;
+        $users->usuario = $request->usuario;
         $users->email = $request->email;
-        //$users->estatus = $request->estatus;
-        //$users->photos = $nombre;
+        $users->estatus = $request->estatus;
         $users->password = bcrypt($request->password);
         $users->save();
         /*if ($users->save()) {
@@ -100,16 +101,13 @@ class UserController extends Controller
     {
         $users=User::findOrFail($id);
 
-        $users->name = $request->name;
-        //$users->surname = $request->surname;
-       //$users->cedula = $request->cedula;
-        //$users->user = $request->user;
+        $users->nombre = $request->nombre;
+        $users->apellido = $request->apellido;
+       $users->cedula = $request->cedula;
+        $users->usuario = $request->usuario;
         $users->email = $request->email;
-           //$users->estatus = $request->estatus;
-        /*if ($users->password != null) {
-        $users->password = $request->password;
-        }*/
-        //$users->syncRoles($request->rol);
+        $users->estatus = $request->estatus;
+        $users->password = bcrypt($request->password);
         $users->save();
      }
     

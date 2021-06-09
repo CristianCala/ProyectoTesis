@@ -30,8 +30,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Ruta principal de los usuarios
 Route::resource('admin/users', userController::class);
-//Comunicacion con el protocolo AJAX
 
+//Comunicacion con el protocolo AJAX de los usuarios
 Route::get('/usersLoad', [userController::class, 'loadAjax']);
 Route::post('/usersAdd', [userController::class, 'store']);
 Route::put('/usersUpdate/{id}', [userController::class, 'update']);
@@ -41,7 +41,7 @@ Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
 //Ruta principal de los equipos
 Route::resource('admin/equipment', equiposController::class);
 
-//Comunicacion con el protocolo AJAX
+//Comunicacion con el protocolo AJAX del equipo
 Route::get('/equiposLoad', [equiposController::class, 'loadAjax']);
 Route::post('/equiposAdd', [equiposController::class, 'store']);
 Route::put('/equiposUpdate/{id}', [equiposController::class, 'update']);
@@ -51,7 +51,7 @@ Route::delete('/equiposDelete/{id}', [equiposController::class, 'destroy']);
 Route::resource('admin/prestamos', prestamosController::class);
 
 
-//Comunicacion con el protocolo AJAX
+//Comunicacion con el protocolo AJAX de los prestamos
 Route::get('/prestamosLoad', [prestamosController::class, 'loadAjax']);
 Route::post('/prestamosAdd', [prestamosController::class, 'store']);
 Route::put('/prestamosUpdate/{id}', [prestamosController::class, 'update']);
@@ -59,6 +59,5 @@ Route::delete('/prestamosDelete/{id}', [prestamosController::class, 'destroy']);
 
 /*
 Route::resource('admin/auditoria', auditoriaController::class);
-Route::resource('admin/departamentos', departamentosController::class);
+Route::resource('admin/departamentos', departamentosController::class);*/
 Route::get('admin/pdf/invoice', [listController::class, 'exportInvoice']);
-*/
