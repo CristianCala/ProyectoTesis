@@ -19,6 +19,8 @@
             <p>Fecha de Salida: {{$info->pres_fecha_salida}}</p>
             <p>Fecha de Entrada{{$info->pres_fecha_entrada}}</p>
             <p>Estado: {{$info->pres_estatus}}</p>
+            <p>Usuario: {{$info->usuarios_us_id}}</p>
+            <p>Equipo: {{$info->equipos_eq_id}}</p>
       </div>
       <div class="modal-footer">
       <a align="center" class="btn btn-primary">Imprimir comprobante</a>

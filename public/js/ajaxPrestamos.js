@@ -74,7 +74,6 @@ $(document).ready(function() {
 	});
 });
 
-
 //Eliminacion del equipo (Funcion de prueba)
 
 $(document).ready(function() {

@@ -1,12 +1,12 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="mb-4 bg-blue-400 rounded-md" data-toggle="modal" data-target="#exampleModalLong">
+<button type="button" class="mb-4 bg-blue-400 rounded-md" data-toggle="modal" data-target="#verUser{{$key->id}}">
 Informacion
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="verUser{{$key->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

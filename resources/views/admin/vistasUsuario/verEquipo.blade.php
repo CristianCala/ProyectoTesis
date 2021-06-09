@@ -14,9 +14,11 @@
         </button>
       </div>
          <div class="modal-body">
-  <p>Codigo de Prestamo: {{$key->eq_modelo}}</p>
+         <p>Codigo de Prestamo: {{$key->eq_modelo}}</p>
           <p>Fecha de Salida: {{$key->eq_marca}}</p>
           <p>Fecha de Entrada: {{$key->eq_nbiennacional}}</p>
+          <p>Codigo de Prestamo: {{$key->eq_tequid}}</p>
+          <p>Fecha de Salida: {{$key->departamentos_dep_id}}</p>
           <p>Estado: {{$key->eq_estatus}}</p>
 
           

@@ -54,7 +54,7 @@ class UserController extends Controller
         $users = new User;
         $users->nombre = $request->nombre;
         $users->apellido = $request->apellido;
-       $users->cedula = $request->cedula;
+        $users->cedula = $request->cedula;
         $users->usuario = $request->usuario;
         $users->email = $request->email;
         $users->estatus = $request->estatus;
@@ -103,7 +103,7 @@ class UserController extends Controller
 
         $users->nombre = $request->nombre;
         $users->apellido = $request->apellido;
-       $users->cedula = $request->cedula;
+        $users->cedula = $request->cedula;
         $users->usuario = $request->usuario;
         $users->email = $request->email;
         $users->estatus = $request->estatus;

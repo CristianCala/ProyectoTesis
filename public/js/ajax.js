@@ -42,8 +42,12 @@ $(document).ready(function() {
             console.log(data);
         //validacion de data desde el ID
         $('#id').val(data[0]);
-        $('#name').val(data[1]);
-        $('#email').val(data[2]);
+        $('#nombre').val(data[1]);
+        $('#apellido').val(data[2]);
+        $('#cedula').val(data[3]);
+        $('#usuario').val(data[4]);
+        $('#email').val(data[5]);
+        $('#estatus').val(data[6]);
 
                 //Comunicacion con el formulario
         $('#editFrmID').on('submit', function(e) {
