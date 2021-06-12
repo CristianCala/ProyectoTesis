@@ -24,12 +24,13 @@ class EquiposController extends Controller
 
         $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
         $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'id');
-        $equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.eq_tequid")
-        -> JOIN("departamentos","departamentos.id","=","equipos.departamentos_dep_id")
-                                    -> SELECT("id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
-                                    -> orderBy('equipos.id', 'asc')
-                                    -> paginate(8);         
-            return view('admin.equipment.index', compact('equipment', 'tipoEquipo' , 'departamentos'));
+        $equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.id")
+        -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
+      -> SELECT("id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
+        -> SELECT("*")
+        -> orderBy('equipos.id', 'asc')
+        -> paginate(8);         
+            return view('admin.equipment.index',  $equipment, compact( 'tipoEquipo' , 'departamentos'));
 
     /**
      * Show the form for creating a new resource.
@@ -92,10 +93,8 @@ class EquiposController extends Controller
      */
     public function edit($id)
     {
-        //    $equipment=Equipo::findOrFail($id);
-         /* $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
-          $departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');*/
-         // return view('admin.equipment.edit', compact('equipment'/*, 'tipoEquipo', 'departamentos'*/));
+            
+
 
     }
 

@@ -20,7 +20,7 @@
   </thead>
   <tbody>
     <tr>
-    @if(!empty($equixte) && $equipment->count())
+    @if(!empty($equixte) && $equixte->count())
         @foreach($equixte as $key)
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_serial}}</td>

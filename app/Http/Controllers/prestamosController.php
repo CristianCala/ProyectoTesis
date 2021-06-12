@@ -81,13 +81,11 @@ class PrestamosController extends Controller
      */
     public function edit($id)
     {
-        $prestamos=PrestamoEquipo::findOrFail($id);
-   return view('admin.prestamos.edit', compact('prestamos'/*, 'users', 'tequid'*/));
-      /*
+
     $prestamos=PrestamoEquipo::findOrFail($id);
-    $users=User::all()->pluck('user');
-    $tequid=Equipos::all()->pluck('eq_id');
-    return view('admin.prestamos.edit', compact('prestamos', 'users', 'tequid'));*/
+    $users=User::all()->pluck('usuario');
+    $equipo=Equipos::all()->pluck('id');
+    return view('admin.prestamos.edit', compact('prestamos', 'users', 'equipo'));
     }
 
 
@@ -101,7 +99,7 @@ class PrestamosController extends Controller
 
     public function update(Request $request, $id)
     {
-  $prestamos=PrestamoEquipo::findOrFail($id);
+  $prestamos=PrestamoEquipo::find($id);
        $prestamos->pres_salida = $request->pres_salida;
        $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
        $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
