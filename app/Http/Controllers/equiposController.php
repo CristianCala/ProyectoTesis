@@ -26,10 +26,10 @@ class EquiposController extends Controller
         $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'id');
         $equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.id")
         -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
-      -> SELECT("id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
+        //-> SELECT("id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
         -> SELECT("*")
         -> orderBy('equipos.id', 'asc')
-        -> paginate(8);         
+        -> paginate(10);         
             return view('admin.equipment.index',  $equipment, compact( 'tipoEquipo' , 'departamentos'));
 
     /**
@@ -93,8 +93,10 @@ class EquiposController extends Controller
      */
     public function edit($id)
     {
-            
-
+        //    $equipment=Equipo::findOrFail($id);
+         /* $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
+          $departamentos=Departamentos::all()->pluck('dep_nombre', 'dep_id');*/
+         // return view('admin.equipment.edit', compact('equipment'/*, 'tipoEquipo', 'departamentos'*/));
 
     }
 

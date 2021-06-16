@@ -30,14 +30,6 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
 
-            /*      'nombre' => 'required|max:24',
-        'apellido' => 'required|max:24',
-        'cedula' => 'required|max:24',
-        'name' => 'required|integer|max:8',
-        'email' => 'required|max:35',
-        'usuario' => 'required|max:24',
-        'estatus' => 'required|accepted',
-        'password' => 'required|max:24'*/
         ])->validate();
 
         return User::create([

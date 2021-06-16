@@ -19,7 +19,7 @@
           <input type="text" class="form-control" placeholder="E-Salida" aria-label="pres_salida" aria-describedby="basic-addon1" required name="pres_salida" id="pres_salida">
           <div class="form-group">
                        <label for="role">Usuario</label>
-                                <select class="form-control form-select " name="usuarios_us_id" >
+                                <select class="form-control form-select " name="usuarios_us_id" id="usuarios_us_id">
                             <option value="">Seleccione usuario</option>
                             @foreach($users as $key => $value)
                                 <option value="{{$key}}">{{$value}}</option>
@@ -35,15 +35,15 @@
         <label>Fecha de Entrada</label>
         <input type="date" class="form-control" placeholder="fecha de salida" aria-label="pres_fecha_entrada" aria-describedby="basic-addon2" required name="pres_fecha_entrada" id="pres_fecha_entrada">
 
-          <div class="form-group">
-                        <label for="role">Departamentos</label>
-                        <select class="form-control form-select " name="equipos_eq_id" >
+        <div class="form-group">
+        <label for="text" value="{{ __('equipos_eq_id') }}">Equipo a prestar</label>
+                             <select class="form-control form-select " name="equipos_eq_id" id="equipos_eq_id">
                             <option value="">Seleccione Equipo</option>
-                            @foreach($equipo as $key => $value)
-                                <option value="{{$key}}">{{$value}}</option>
+                            @foreach($id as $key => $value)
+                                <option value="{{$value}}">{{$value}}</option>
                             @endforeach
                         </select>
-          </div>
+        </div>
 
         </div>
         <div class="form-group">
