@@ -45,7 +45,8 @@ $(document).ready(function() {
 		$('#eq_serial').val(data[3]);
 		$('#eq_nbiennacional').val(data[4]);
         $('#eq_estatus').val(data[5]);
-
+		$('#eq_tequid').val(data[6]);
+        $('#departamentos_dep_id').val(data[7]);
 				//Comunicacion con el formulario
 		$('#editFormID').on('submit', function(e) {
 			e.preventDefault();

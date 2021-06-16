@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('usuario')->unique();
             //$table->string('fotos');
-            $table->boolean('estatus');
+            $table->boolean('estatus')->nullable();;
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
