@@ -20,13 +20,8 @@
   </thead>
   <tbody>
     <tr>
-<<<<<<< HEAD
     @if(!empty($equipment) && $equipment->count())
         @foreach($equipment as $key)
-=======
-    @if(!empty($equixte) && $equixte->count())
-        @foreach($equixte as $key)
->>>>>>> c75c52d578fe342a902bdde3afa77a82b477c0bd
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_serial}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo')  @include('admin.vistasUsuario.verEquipo') @include('admin.equipment.delete')</td>

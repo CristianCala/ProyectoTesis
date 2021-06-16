@@ -23,22 +23,12 @@ class EquiposController extends Controller
             //Aca nos encargamos de extraer datos de las tablas relacionales entre  las tablas Equipo, Tipo de equipos y departamentos
 
         $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
-<<<<<<< HEAD
         $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
         $equipment['equipment']=Equipo::JOIN("tipo_equipos","tipo_equipos.teq_id","=","equipos.id")
         -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
         -> SELECT("equipos.id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
         -> orderBy('equipos.id', 'asc')
         -> paginate(4);         
-=======
-        $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'id');
-        $equipment['equixte']=Equipo::JOIN("tipo_equipos","tipo_equipos.id","=","equipos.id")
-        -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
-        //-> SELECT("id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
-        -> SELECT("*")
-        -> orderBy('equipos.id', 'asc')
-        -> paginate(10);         
->>>>>>> c75c52d578fe342a902bdde3afa77a82b477c0bd
             return view('admin.equipment.index',  $equipment, compact( 'tipoEquipo' , 'departamentos'));
 
     /**
