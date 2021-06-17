@@ -18,8 +18,13 @@ class CreatePrestamoEquiposTable extends Migration
             $table->integer('pres_salida');
             $table->timestamp('pres_fecha_salida');
             $table->timestamp('pres_fecha_entrada');
+<<<<<<< HEAD
+            $table->integer('usuarios_us_id')->references('id')->on('users');
+            $table->integer('equipos_eq_id')->references('id')->on('equipos');
+=======
             $table->integer('usuarios_us_id');
             $table->integer('equipos_eq_id');
+>>>>>>> bfa871998a18e1890bf74f2a4c1c575910195898
             $table->boolean('pres_estatus')->nullable();;
             $table->timestamps();
         });
