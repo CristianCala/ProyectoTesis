@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class OrdenSalida extends Model
 {
     use HasFactory;
+
 }

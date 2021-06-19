@@ -22,8 +22,7 @@ class CreateEquiposTable extends Migration
             $table->string('eq_nbiennacional')->unique();
             $table->boolean('eq_estatus')->nullable();
             $table->integer('departamentos_dep_id');
-
-            //$table->integer('ubicacion_equipo_ubeq')->references('ubeq_id')->on('ubicacion_equipos');
+            //$table->integer('ubicacion_equipo_ubeq');
             $table->timestamps();
         });
     }
