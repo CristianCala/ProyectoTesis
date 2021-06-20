@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Marca extends Model
 {
     use HasFactory;
-         public function users()
+         public function modelos()
     {
         return $this->hasMany(Modelo::class, 'modelo_id');
+    }
+    public function equipos()
+    {
+        return $this->belongsTo(Equipo::class, 'eq_marca');
     }
 }
