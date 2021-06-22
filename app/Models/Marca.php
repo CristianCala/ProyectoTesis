@@ -8,12 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Marca extends Model
 {
     use HasFactory;
+            protected $table = "marcas";
+    protected $fillable = [
+        'mar_nombre', 'mar_descripcion',
+    ];
          public function modelos()
     {
-        return $this->hasMany(Modelo::class, 'modelo_id');
+        return $this->hasMany(Modelo::class);
     }
     public function equipos()
     {
-        return $this->belongsTo(Equipo::class, 'eq_marca');
+        return $this->belongsTo(Equipo::class);
     }
 }

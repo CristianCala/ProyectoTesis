@@ -22,7 +22,7 @@
         @foreach($departamentos as $key)
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->dep_nombre}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->dep_descripcion}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800"><button class="mb-4 bg-green-600">boton</button> <button class="mb-4 bg-green-600">boton</button></td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editDepartamento') </td>
     </tr>
     @endforeach
     @endif
@@ -43,6 +43,6 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script src="{{ asset('js/ajaxDepartamento.js') }}"></script>
 @stop 
 

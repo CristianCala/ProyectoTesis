@@ -16,13 +16,24 @@
             <input type="hidden" name="id" id="id">
         <div class="modal-body">
           <div class="form-group">
-          <label>Modelo</label>
-          <input class="form-control" type="text" name="eq_modelo" placeholder="Modelo" id="eq_modelo">
-        </div>
-          <div class="form-group">
-          <label>Marca</label>
-          <input class="form-control" type="text" name="eq_marca" placeholder="Marca" id="eq_marca">
-        </div>
+        <label for="text" value="{{ __('modelos_mdl_id') }}">Modelo</label>
+      <select class="form-control" name="modelos_mdl_id" id="modelos_mdl_id">
+                            <option value="">Seleccione Departamento</option>
+                            @foreach($departamentos as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                        </select>
+                        </div>
+
+    <div class="form-group">
+        <label for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
+      <select class="form-control" name="marcas_mar_id" id="marcas_mar_id">
+                            <option value="">Seleccione Departamento</option>
+                            @foreach($departamentos as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                        </select>
+                        </div>
         <div class="form-group">
             <label for="role">tipo de equipos</label>
                        <select class="form-control form-select" name="eq_tequid" id="eq_tequid">
@@ -40,7 +51,7 @@
           <input class="form-control" type="text" name="eq_nbiennacional" placeholder="N° Bien Nacional" id="eq_nbiennacional">
         </div>
         <div class="form-group">
-           <label>Departamentol</label>
+           <label>Departamentos</label>
            <select class="form-control" name="departamentos_dep_id" id="departamentos_dep_id">
                             @foreach($departamentos as $key => $value)
                                 <option value="{{$key}}">{{$value}}</option>
