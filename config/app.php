@@ -161,6 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
         //Spatie\Permission\PermissionServiceProvider::class,
         //Barryvdh\DomPDF\ServiceProvider::class,
         //BeyondCode\ErdGenerator\ErdGeneratorServiceProvider::class,
@@ -180,7 +181,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
-
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
     ],
 
@@ -234,7 +235,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         //'PDF' => Barryvdh\DomPDF\Facade::class,
-
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
 
     ],

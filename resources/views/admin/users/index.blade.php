@@ -17,8 +17,12 @@
   <thead class="border border-gray-400 bg-gray-200">
     <tr>
       <th>#</th>
-      <th>usuario</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Cedula</th>
       <th>Email</th>
+      <th>usuario</th>
+      <th>Estado</th>
       <th>Acciones</th>
     </tr>
   </thead>
@@ -27,9 +31,13 @@
     @if(!empty($users) && $users->count())
         @foreach($users as $key)
          <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->usuario}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->nombre}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->apellido}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->cedula}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->email}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editUser')  @include('admin.vistasUsuario.verUsuario')</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->usuario}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->estatus}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editUser')</td>
     </tr>
     @endforeach
     @endif

@@ -236,7 +236,7 @@ return [
         ],
         [
             'text' => 'Registrar equipos',
-            'url'  => 'admin/equipment',
+            'url'  => '/equipos',
             'icon' => 'fas fa-fw fa-desktop',
         ],
         [

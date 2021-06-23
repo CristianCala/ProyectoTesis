@@ -17,6 +17,7 @@ class CreateModelosTable extends Migration
             $table->id('modelo_id');
             $table->string('mdl_nombre');
             $table->string('mdl_descripcion');
+            //$table->unsignedInteger('modelo_mar_id');
             $table->timestamps();
         });
     }

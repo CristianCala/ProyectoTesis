@@ -20,7 +20,7 @@ class EquiposController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    /*public function index()
     {
           //Aca nos encargamos de extraer datos de las tablas relacionales entre  las tablas Equipo, Tipo de equipos y departamentos
 
@@ -35,6 +35,7 @@ class EquiposController extends Controller
        -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
 
         -> JOIN("modelos","modelos.modelo_id","=","equipos.modelos_mdl_id")
+        
         -> SELECT("equipos.id", "modelos_mdl_id", "marcas_mar_id" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre", "mar_nombre", "mdl_nombre")
         -> orderBy('equipos.id', 'asc')
         ->latest()
@@ -45,8 +46,20 @@ class EquiposController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     *
+    }*/
+
+    public function index( Request $request){
+        return datatables()->eloquent(
+            Equipo::with([
+                'tipo_equipos',
+                'departamentos',
+                'modelos',
+                'marcas',
+            ])->orderBy('id', 'asc')
+        )->tojson();
     }
+
     public function create()
     {
      /* $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
@@ -139,5 +152,6 @@ class EquiposController extends Controller
         $equipment->delete();
         return $equipment; 
     }
+    
 
 }

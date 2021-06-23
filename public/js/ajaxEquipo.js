@@ -75,9 +75,12 @@ $(document).ready(function() {
 	});
 });
 
-//Eliminacion del equipo (Funcion de prueba)
+//Muestra de tablas del modulo equipo 
 
-$(document).ready(function() {
+
+
+//Eliminacion de equipo
+/*$(document).ready(function() {
 	$('.deleteBtn').on('click', function() {
 		$('#equipoDelete').modal('show');
 
@@ -117,4 +120,7 @@ $(document).ready(function() {
 		});
  
 	});
-});
+});*/
+
+
+//Tablas Anidadas

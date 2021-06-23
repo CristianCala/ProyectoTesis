@@ -66,7 +66,7 @@
 </div>
 <div class="form-group">
         <label>Estado</label>
-        <input type="text" class="form-control" placeholder="Estatus" aria-label="pres_estatus" aria-describedby="basic-addon4" required  name="pres_estatus"  id="pres_estatus">
+        <input type="text" class="form-control" placeholder="Estatus" aria-label="estatus" aria-describedby="basic-addon4" required  name="estatus"  id="estatus">
         </div>
         </div>
           <div class="modal-footer">

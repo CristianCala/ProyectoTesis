@@ -29,8 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $users=User::all();
-        return view('admin.create.index');
+        /*$users=User::all();
+        return view('admin.create.index');*/
     }
 
     /**
@@ -100,7 +100,6 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $users=User::findOrFail($id);
-
         $users->nombre = $request->nombre;
         $users->apellido = $request->apellido;
         $users->cedula = $request->cedula;

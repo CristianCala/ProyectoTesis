@@ -10,20 +10,31 @@ class Equipo extends Model
     use HasFactory;
     protected $table = "equipos";
    protected $fillable = [
-        'modelos_mdl_id', 'marcas_mar_id', 'eq_serial', 'eq_tequid', 'eq_nbiennacional' ,'eq_estatus', 'departamentos_dep_id',
+        'modelos_mdl_id', 
+        'marcas_mar_id', 
+        'eq_serial', 
+        'eq_tequid', 
+        'eq_nbiennacional' ,
+        'eq_estatus', 
+        'departamentos_dep_id',
     ];
-         public function tipo_equipos()
+    public function tipo_equipos()
     {
-        return $this->belongsToMany(TipoEquipo::class);
+        return $this->belongsToMany(TipoEquipo::class,'eq_tequid', 'teq_id');
     }
 
-        public function departamentos()
+    public function departamentos()
     {
-        return $this->belongsTo(Departamento::class);
+        return $this->belongsTo(Departamento::class, 'departamentos_dep_id', 'dep_id');
     }
 
-       /*     public function ubicacion_equipos()
+    public function modelos()
     {
-        return $this->belongsTo(UbicacionEquipo::class, 'ubicacion_equipo_ubeq');
-    }*/
+        return $this->belongsTo(Modelo::class, 'modelos_mdl_id', 'modelo_id');
+    }
+    public function marcas()
+    {
+        return $this->belongsTo(Marca::class, 'marcas_mar_id', 'marca_id');
+    }
+
 }

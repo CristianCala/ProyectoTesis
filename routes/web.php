@@ -39,14 +39,19 @@ Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
 
 
 //Ruta principal de los equipos
-Route::resource('admin/equipment', equiposController::class);
+//Route::resource('admin/equipment', equiposController::class);
 
 //Comunicacion con el protocolo AJAX del equipo
+Route::get('/equipos', function ()
+{
+    return view('admin/equipment/index');
+});
+
+Route::get('/list_equipos', [equiposController::class, 'index']); 
 Route::get('/equiposLoad', [equiposController::class, 'loadAjax']);
 Route::post('/equiposAdd', [equiposController::class, 'store']);
 Route::put('/equiposUpdate/{id}', [equiposController::class, 'update']);
 Route::delete('/equiposDelete/{id}', [equiposController::class, 'destroy']);
-
 //Ruta principal de los prestamos
 Route::resource('admin/prestamos', prestamosController::class);
 

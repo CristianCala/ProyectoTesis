@@ -12,12 +12,9 @@ class Marca extends Model
     protected $fillable = [
         'mar_nombre', 'mar_descripcion',
     ];
-         public function modelos()
-    {
-        return $this->hasMany(Modelo::class);
-    }
+   
     public function equipos()
     {
-        return $this->belongsTo(Equipo::class);
+        return $this->hasMany(Equipo::class, 'marcas_mar_id');
     }
 }
