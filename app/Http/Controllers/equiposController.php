@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Equipo;
 use App\Models\TipoEquipo;
 use App\Models\Departamento;
+use App\Models\Marca;
+use App\Models\Modelo;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
 
@@ -20,16 +22,23 @@ class EquiposController extends Controller
     }
     public function index()
     {
-            //Aca nos encargamos de extraer datos de las tablas relacionales entre  las tablas Equipo, Tipo de equipos y departamentos
+          //Aca nos encargamos de extraer datos de las tablas relacionales entre  las tablas Equipo, Tipo de equipos y departamentos
 
         $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
         $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');
-        $equipment['equipment']=Equipo::JOIN("tipo_equipos","tipo_equipos.teq_id","=","equipos.id")
-        -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
-        -> SELECT("equipos.id", "eq_modelo", "eq_marca" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
+        $marcas=Marca::all()->pluck('mar_nombre', 'marca_id');
+        $modelos=Modelo::all()->pluck('mdl_nombre', 'modelo_id');
+        $equipment['equipment']=Equipo::JOIN("tipo_equipos","tipo_equipos.teq_id","=","equipos.eq_tequid")
+
+        -> JOIN("marcas","marcas.marca_id","=","equipos.marcas_mar_id")
+
+       -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
+
+        -> JOIN("modelos","modelos.modelo_id","=","equipos.modelos_mdl_id")
+        -> SELECT("equipos.id", "modelos_mdl_id", "marcas_mar_id" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre", "mar_nombre", "mdl_nombre")
         -> orderBy('equipos.id', 'asc')
         -> paginate(4);         
-            return view('admin.equipment.index',  $equipment, compact( 'tipoEquipo' , 'departamentos'));
+            return view('admin.equipment.index',  $equipment, compact( 'tipoEquipo' , 'departamentos', 'marcas', 'modelos'));
 
     /**
      * Show the form for creating a new resource.
@@ -55,16 +64,14 @@ class EquiposController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'eq_modelo' => 'required|max:24',
-            'eq_marca' => 'required|max:24',
             'eq_serial' => 'required|integer|digits:6',
             'eq_nbiennacional' => 'required|integer|min:1|digits:5',
             'eq_estatus' => 'required|accepted'
         ]);
 
     $equipment = new Equipo;
-       $equipment->eq_modelo = $request->eq_modelo;
-       $equipment->eq_marca = $request->eq_marca;
+       $equipment->modelos_mdl_id = $request->modelos_mdl_id;
+       $equipment->marcas_mar_id = $request->marcas_mar_id;
        $equipment->eq_serial = $request->eq_serial;
        $equipment->eq_tequid = $request->eq_tequid;
        $equipment->eq_nbiennacional = $request->eq_nbiennacional;
@@ -109,8 +116,8 @@ class EquiposController extends Controller
     public function update(Request $request, $id)
     {
          $equipment=Equipo::findOrFail($id);
-       $equipment->eq_modelo = $request->eq_modelo;
-       $equipment->eq_marca = $request->eq_marca;
+       $equipment->modelos_mdl_id = $request->modelos_mdl_id;
+       $equipment->marcas_mar_id = $request->marcas_mar_id;
        $equipment->eq_serial = $request->eq_serial;
        $equipment->eq_tequid = $request->eq_tequid;
        $equipment->eq_nbiennacional = $request->eq_nbiennacional;

@@ -15,37 +15,27 @@
       <form id="addForm">
         @csrf
     <div class="modal-body">
-        <div class="form-group">
-        @error('eq_modelo')
-    <br>
-    <small>{{$message}}</small>
-    <br>
-    @enderror
-      <label for="text" value="{{ __('eq_modelo') }}">Modelo</label>
-         <input id="eq_modelo" class="form-control" type="text" name="eq_modelo" :value="old('eq_modelo')"  autofocus>
-        </div>
-        <div class="form-group">
-        @error('eq_marca')
-    <br>
-    <small>{{$message}}</small>
-    <br>
-    @enderror
 
-      <label for="text" value="{{ __('eq_marca') }}">Marca</label>
-       <input type="text"id="eq_marca" class="form-control"name="eq_marca" :value="old('eq_marca')"  autofocus>
-        </div>
-
-        <div class="form-group">
-        <label for="text" value="{{ __('eq_tequid') }}">Tipo de equipo</label>
-         <select class="form-control form-select " name="eq_tequid"  id="eq_tequid">
-                            <option value="">Seleccione Equipo</option>
-                            @foreach($tipoEquipo as $key => $value)
+            <div class="form-group">
+        <label for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
+      <select class="form-control" name="marcas_mar_id" id="marcas_mar_id">
+                            <option value="">Seleccione Marca</option>
+                            @foreach($marcas as $key => $value)
                                 <option value="{{$key}}">{{$value}}</option>
                             @endforeach
                         </select>
-      </div>
+                        </div>
 
-       
+   <div class="form-group">
+        <label for="text" value="{{ __('modelos_mdl_id') }}">Modelo</label>
+      <select class="form-control" name="modelos_mdl_id" id="modelos_mdl_id">
+         <option value="">Seleccione modelo</option>
+                            @foreach($modelos as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                </select>
+               </div>
+
         <div class="form-group">
         @error('eq_serial')
     <br>
@@ -56,6 +46,27 @@
                         <input id="eq_serial" class="form-control" type="text" name="eq_serial" :value="old('eq_serial')"  autofocus>
 
       </div>
+
+          <div class="form-group">
+            <label for="role">tipo de equipos</label>
+                       <select class="form-control form-select" name="eq_tequid" id="eq_tequid">
+                        <option value="">Seleccione Tipo de equipo</option>
+                            @foreach($tipoEquipo as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                        </select>
+        </div>
+
+    <div class="form-group">
+        <label for="text" value="{{ __('departamentos_dep_id') }}">Departamento</label>
+      <select class="form-control" name="departamentos_dep_id" id="departamentos_dep_id">
+                            <option value="">Seleccione Departamento</option>
+                            @foreach($departamentos as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                            @endforeach
+                        </select>
+                        </div>
+
         <div class="form-group">
         @error('eq_nbiennacional')
     <br>
@@ -65,15 +76,7 @@
                         <label for="email" value="{{ __('eq_nbiennacional') }}">Bien nacional</label>
                         <input type="text"id="eq_nbiennacional" class="form-control" name="eq_nbiennacional" :value="old('eq_nbiennacional')"  autofocus>            </div>
     
-     <div class="form-group">
-        <label for="text" value="{{ __('departamentos_dep_id') }}">Departamento</label>
-      <select class="form-control" name="departamentos_dep_id" id="departamentos_dep_id">
-                            <option value="">Seleccione Departamento</option>
-                            @foreach($departamentos as $key => $value)
-                                <option value="{{$key}}">{{$value}}</option>
-                            @endforeach
-                        </select>
-                        </div>
+    
  </div>
      <div class="mt-8 flex flex-col">
                       <center>

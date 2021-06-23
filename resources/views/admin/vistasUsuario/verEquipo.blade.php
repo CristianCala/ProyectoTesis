@@ -14,9 +14,9 @@
         </button>
       </div>
          <div class="modal-body">
-         <p>Modelo: {{$key->eq_modelo}}</p>
-          <p>Marca: {{$key->eq_marca}}</p>
-          <p>N° Bien Nacional: {{$key->eq_nbiennacional}}</p>
+         <p>Codigo de Modelo: {{$key->eq_modelo}}</p>
+          <p>Fecha de Prestamo: {{$key->eq_marca}}</p>
+          <p>Bien nacional: {{$key->eq_nbiennacional}}</p>
           <p>Tipo de equipo: {{$key->eq_tequid}}</p>
           <p>Departamento: {{$key->departamentos_dep_id}}</p>
           <p>Estado: {{$key->eq_estatus}}</p>

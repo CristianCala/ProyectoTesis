@@ -15,18 +15,14 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
           $table->id();
-            $table->string('eq_modelo');
-            $table->string('eq_marca');
             $table->string('eq_serial')->unique();
             $table->integer('eq_tequid');
             $table->string('eq_nbiennacional')->unique();
             $table->boolean('eq_estatus')->nullable();
-<<<<<<< HEAD
+            $table->integer('modelos_mdl_id');
+            $table->integer('marcas_mar_id');
             $table->integer('departamentos_dep_id');
-=======
-            $table->integer('departamentos_dep_id')->references('id')->on('departamentos');
->>>>>>> c75c52d578fe342a902bdde3afa77a82b477c0bd
-            //$table->integer('ubicacion_equipo_ubeq')->references('ubeq_id')->on('ubicacion_equipos');
+            //$table->integer('ubicacion_equipo_ubeq');
             $table->timestamps();
         });
     }

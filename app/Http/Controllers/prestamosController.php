@@ -19,7 +19,7 @@ class PrestamosController extends Controller
     }
     public function index()
     {
-          $users=User::all();
+      $users=User::all();
           $id=Equipo::all()->pluck('id');
         //$prestamos = PrestamoEquipo::paginate(10);
        $prestamos['prestamos']=PrestamoEquipo::JOIN("users","users.id","=","prestamo_equipos.usuarios_us_id")
@@ -27,7 +27,7 @@ class PrestamosController extends Controller
                                     -> orderBy('prestamo_equipos.id', 'asc')
                                     -> paginate(8); 
             return view('admin.prestamos.index', $prestamos, compact('users','id'));
-        //return view('admin.prestamos.index', compact('prestamos')); 
+        //return view('admin.prestamos.index', compact('prestamos'));
     }
 
     /**
@@ -99,6 +99,7 @@ class PrestamosController extends Controller
 
     public function update(Request $request, $id)
     {
+          $prestamos = PrestamoEquipo::all();
   $prestamos=PrestamoEquipo::find($id);
        $prestamos->pres_salida = $request->pres_salida;
        $prestamos->pres_fecha_salida = $request->pres_fecha_salida;

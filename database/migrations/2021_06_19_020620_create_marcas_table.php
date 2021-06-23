@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrdenSalidasTable extends Migration
+class CreateMarcasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateOrdenSalidasTable extends Migration
      */
     public function up()
     {
-        Schema::create('orden_salidas', function (Blueprint $table) {
-            $table->id();
-            $table->string('ord_ubicacion');
-            //$table->integer('prestamo_equipos_pres_id');
+        Schema::create('marcas', function (Blueprint $table) {
+            $table->id('marca_id');
+            $table->string('mar_nombre');
+            $table->string('mar_descripcion');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateOrdenSalidasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orden_salidas');
+        Schema::dropIfExists('marcas');
     }
 }

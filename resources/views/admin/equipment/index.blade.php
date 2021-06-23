@@ -14,7 +14,13 @@
   <thead class="border border-gray-400 bg-gray-200">
     <tr>
     <th>#</th>
-      <th>Serial</th>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>Serial</th>
+    <th>Tipo de equipo</th>
+    <th>N° Bien nacional</th>
+    <th>Estado</th>
+      <th>Departamento</th>
       <th>Acciones</th>
     </tr>
   </thead>
@@ -23,15 +29,21 @@
     @if(!empty($equipment) && $equipment->count())
         @foreach($equipment as $key)
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->marcas_mar_id}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->modelos_mdl_id}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_serial}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo')  @include('admin.vistasUsuario.verEquipo') @include('admin.equipment.delete')</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_tequid}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_nbiennacional}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_estatus}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->departamentos_dep_id}}</td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo') <button href="{{url('admin/pdf/invoice')}}"align="center" class="bg-blue-500">Imprimir comprobante</button></td>
     </tr>
     @endforeach
     @endif
   </tbody>
 </table>
 <div class="mt-4">
-{{ $equipment->links() }}
+        {{$equipment->links()}}       
   <a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md text-2xl">Volver</a>
 </div>
 </div>
@@ -54,3 +66,4 @@
       <script> console.log('Hi!'); </script>
     <script src="{{ asset('js/ajaxEquipo.js') }}"></script>
 @stop 
+
