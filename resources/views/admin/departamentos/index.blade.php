@@ -21,7 +21,7 @@
   <tr>
       @if(!empty($departamentos))
         @foreach($departamentos as $key)
-        <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->dep_id}}</td>
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->dep_nombre}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editDepartamento') </td>
     </tr>

@@ -75,6 +75,7 @@ class departamentosController extends Controller
     {
         $departamentos=Departamento::findOrFail($id);
         $departamentos->dep_nombre = $request->dep_nombre;
+        $departamentos->save();
     }
 
     /**

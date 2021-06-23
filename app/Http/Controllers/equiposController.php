@@ -139,11 +139,5 @@ class EquiposController extends Controller
         $equipment->delete();
         return $equipment; 
     }
-    public function exportInvoice()
-    {
-     $equipos=App\Models\Equipo::get();
-     $pdf = PDF::loadView('admin.pdf.invoice', compact('equipos') );
-     return $pdf->download('invoice.pdf');
-     //return view('admin.pdf.invoice', compact('equipos'));
-    }
+
 }
