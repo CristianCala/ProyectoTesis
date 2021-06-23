@@ -36,7 +36,9 @@
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_nbiennacional}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->eq_estatus}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->departamentos_dep_id}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo') <button href="{{url('admin/pdf/invoice')}}"align="center" class="bg-blue-500">Imprimir comprobante</button></td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editEquipo') 
+        <button type="button" onclick="window.location='{{url('admin/pdf/invoice')}}'" align="center" class="bg-blue-500">Imprimir comprobante</button>
+  </td>
     </tr>
     @endforeach
     @endif

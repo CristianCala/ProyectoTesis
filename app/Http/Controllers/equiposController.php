@@ -35,12 +35,9 @@ class EquiposController extends Controller
        -> JOIN("departamentos","departamentos.dep_id","=","equipos.departamentos_dep_id")
 
         -> JOIN("modelos","modelos.modelo_id","=","equipos.modelos_mdl_id")
-<<<<<<< HEAD
         -> SELECT("equipos.id", "modelos_mdl_id", "marcas_mar_id" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre", "mar_nombre", "mdl_nombre")
-=======
-        -> SELECT("equipos.id", "modelos_mdl_id", "marcas_mar_id" ,"eq_serial" , "eq_tequid","eq_nbiennacional", "eq_estatus", "equipos.created_at", "equipos.updated_at", "teq_nombre", "dep_nombre")
->>>>>>> 22841bdefc4b8d2ad3b4b01820854cb895bb4df3
         -> orderBy('equipos.id', 'asc')
+        ->latest()
         -> paginate(4);         
             return view('admin.equipment.index',  $equipment, compact( 'tipoEquipo' , 'departamentos', 'marcas', 'modelos'));
 

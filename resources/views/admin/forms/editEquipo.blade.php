@@ -19,11 +19,7 @@
         <label for="text" value="{{ __('modelos_mdl_id') }}">Modelo</label>
       <select class="form-control" name="modelos_mdl_id" id="modelos_mdl_id">
                             <option value="">Seleccione Departamento</option>
-<<<<<<< HEAD
                             @foreach($modelos as $key => $value)
-=======
-                            @foreach($departamentos as $key => $value)
->>>>>>> 22841bdefc4b8d2ad3b4b01820854cb895bb4df3
                                 <option value="{{$key}}">{{$value}}</option>
                             @endforeach
                         </select>
@@ -33,11 +29,7 @@
         <label for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
       <select class="form-control" name="marcas_mar_id" id="marcas_mar_id">
                             <option value="">Seleccione Departamento</option>
-<<<<<<< HEAD
                             @foreach($marcas as $key => $value)
-=======
-                            @foreach($departamentos as $key => $value)
->>>>>>> 22841bdefc4b8d2ad3b4b01820854cb895bb4df3
                                 <option value="{{$key}}">{{$value}}</option>
                             @endforeach
                         </select>

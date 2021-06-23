@@ -60,11 +60,7 @@ Route::delete('/prestamosDelete/{id}', [prestamosController::class, 'destroy']);
 /*
 Route::resource('admin/auditoria', auditoriaController::class);*/
 Route::resource('admin/departamentos', departamentosController::class);
-<<<<<<< HEAD
 Route::put('/departamentosUpdate/{id}', [departamentosController::class, 'update']);
-=======
-Route::put('/departamentosUpdate/{id}', [prestamosController::class, 'update']);
->>>>>>> 22841bdefc4b8d2ad3b4b01820854cb895bb4df3
 
 
 Route::get('admin/pdf/invoice', [listController::class, 'exportInvoice']);

@@ -58,13 +58,8 @@
         </div>
 
     <div class="form-group">
-<<<<<<< HEAD
         <label for="text" value="{{ __('departamentos_dep_id') }}">Departamento</label>
       <select class="form-control" name="departamentos_dep_id" id="departamentos_dep_id">
-=======
-        <label for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
-      <select class="form-control" name="marcas_mar_id" id="marcas_mar_id">
->>>>>>> 22841bdefc4b8d2ad3b4b01820854cb895bb4df3
                             <option value="">Seleccione Departamento</option>
                             @foreach($departamentos as $key => $value)
                                 <option value="{{$key}}">{{$value}}</option>

@@ -23,10 +23,6 @@
         @foreach($departamentos as $key)
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->id}}</td>
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->dep_nombre}}</td>
-<<<<<<< HEAD
-=======
-      <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->dep_descripcion}}</td>
->>>>>>> 22841bdefc4b8d2ad3b4b01820854cb895bb4df3
       <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editDepartamento') </td>
     </tr>
     @endforeach

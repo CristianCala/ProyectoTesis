@@ -23,7 +23,7 @@
             <p>Equipo: {{$info->equipos_eq_id}}</p>
       </div>
       <div class="modal-footer">
-      <a align="center" class="btn btn-primary">Imprimir comprobante</a>
+
       </div>
     </div>
   </div>

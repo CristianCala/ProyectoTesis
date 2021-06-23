@@ -24,6 +24,11 @@
         @foreach($prestamos as $info)
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$info->id}}</td>
         <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$info->pres_salida}}</td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$info->pres_fecha_salida}}</td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$info->pres_fecha_entrada}}</td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$info->pres_estatus}}</td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$info->usuarios_us_id}}</td>
+        <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$info->equipos_eq_id}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.forms.editPrestamo')
       @include('admin.vistasUsuario.verPrestamo') @include('admin.prestamos.delete')</td>
     </tr>
