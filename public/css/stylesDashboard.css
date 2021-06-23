@@ -1,7 +1,5 @@
 @import url('generalStyles.css');
 
-
-
 body {
     position: relative;
     margin: var(--header-ancho) 0 0 0;
@@ -20,8 +18,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-/*    background-color: var(--color-graystandar);
-*/    
     background-color:  var(--secondary-blue);
     z-index: 100;
     transition: .5s
@@ -33,17 +29,13 @@ body {
     cursor: pointer;
 }
 
-.header_img {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    overflow: hidden;
+.dropdown-toggle::after {
+    display:none !important; 
 }
 
-.header_img img {
-    width: 40px;
+.dropdown-menu{
+    border-radius: 6px !important;
+    border: 1px !important;
 }
 
 .form-outline{
@@ -63,7 +55,7 @@ body {
     width: var(--nav-largo);
     height: 100vh;
     background-color: var(--main-color);
-    background-image: url('../img/ondaArriba.png');
+    background-image: url('../img/OndaArriba.png');
     background-size: 180% calc(var(--header-ancho) + 28rem);
     background-position-x: -20px;
     background-repeat: no-repeat;
@@ -137,8 +129,7 @@ body {
 }
 
 .height-100 {
-    height: 100vh;
-    margin-top: 5rem;
+    margin-top: 7rem;
     border-radius: 1rem ;
 }
 
@@ -151,15 +142,6 @@ body {
     .header {
         height: calc(var(--header-ancho) + 1rem);
         padding: 0 2rem 0 calc(var(--nav-largo) + 2rem);
-    }
-
-    .header_img {
-        width: 50px;
-        height: auto;
-    }
-
-    .header_img img {
-        width: 55px;
     }
 
     .l-navbar {
@@ -191,11 +173,12 @@ body {
   .show{
     background-size: 170% calc(var(--header-ancho) + 23rem);
   }
-
-
 }
 
 .invisibilidad{
     display: none !important;
 }
 
+.nav-enlace{
+    background-color: transparent !important;
+}

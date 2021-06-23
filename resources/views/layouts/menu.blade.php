@@ -3,16 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Document</title>
+		<title>Dashboard</title>
 		<!-- Bootstrap 5 -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 		<!-- Fontawesome -->
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-		<link rel="stylesheet" href="{{ mix('css/generalStyles.css') }}">
-		<link rel="stylesheet" href="{{ mix('css/stylesDashboard.css') }}">
+		<link rel="stylesheet" href="css/stylesDashboard.css">
 	</head>
-	<body>
-		<header class="header" id="header">
+	<body id="body-pd">
+		<header class="header shadow-lg" id="header">
 			<!-- boton menu -->
 			<div class="header_toggle"><i class='bx bx-menu fas fa-arrow-right' id="header-toggle"></i> </div>
 			<!-- input -->
@@ -24,8 +23,22 @@
 					</button>
 				</div>
 			</div>
-			<!-- fin de input -->
-			<div class="header_img "> <img class="rounded-circle" src="#" alt="imagen-header"> </div>
+			<div class="dropdown">
+				<a type="button" class="dropdown-toggle nav-enlace" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+					<span class="d-none d-lg-inline text-dark small me-2">Usuario</span>
+					<img class="img-profile rounded-circle" src="img/imagen.jpg" width="32" height="32" alt="user">
+				</a>
+				<ul class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuOffset">
+					<a class="dropdown-item" href="#">
+						<i class="fas fa-user fa-sm fa-fw ms-2 text-primary"></i>
+						Perfil
+					</a>
+					<a class="dropdown-item">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw ms-2 text-primary"></i>
+						Cerrar Sesión
+					</a>
+				</ul>
+			</div>
 		</header>
 		<!-- comienzo navbar -->
 		<div class="l-navbar" id="nav-bar">
@@ -68,7 +81,7 @@
 		<main class="height-100 bg-main  p-5">
 			@yield('content')
 		</main>
-		<script src="{{ mix('js/script.js') }}" defer></script>
+		<script src="js/script.js" defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 	</body>
 </html>

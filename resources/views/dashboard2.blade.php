@@ -1,5 +1,5 @@
-@extends('menu')
-@section('main')
+@extends('layouts.menu')
+@section('content')
 
 	<h1 class="fw-bold">Dashboard</h1>
 	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quod praesentium culpa eveniet ut, illo dolorem molestias possimus labore recusandae fuga odio ipsam voluptate perspiciatis ex eaque omnis numquam optio.</p>
