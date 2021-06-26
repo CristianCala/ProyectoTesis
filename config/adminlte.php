@@ -242,7 +242,7 @@ return [
         [
             'text'       => 'Prestamos',
             'icon'       => 'fas fa-address-book',
-            'url'        => 'admin/prestamos',
+            'url'        => '/prestamos',
         ],
  
         ['header' => 'Inactivo'],

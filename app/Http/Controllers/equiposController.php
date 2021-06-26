@@ -20,6 +20,10 @@ class EquiposController extends Controller
     {
         $this->middleware('auth');
     }
+<<<<<<< HEAD
+ 
+
+=======
     /*public function index()
     {
           //Aca nos encargamos de extraer datos de las tablas relacionales entre  las tablas Equipo, Tipo de equipos y departamentos
@@ -49,6 +53,7 @@ class EquiposController extends Controller
      *
     }*/
 
+>>>>>>> 46a4af3ecbeaa48f0837937366cc8caaa29fdb4a
     public function index( Request $request){
         return datatables()->eloquent(
             Equipo::with([

@@ -57,6 +57,11 @@ Route::resource('admin/prestamos', prestamosController::class);
 
 
 //Comunicacion con el protocolo AJAX de los prestamos
+Route::get('/prestamos', function ()
+{
+    return view('admin/prestamos/index');
+});
+Route::get('/list_equipos', [equiposController::class, 'index']); 
 Route::get('/prestamosLoad', [prestamosController::class, 'loadAjax']);
 Route::post('/prestamosAdd', [prestamosController::class, 'store']);
 Route::put('/prestamosUpdate/{id}', [prestamosController::class, 'update']);

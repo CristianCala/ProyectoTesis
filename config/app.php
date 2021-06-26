@@ -161,7 +161,12 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+<<<<<<< HEAD
+        Yajra\DataTables\DataTablesServiceProvider::class,
+
+=======
         
+>>>>>>> 46a4af3ecbeaa48f0837937366cc8caaa29fdb4a
         //Spatie\Permission\PermissionServiceProvider::class,
         //Barryvdh\DomPDF\ServiceProvider::class,
         //BeyondCode\ErdGenerator\ErdGeneratorServiceProvider::class,

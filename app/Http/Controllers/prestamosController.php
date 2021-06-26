@@ -19,6 +19,14 @@ class PrestamosController extends Controller
     }
     public function index()
     {
+<<<<<<< HEAD
+      return datatables()->eloquent(
+        Equipo::with([
+            'users',
+            'equipos',
+        ])->orderBy('id', 'asc')
+    )->tojson();
+=======
       $users=User::all();
           $id=Equipo::all()->pluck('id');
         //$prestamos = PrestamoEquipo::paginate(10);
@@ -28,6 +36,7 @@ class PrestamosController extends Controller
                                     -> paginate(8); 
             return view('admin.prestamos.index', $prestamos, compact('users','id'));
         //return view('admin.prestamos.index', compact('prestamos'));
+>>>>>>> 46a4af3ecbeaa48f0837937366cc8caaa29fdb4a
     }
 
     /**
