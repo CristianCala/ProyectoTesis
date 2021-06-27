@@ -13,6 +13,6 @@ class EquipoSeeder extends Seeder
      */
     public function run()
     {
-        //\App\Models\Equipo::factory(10)->create();
+        //
     }
 }

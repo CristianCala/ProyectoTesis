@@ -23,9 +23,10 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $table = "users";
     protected $fillable = [
-          'nombre', 'apellido', 'cedula', 'email', 'usuario', 'password', 'estatus', 
+        'name',
+        'email',
+        'password',
     ];
 
     /**
@@ -57,43 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function adminlte_image()
-    {
-         return 'https://picsum.photos/300/300';
-    }
-
-        public function adminlte_desc()
-    {
-         return 'Admin';
-    }
-
-    public function adminlte_profile_url()
-    {
-         return 'profile/username';
-    }
-       public function departamentos()
-    {
-        return $this->belongsToMany(Departamento::class, 'usuario_x_departamentos' , 'usxdp_uscedula', 'usxdp_dpid');
-    }
-
-        public function role()
-    {
-        return $this->belongsTo(rol::class, 'us_rol_id');
-    }
-
-   public function tipo(){
-        
-      return $this->belongsTo(TipoUsuario::class, 'us_tu_id');
-
-    }
-    public function acceso_cliente()
-    {
-        return $this->belongsTo(AccesoCliente::class, 'acl_us_id');
-    }
-
-          public function auditoria()
-    {
-        return $this->belongsTo(Auditoria::class, 'au_us_id');
-    }
 }

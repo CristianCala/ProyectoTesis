@@ -13,6 +13,6 @@ class ModuloSeeder extends Seeder
      */
     public function run()
     {
-        //\App\Models\Modulo::factory(10)->create();
+        //
     }
 }

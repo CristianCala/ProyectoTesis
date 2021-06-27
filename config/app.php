@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'es',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -161,16 +161,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-<<<<<<< HEAD
-        Yajra\DataTables\DataTablesServiceProvider::class,
-
-=======
-        
->>>>>>> 46a4af3ecbeaa48f0837937366cc8caaa29fdb4a
-        //Spatie\Permission\PermissionServiceProvider::class,
-        //Barryvdh\DomPDF\ServiceProvider::class,
-        //BeyondCode\ErdGenerator\ErdGeneratorServiceProvider::class,
-
 
         /*
          * Package Service Providers...
@@ -186,7 +176,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
-        Yajra\DataTables\DataTablesServiceProvider::class,
 
     ],
 
@@ -214,6 +203,7 @@ return [
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
+        'Date' => Illuminate\Support\Facades\Date::class,
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
@@ -239,9 +229,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        //'PDF' => Barryvdh\DomPDF\Facade::class,
-        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-
 
     ],
 

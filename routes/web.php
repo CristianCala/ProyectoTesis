@@ -1,12 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\userController;
-use App\Http\Controllers\equiposController;
-use App\Http\Controllers\auditoriaController;
-use App\Http\Controllers\prestamosController;
-use App\Http\Controllers\departamentosController;
-use App\Http\Controllers\listController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,61 +14,9 @@ use App\Http\Controllers\listController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-//Rutas de los controladores
-
-//Ruta principal de los usuarios
-Route::resource('admin/users', userController::class);
-
-//Comunicacion con el protocolo AJAX de los usuarios
-Route::get('/usersLoad', [userController::class, 'loadAjax']);
-Route::post('/usersAdd', [userController::class, 'store']);
-Route::put('/usersUpdate/{id}', [userController::class, 'update']);
-Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
-
-
-//Ruta principal de los equipos
-//Route::resource('admin/equipment', equiposController::class);
-
-//Comunicacion con el protocolo AJAX del equipo
-Route::get('/equipos', function ()
-{
-    return view('admin/equipment/index');
-});
-
-Route::get('/list_equipos', [equiposController::class, 'index']); 
-Route::get('/equiposLoad', [equiposController::class, 'loadAjax']);
-Route::post('/equiposAdd', [equiposController::class, 'store']);
-Route::put('/equiposUpdate/{id}', [equiposController::class, 'update']);
-Route::delete('/equiposDelete/{id}', [equiposController::class, 'destroy']);
-//Ruta principal de los prestamos
-Route::resource('admin/prestamos', prestamosController::class);
-
-
-//Comunicacion con el protocolo AJAX de los prestamos
-Route::get('/prestamos', function ()
-{
-    return view('admin/prestamos/index');
-});
-Route::get('/list_equipos', [equiposController::class, 'index']); 
-Route::get('/prestamosLoad', [prestamosController::class, 'loadAjax']);
-Route::post('/prestamosAdd', [prestamosController::class, 'store']);
-Route::put('/prestamosUpdate/{id}', [prestamosController::class, 'update']);
-Route::delete('/prestamosDelete/{id}', [prestamosController::class, 'destroy']);
-
-/*
-Route::resource('admin/auditoria', auditoriaController::class);*/
-Route::resource('admin/departamentos', departamentosController::class);
-Route::put('/departamentosUpdate/{id}', [departamentosController::class, 'update']);
-
-
-Route::get('admin/pdf/invoice', [listController::class, 'exportInvoice']);
-
-
-

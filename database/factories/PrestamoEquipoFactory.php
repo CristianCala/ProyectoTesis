@@ -22,10 +22,7 @@ class PrestamoEquipoFactory extends Factory
     public function definition()
     {
         return [
-            'pres_salida' => $this->faker->numerify('###'),
-            'pres_fecha_salida' => $this->faker->date,
-            'pres_fecha_entrada' => $this->faker->date,
-            'pres_estatus' => $this->faker->suffix,
+            //
         ];
     }
 }
