@@ -22,7 +22,9 @@ class ModuloFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'mod_nombre' => $this->faker->name,
+            'mod_descripcion' => $this->faker->address,
+            'mod_estatus' => $this->faker->suffix,
         ];
     }
 }

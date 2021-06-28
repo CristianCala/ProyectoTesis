@@ -22,7 +22,9 @@ class PantallaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'pan_nombre' => $this->faker->name,
+            'pan_descripcion' => $this->faker->address,
+            'pan_estatus' => $this->faker->suffix,
         ];
     }
 }

@@ -15,6 +15,12 @@ class CreatePrestamoEquiposTable extends Migration
     {
         Schema::create('prestamo_equipos', function (Blueprint $table) {
             $table->id();
+            $table->integer('pres_salida');
+            $table->timestamp('pres_fecha_salida');
+            $table->timestamp('pres_fecha_entrada');
+            $table->integer('usuarios_us_id');
+            $table->integer('equipos_eq_id');
+            $table->boolean('pres_estatus')->nullable();;
             $table->timestamps();
         });
     }
