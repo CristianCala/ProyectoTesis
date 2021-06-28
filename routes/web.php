@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
-use App\Http\Controllers\equiposController;
-use App\Http\Controllers\auditoriaController;
-use App\Http\Controllers\prestamosController;
-use App\Http\Controllers\departamentosController;
-use App\Http\Controllers\listController;
+use App\Http\Controllers\EquipoController;
+
+use App\Http\Controllers\PrestamoEquipoController;
+use App\Http\Controllers\DepartamentoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,22 +47,22 @@ Route::get('/equipos', function ()
     return view('admin/equipment/index');
 });
 
-Route::get('/list_equipos', [equiposController::class, 'index']); 
-Route::get('/equiposLoad', [equiposController::class, 'loadAjax']);
-Route::post('/equiposAdd', [equiposController::class, 'store']);
-Route::put('/equiposUpdate/{id}', [equiposController::class, 'update']);
-Route::delete('/equiposDelete/{id}', [equiposController::class, 'destroy']);
+Route::get('/list_equipos', [EquipoController::class, 'index']); 
+Route::get('/equiposLoad', [EquipoController::class, 'loadAjax']);
+Route::post('/equiposAdd', [EquipoController::class, 'store']);
+Route::put('/equiposUpdate/{id}', [EquipoController::class, 'update']);
+Route::delete('/equiposDelete/{id}', [EquipoController::class, 'destroy']);
 //Ruta principal de los prestamos
-Route::resource('admin/prestamos', prestamosController::class);
+Route::resource('admin/prestamos', PrestamoEquipoController::class);
 
 
 //Comunicacion con el protocolo AJAX de los prestamos
-Route::get('/prestamosLoad', [prestamosController::class, 'loadAjax']);
-Route::post('/prestamosAdd', [prestamosController::class, 'store']);
-Route::put('/prestamosUpdate/{id}', [prestamosController::class, 'update']);
-Route::delete('/prestamosDelete/{id}', [prestamosController::class, 'destroy']);
+Route::get('/prestamosLoad', [PrestamoEquipoController::class, 'loadAjax']);
+Route::post('/prestamosAdd', [PrestamoEquipoController::class, 'store']);
+Route::put('/prestamosUpdate/{id}', [PrestamoEquipoController::class, 'update']);
+Route::delete('/prestamosDelete/{id}', [PrestamoEquipoController::class, 'destroy']);
 
 /*
 Route::resource('admin/auditoria', auditoriaController::class);*/
-Route::resource('admin/departamentos', departamentosController::class);
-Route::put('/departamentosUpdate/{id}', [departamentosController::class, 'update']);
+Route::resource('admin/departamentos', DepartamentoController::class);
+Route::put('/departamentosUpdate/{id}', [DepartamentoController::class, 'update']);
