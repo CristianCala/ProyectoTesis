@@ -29,10 +29,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //Rutas de los controladores
 
 //Ruta principal de los usuarios
-Route::resource('admin/users', userController::class);
-
+ Route::resource('admin/usuarios', userController::class);
+/*Route::get('/usuarios', function ()
+{
+    return view('admin/users/index');
+});*/
 //Comunicacion con el protocolo AJAX de los usuarios
-Route::get('/usersLoad', [userController::class, 'loadAjax']);
+
+//Route::get('/list_usuarios', [userController::class, 'index']); 
 Route::post('/usersAdd', [userController::class, 'store']);
 Route::put('/usersUpdate/{id}', [userController::class, 'update']);
 Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
@@ -44,7 +48,7 @@ Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
 //Comunicacion con el protocolo AJAX del equipo
 Route::get('/equipos', function ()
 {
-    return view('admin/equipment/index');
+    return view('admin/equipos/index');
 });
 
 Route::get('/list_equipos', [EquipoController::class, 'index']); 

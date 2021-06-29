@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+
 class userController extends Controller
 {
             //Constructor Auth
@@ -15,16 +16,16 @@ class userController extends Controller
          }
      
       
-         public function index()
+         public function index(Request $request)
          {
                //Funcion Index
          /*Esta funcion nos permite traer las vistas y mostrar los datos en pantalla.
          Tambien se pueden manejar consultas query como por ejemplo los Joins para relacionar tablas
          Por ejemplo "PrestamoEquipo::Join()", Tambien para generar variables que muestran los datos de una tabla
          */ 
-        $users=User::all();
+                $users=User::all();
         $users = User::paginate(10);
-        return view('admin.users.index', compact('users'));
+        return view('admin.usuarios.index', compact('users'));
          }
      
          public function store(Request $request)

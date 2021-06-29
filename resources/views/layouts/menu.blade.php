@@ -8,7 +8,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 		<!-- Fontawesome -->
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-		<link rel="stylesheet" href="css/stylesDashboard.css">
+		<link rel="stylesheet" href= "{{ asset('css/stylesDashboard.css') }}">
 	</head>
 	<body id="body-pd">
 		<header class="header shadow-lg" id="header">
@@ -26,10 +26,10 @@
 			<div class="dropdown">
 				<a type="button" class="dropdown-toggle nav-enlace" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
 					<span class="d-none d-lg-inline text-dark small me-2">Usuario</span>
-					<img class="img-profile rounded-circle" src="img/imagen.jpg" width="32" height="32" alt="user">
+					<img class="img-profile rounded-circle"  src="{{ asset('public/img/imagen.jpg') }}" width="32" height="32" alt="user">
 				</a>
 				<ul class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuOffset">
-					<a class="dropdown-item" href="#">
+					<a class="dropdown-item" href="{{ route('profile.show') }}">
 						<i class="fas fa-user fa-sm fa-fw ms-2 text-primary"></i>
 						Perfil
 					</a>
@@ -53,13 +53,13 @@
 						<img src="img/IconoVive.svg" width="90" height="90" alt="Logo">
 					</div>
 					<div class="mb-3 mt-1 ms-2" id="img-menor">
-						<img  src="img/IconoViveR.svg" width="45" height="45" class="logo-image" alt="Logo">
+						<img src="img/IconoViveR.svg" width="45" height="45" class="logo-image" alt="Logo">
 					</div>
 					<div class="nav_list mt-5">
-						<a href="#" class="nav_link fw-bold">
+						<a href="{{url('admin/usuarios')}}" class="nav_link fw-bold">
 							<i class='fas fa-user-plus'></i> <span class="nav_name">Registrar Usuarios</span>
 						</a>
-						<a href="#" class="nav_link fw-bold">
+						<a href="{{url('/equipos')}}" class="nav_link fw-bold">
 							<i class='fas fa-desktop'></i> <span class="nav_name">Registrar Equipo</span>
 						</a>
 						<a href="#" class="nav_link fw-bold">
@@ -86,7 +86,8 @@
 		<main class="height-100 bg-main  p-5">
 			@yield('content')
 		</main>
-		<script src="js/script.js" defer></script>
+		<script src="{{ asset('js/script.js') }}" defer></script>
+
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 	</body>
 </html>
