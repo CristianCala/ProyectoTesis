@@ -10,6 +10,8 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 		<!-- Fontawesome -->
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<!-- Google font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
 	</head>
 	<body>
 		<main class="m-0 vh-100 row justify-content-center align-items-center">
@@ -26,7 +28,7 @@
 				</div>
 				<!-- input -->
 				<div class="container">
-					<input class="form-control" type="password"id="password" class="block mt-1 w-full" name="password" :value="old('password')" required autofocus>
+					<input class="form-control" type="password" placeholder="Contraseña" id="password" class="block mt-1 w-full" name="password" :value="old('password')" required autofocus>
 					<i class="icon-move fas fa-lock fa-lg"></i>
 				</div>
 				<!-- input -->
@@ -39,7 +41,7 @@
 					<input class="btn btn-primary" value="Aceptar" type="submit" name="submit">
 				</div>
 				<footer class="container mt-4 text-center">
-					<a href="#">Olvidaste tu contraseña?</a>
+					<a href="{{ route('password.request') }}">Olvidaste tu contraseña?</a>
 				</footer>
 			</form>
 		</main>

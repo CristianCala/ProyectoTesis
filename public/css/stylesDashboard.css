@@ -64,11 +64,11 @@ body {
     z-index: 100;
 }
 
-.form-control{
+.form-search{
     box-shadow: none !important;
 }
 
-.form-control:focus{
+.form-search:focus{
     border: 2px solid var(--main-color) !important;
 }
 

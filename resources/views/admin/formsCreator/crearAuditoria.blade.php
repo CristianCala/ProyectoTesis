@@ -1,70 +1,74 @@
-<!-- Button trigger modal -->
-<button type="button" class="inline-block font-normal text-center px-3 py-2 leading-normal text-base rounded cursor-pointer text-white bg-blue-600" data-toggle="modal" data-target="#exampleModalTwo">
-Registrar equipo
-</button>
-
-<!-- Modal -->
-<div class="modal hidden fixed top-0 left-0 w-full h-full outline-none fade" id="exampleModalTwo" tabindex="-1" role="dialog">
-  <div class="modal-dialog relative w-auto pointer-events-none max-w-lg my-8 mx-auto px-4 sm:px-0" role="document">
-    <div class="relative flex flex-col w-full pointer-events-auto bg-white border border-gray-300 rounded-lg">
-      <div class="flex items-start justify-between p-4 border-b border-gray-300 rounded-t">
-        <h5 class="mb-0 text-lg leading-normal">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="relative flex p-4">
-<form action="{{url('/admin/auditoria')}}" method="post">
-    @csrf
-    <div class="mt-4 text-center">Registro de equipos</div>
-
-    <div class="mt-8 flex flex-col">
-    @error('au_maquina')
-    <br>
-    <small>{{$message}}</small>
-    <br>
-    @enderror
-      <label for="text" value="{{ __('au_maquina') }}">Maquina</label>
-         <input id="au_maquina" class="block mt-1 w-full" type="text" name="au_maquina" :value="old('au_maquina')"  autofocus>
-    </div>
-       @error('au_so')
-    <br>
-    <small>{{$message}}</small>
-    <br>
-    @enderror
-     <div class="mt-8 flex flex-col">
-      <label for="text" value="{{ __('au_so') }}">Sistema Operativo</label>
-       <input type="text"id="au_so" class="block mt-1 w-full" name="au_so" :value="old('au_so')"  autofocus>
-     </div>
-   @error('au_ip')
-    <br>
-    <small>{{$message}}</small>
-    <br>
-    @enderror
-                    <div class="mt-8 flex flex-col">
-                        <label for="email" value="{{ __('au_ip') }}">I.P.</label>
-                        <input id="au_ip" class="block mt-1 w-full" type="text" name="au_ip" :value="old('au_ip')"  autofocus>
-                    </div>
-   @error('au_navegador')
-    <br>
-    <small>{{$message}}</small>
-    <br>
-    @enderror
-                    <div class="mt-8 flex flex-col">
-                        <label for="email" value="{{ __('au_navegador') }}">Navegador</label>
-                        <input type="text"id="au_navegador" class="block mt-1 w-full" name="au_navegador" :value="old('au_navegador')"  autofocus>
-                    </div>
-   @error('au_fecha')
-    <br>
-    <small>{{$message}}</small>
-    <br>
-    @enderror
-                    <div class="mt-8 flex flex-col">
-                        <label for="email" value="{{ __('au_fecha') }}">Fecha</label>
-                        <input type="date"id="au_fecha" class="block mt-1 w-full" name="au_fecha" :value="old('au_fecha')"  autofocus>
-                    </div>
-        <button>Registrar</button>
-    </form>
-      </div>
-     
-    </div>
-  </div>
+<button class="btn btn-success btn-claro-success fw-bold" data-bs-toggle="modal" data-bs-target="#teamRegister">Registrar Equipo</button>
+<!-- Modal crear Auditoria-->
+<div class="modal fade" id="teamRegister" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content border-rad">
+			<div class="modal-header">
+				<h5 class="modal-title fw-bold" id="staticBackdropLabel">REGISTRO DE EQUIPO</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form action="{{url('/admin/auditoria')}}" method="post">
+				<div class="modal-body p-4 text-center" >
+					@csrf
+					<div class="container">
+						<div class="row row cols-2">
+							<div class="col-6 my-2">
+								@error('au_maquina')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+								<label for="text" value="{{ __('au_maquina') }}" class="fw-normal">Máquina</label>
+								<input id="au_maquina" class="form-control" type="text" name="au_maquina" :value="old('au_maquina')" placeholder="Máquina..."  autofocus required>
+							</div>
+							<div class="col-6 my-2">
+								@error('au_so')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+								<label class="fw-normal" for="text" value="{{ __('au_so') }}">Sistema Operativo</label>
+								<input type="text" id="au_so" class="form-control" name="au_so" :value="old('au_so')" placeholder="S.O."  autofocus required>
+							</div>
+							<div class="col-6 mt-2">
+								@error('au_ip')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+								<label class="fw-normal" for="email" value="{{ __('au_ip') }}">Dirección IP</label>
+								<input id="au_ip" class="form-control" type="number" name="au_ip" :value="old('au_ip')"  placeholder="IP..." autofocus required>
+							</div>
+							<div class="col-6 mt-2">
+								@error('au_navegador')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+								<label class="fw-normal" for="email" value="{{ __('au_navegador') }}">Navegador</label>
+								<input type="text" id="au_navegador" class="form-control" name="au_navegador" :value="old('au_navegador')" placeholder="Navegador..."  autofocus required>
+							</div>
+							<div class="col-12 mt-2 px-5">
+								@error('au_fecha')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+								<label class="fw-normal" for="email" value="{{ __('au_fecha') }}">Fecha</label>
+								<input type="date" id="au_fecha" class="form-control" name="au_fecha" :value="old('au_fecha')"  autofocus required>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row row-quit-bs mx-4 mb-4">
+					<div class="col-4">
+						<button type="button" class="btn btn-outline-success w-100 modal-button-rigth fw-bold" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+					</div>
+					<div class="col-8">
+						<button type="submit" class="btn btn-success  w-100 modal-button-left ms-2 fw-bold"><span class="fas fa-save alt mx-2"></span>Registrar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>

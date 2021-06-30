@@ -18,24 +18,17 @@ use App\Http\Controllers\listController;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
 Route::get('/', function(){
-    return view('dashboard2');
-});
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
-
-/*Route::get('/dashboard2', function () {
-    return view('dashboard2');
-})->name('dashboard2');*/
+});
 
 Route::get('/login', function(){
     return view('auth.login');
 })->name('login');
+
+Route::get('/register', function(){
+    return view('auth.register');
+})->name('register');
 //Rutas de los controladores
 
 //Ruta principal de los usuarios
