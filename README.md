@@ -10,7 +10,7 @@ Este proyecto fue creado en base a Laravel en su version 8.32.1 en conjunto con 
 - [Bootstrap(Para algunos detalles y el adminLTE)](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [NPM](https://www.npmjs.com/)
 - [Nodejs(Para traer el NPM)](https://nodejs.org/en/)
-- [Spatie(Para trabajar los roles)](https://spatie.be/docs/laravel-permission/v3/introduction)
+
 
 ## Sobre este proyecto
 
