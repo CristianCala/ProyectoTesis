@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\PrestamoEquipo;
 class PrestamoEquipoController extends Controller
 {
             //Constructor Auth
@@ -22,6 +22,12 @@ class PrestamoEquipoController extends Controller
     Tambien se pueden manejar consultas query como por ejemplo los Joins para relacionar tablas
     Por ejemplo "PrestamoEquipo::Join()", Tambien para generar variables que muestran los datos de una tabla
     */ 
+    return datatables()->eloquent(
+        PrestamoEquipo::with([
+            'users',
+            'equipos',
+        ])->orderBy('id', 'asc')
+    )->tojson();
     }
 
     public function store(Request $request)
@@ -30,15 +36,32 @@ class PrestamoEquipoController extends Controller
     /*Esta funcion nos permite hacer las form requests para almacenar datos o bien validarlos
     Se emplea la funcion validate paraque estos sean validados sin inconvenientes
     */ 
+    $prestamos = new PrestamoEquipo;
+    $prestamos->pres_salida = $request->pres_salida;
+    $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
+    $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
+    $prestamos->pres_estatus = $request->pres_estatus;
+    $prestamos->usuarios_us_id = $request->usuarios_us_id;
+    $prestamos->equipos_eq_id = $request->equipos_eq_id;
+    $prestamos->save();
     }
 
     public function update(Request $request, $id)
     {
-        # code...
+        $prestamos=PrestamoEquipo::find($id);
+        $prestamos->pres_salida = $request->pres_salida;
+        $prestamos->pres_fecha_salida = $request->pres_fecha_salida;
+        $prestamos->pres_fecha_entrada = $request->pres_fecha_entrada;
+        $prestamos->pres_estatus = $request->pres_estatus;
+        $prestamos->usuarios_us_id = $request->usuarios_us_id;
+        $prestamos->equipos_eq_id = $request->equipos_eq_id;
+          $prestamos->save();
     }
     
     public function destroy($id)
     {
-        # code...
+        $prestamos = PrestamoEquipo::find($id);
+        $prestamos->delete();
+        return $prestamos; 
     }
 }

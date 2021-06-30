@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Equipo;
-use App\Models\TipoEquipo;
-use App\Models\Departamento;
-use App\Models\Marca;
-use App\Models\Modelo;
 class EquipoController extends Controller
 {
             //Constructor Auth

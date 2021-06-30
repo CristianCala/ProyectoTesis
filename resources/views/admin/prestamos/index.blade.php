@@ -8,26 +8,23 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" >
-<script src="{{ asset('js/ajaxEquipo.js') }}"></script>
-    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 </head>
 <center>
-  <h1>Menu de equipos</h1>
-<p class="mb-2 mt-2">Equipos listados</p>
+  <h1>Menu de prestamos</h1>
+<p class="mb-2 mt-2">Prestamos listados</p>
 
 <div class="container mt-6">
-@include('admin.formsCreator.crearEquipo')
-<table class="table-fixed" id="equiposTable">
+{{-- @include('admin.formsCreator.crearEquipo')--}}
+<table class="table-fixed" id="prestamosTable">
   <thead class="border border-gray-400 bg-gray-200">
     <tr>
     <th>#</th>
-    <th>Serial</th>
-    <th>Tipo de equipo</th>
-    <th>N° Bien nacional</th>
-    <th>Estado</th>
-    <th>Marca</th>
-    <th>Modelo</th>
-      <th>Departamento</th>
+      <th>Codigo de salida</th>
+      <th>Fecha de prestamo salida</th>
+      <th>Fecha de prestamo entrada</th>
+      <th>Estado</th>
+      <th>Usuario</th>
+      <th>Equipo</th>
       <th>Acciones</th>
     </tr>
   </thead>
@@ -55,4 +52,6 @@
 </div>
 </div>
 </center>
+    <script src="{{ asset('js/ajaxPrestamos.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>  
 @endsection

@@ -57,10 +57,16 @@ Route::post('/equiposAdd', [EquipoController::class, 'store']);
 Route::put('/equiposUpdate/{id}', [EquipoController::class, 'update']);
 Route::delete('/equiposDelete/{id}', [EquipoController::class, 'destroy']);
 //Ruta principal de los prestamos
-Route::resource('admin/prestamos', PrestamoEquipoController::class);
+//Route::resource('admin/prestamos', PrestamoEquipoController::class);
 
 
 //Comunicacion con el protocolo AJAX de los prestamos
+Route::get('/prestamos', function ()
+{
+    return view('admin/prestamos/index');
+});
+
+Route::get('/list_prestamos', [EquipoController::class, 'index']); 
 Route::get('/prestamosLoad', [PrestamoEquipoController::class, 'loadAjax']);
 Route::post('/prestamosAdd', [PrestamoEquipoController::class, 'store']);
 Route::put('/prestamosUpdate/{id}', [PrestamoEquipoController::class, 'update']);

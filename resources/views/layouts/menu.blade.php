@@ -62,7 +62,7 @@
 						<a href="{{url('/equipos')}}" class="nav_link fw-bold">
 							<i class='fas fa-desktop'></i> <span class="nav_name">Registrar Equipo</span>
 						</a>
-						<a href="#" class="nav_link fw-bold">
+						<a href="{{url('/prestamos')}}" class="nav_link fw-bold">
 							<i class='fas fa-money-check-alt '></i> <span class="nav_name">Préstamos</span>
 						</a>
 						<a href="#" class="nav_link fw-bold">

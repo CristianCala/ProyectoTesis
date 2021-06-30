@@ -39,7 +39,9 @@
 					<input class="btn btn-primary" value="Aceptar" type="submit" name="submit">
 				</div>
 				<footer class="container mt-4 text-center">
-					<a href="#">Olvidaste tu contraseña?</a>
+				@if (Route::has('password.request'))
+					<a href="{{ route('password.request') }}">Olvidaste tu contraseña?</a>
+                @endif
 				</footer>
 			</form>
 		</main>

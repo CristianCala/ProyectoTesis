@@ -11,7 +11,7 @@
 <center>
   <h1 class="bg-gray-200">Configuracion de Usuarios</h1>
 <p class="mb-2 mt-2">Usuarios listados</p>
-
+@include('admin.formsCreator.crearUsuario')
 <div class="container mt-6">
 
 <table class="table-fixed" id="usersTable">
