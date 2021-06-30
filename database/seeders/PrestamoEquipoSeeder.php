@@ -13,6 +13,6 @@ class PrestamoEquipoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // \App\Models\PrestamoEquipo::factory(10)->create();
     }
 }

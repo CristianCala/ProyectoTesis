@@ -44,16 +44,17 @@ Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
 //Route::resource('admin/equipment', equiposController::class);
 
 //Comunicacion con el protocolo AJAX del equipo
-Route::get('/equipos', function ()
+Route::get('/equipos', [EquipoController::class, 'selectAnidado'],function ()
 {
     return view('admin/equipos/index');
 });
 
 Route::get('/list_equipos', [EquipoController::class, 'index']); 
-Route::get('/equiposLoad', [EquipoController::class, 'loadAjax']);
+//Route::get('/equiposLoad', [EquipoController::class, 'selectAnidado']);
 Route::post('/equiposAdd', [EquipoController::class, 'store']);
 Route::put('/equiposUpdate/{id}', [EquipoController::class, 'update']);
 Route::delete('/equiposDelete/{id}', [EquipoController::class, 'destroy']);
+
 //Ruta principal de los prestamos
 //Route::resource('admin/prestamos', PrestamoEquipoController::class);
 

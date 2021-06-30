@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Equipo;
+use App\Models\Departamento;
+use App\Models\TipoEquipo;
+use App\Models\Marca;
+use App\Models\Modelo;
 class EquipoController extends Controller
 {
             //Constructor Auth
@@ -73,5 +77,19 @@ class EquipoController extends Controller
             $equipment = Equipo::find($id);
             $equipment->delete();
             return $equipment; 
+         }
+
+         public function selectAnidado()
+         {
+            $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
+            $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');    
+            $marca=Marca::all()->pluck('mar_nombre', 'marca_id');
+            $modelos=Modelo::all()->pluck('mdl_nombre', 'modelo_id');
+            return view('admin.equipos.index', compact('marca','tipoEquipo','modelos', 'departamentos'));
+            /*$datos['departamentos'] = Departamento::get();
+            $datos['tipoEquipo'] = TipoEquipo::get();    
+            $datos['marca'] = Marca::get();
+            $datos['modelos'] = Modelo::get();
+            return view('admin.equipos.index', $datos);*/
          }
 }
