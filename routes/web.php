@@ -29,11 +29,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //Rutas de los controladores
 
 //Ruta principal de los usuarios
- Route::resource('admin/usuarios', userController::class);
-/*Route::get('/usuarios', function ()
-{
-    return view('admin/users/index');
-});*/
+// Route::resource('admin/usuarios', userController::class);
+Route::get('admin/usuarios', [userController::class, 'index']); 
+
 //Comunicacion con el protocolo AJAX de los usuarios
 
 //Route::get('/list_usuarios', [userController::class, 'index']); 
