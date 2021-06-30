@@ -68,16 +68,16 @@
 						<a href="#" class="nav_link fw-bold">
 							<i class='fas fa-user-tie'></i> <span class="nav_name">Auditoría</span>
 						</a>
-						<a href="#" class="nav_link fw-bold">
+						<a href="{{url('admin/departamentos')}}"  class="nav_link fw-bold">
 							<i class='fas fa-hotel'></i> <span class="nav_name">Departamentos</span>
 						</a>
 					</div>
 				</div>
 				<div>
-					<a href="#" class="nav_link fw-bold">
+					<a href="{{url('config')}}" class="nav_link fw-bold">
 						<i class=' fas fa-cog' ></i> <span class="nav_name">Configuración</span>
 					</a>
-					<a href="#" class="nav_link fw-bold">
+					<a href="{{url('config/ayuda')}}"  class="nav_link fw-bold">
 						<i class='fas fa-question-circle'></i> <span class="nav_name">Ayuda</span>
 					</a>
 				</div>

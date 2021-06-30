@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\EquipoController;
-
 use App\Http\Controllers\PrestamoEquipoController;
 use App\Http\Controllers\DepartamentoController;
-
+use App\Http\Controllers\configController;
+use App\Http\Controllers\ayudaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,7 +66,7 @@ Route::get('/prestamos', function ()
     return view('admin/prestamos/index');
 });
 
-Route::get('/list_prestamos', [EquipoController::class, 'index']); 
+Route::get('/list_prestamos', [PrestamoEquipoController::class, 'index']); 
 Route::get('/prestamosLoad', [PrestamoEquipoController::class, 'loadAjax']);
 Route::post('/prestamosAdd', [PrestamoEquipoController::class, 'store']);
 Route::put('/prestamosUpdate/{id}', [PrestamoEquipoController::class, 'update']);
@@ -76,3 +76,6 @@ Route::delete('/prestamosDelete/{id}', [PrestamoEquipoController::class, 'destro
 Route::resource('admin/auditoria', auditoriaController::class);*/
 Route::resource('admin/departamentos', DepartamentoController::class);
 Route::put('/departamentosUpdate/{id}', [DepartamentoController::class, 'update']);
+
+Route::resource('config', configController::class);
+Route::resource('config/ayuda', ayudaController::class);
