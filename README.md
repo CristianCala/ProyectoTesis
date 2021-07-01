@@ -10,10 +10,6 @@ Este proyecto fue creado en base a Laravel en su version 8.32.1 en conjunto con 
 - [Bootstrap(Para algunos detalles y el adminLTE)](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [NPM](https://www.npmjs.com/)
 - [Nodejs(Para traer el NPM)](https://nodejs.org/en/)
-<<<<<<< HEAD
-=======
-- [Datatable](https://datatables.net/)
->>>>>>> 60b2b030cab6099f2ba29610cf6a3c9676581f14
 
 
 ## Sobre este proyecto
