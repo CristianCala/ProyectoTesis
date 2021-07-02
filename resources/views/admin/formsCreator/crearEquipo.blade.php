@@ -13,22 +13,36 @@
 					<div class="container">
 						<div class="row row cols-2">
 							<div class="col-6 my-2">
-								@error('eq_modelo')
+								@error('modelos_mdl_id')
 								<br>
 								<small>{{$message}}</small>
 								<br>
 								@enderror
-								<label class="fw-normal" for="text" value="{{ __('eq_modelo') }}">Modelo</label>
-								<input id="eq_modelo" class="form-control" type="text" name="eq_modelo" :value="old('eq_modelo')" autofocus required>
+								<label class="fw-normal" for="text" value="{{ __('modelos_mdl_id') }}">Modelo</label>
+								<select class="form-select" name="modelos_mdl_id"  id="modelos_mdl_id">
+									<option value="">Seleccione Modelo
+									</option>
+									@foreach($modelos as $key => $value)
+									<option value="{{$key}}">{{$value}}
+									</option>
+									@endforeach
+								</select>
 							</div>
 							<div class="col-6 my-2">
-								@error('eq_marca')
+								@error('marcas_mar_id')
 								<br>
 								<small>{{$message}}</small>
 								<br>
 								@enderror
-								<label class="fw-normal" for="text" value="{{ __('eq_marca') }}">Marca</label>
-								<input type="text" id="eq_marca" class="form-control" name="eq_marca" :value="old('eq_marca')" autofocus required>
+								<label class="fw-normal" for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
+								<select class="form-select" name="marcas_mar_id"  id="marcas_mar_id">
+									<option value="">Seleccione Equipo
+									</option>
+									@foreach($marca as $key => $value)
+									<option value="{{$key}}">{{$value}}
+									</option>
+									@endforeach
+								</select>
 							</div>
 							<div class="col-6 mt-2">
 								<label class="fw-normal" for="text" value="{{ __('eq_tequid') }}">Tipo de Equipo</label>
@@ -40,6 +54,15 @@
 									</option>
 									@endforeach
 								</select>
+							</div>
+							<div class="col-6 mt-2">
+								@error('eq_serial')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+								<label class="fw-normal" for="email" value="{{ __('eq_serial') }}">Numero</label>
+								<input type="text"id="eq_serial" class="form-control" name="eq_serial" :value="old('eq_serial')"  autofocus required>
 							</div>
 							<div class="col-6 mt-2">
 								@error('eq_nbiennacional')

@@ -14,8 +14,8 @@ $(document).ready( function () {
 					{data:"eq_nbiennacional"},
 					{data:"eq_estatus"},
 					{data:"modelos.mdl_nombre"},
-			  {data:"marcas_mar_id"},
-			  {data:"departamentos_dep_id"},
+			  {data:"marcas.mar_nombre"},
+			  {data:"departamentos.dep_nombre"},
 			  ]
 		  }
 	);

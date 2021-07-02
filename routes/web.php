@@ -7,6 +7,8 @@ use App\Http\Controllers\PrestamoEquipoController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\configController;
 use App\Http\Controllers\ayudaController;
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +29,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //Rutas de los controladores
-
+//Route::get('/dashboard', [LoginController::class, 'login']); 
 //Ruta principal de los usuarios
 // Route::resource('admin/usuarios', userController::class);
 Route::get('admin/usuarios', [userController::class, 'index']); 
