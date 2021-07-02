@@ -14,7 +14,7 @@
 <p class="mb-2 mt-2">Prestamos listados</p>
 
 <div class="container mt-6">
-{{-- @include('admin.formsCreator.crearEquipo')--}}
+@include('admin.formsCreator.crearPrestamo')
 <table class="table-fixed" id="prestamosTable">
   <thead class="border border-gray-400 bg-gray-200">
     <tr>

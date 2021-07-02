@@ -60,7 +60,7 @@ Route::delete('/equiposDelete/{id}', [EquipoController::class, 'destroy']);
 
 
 //Comunicacion con el protocolo AJAX de los prestamos
-Route::get('/prestamos', function ()
+Route::get('/prestamos',  [PrestamoEquipoController::class, 'selector'], function ()
 {
     return view('admin/prestamos/index');
 });

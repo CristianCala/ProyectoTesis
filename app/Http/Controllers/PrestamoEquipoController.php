@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\PrestamoEquipo;
+use App\Models\Equipo;
 class PrestamoEquipoController extends Controller
 {
             //Constructor Auth
@@ -63,5 +65,16 @@ class PrestamoEquipoController extends Controller
         $prestamos = PrestamoEquipo::find($id);
         $prestamos->delete();
         return $prestamos; 
+    }
+    public function selector()
+    {
+        $users=User::all();
+        $id=Equipo::all()->pluck('id');
+       return view('admin.prestamos.index', compact('users','id'));
+       /*$datos['departamentos'] = Departamento::get();
+       $datos['tipoEquipo'] = TipoEquipo::get();    
+       $datos['marca'] = Marca::get();
+       $datos['modelos'] = Modelo::get();
+       return view('admin.equipos.index', $datos);*/
     }
 }
