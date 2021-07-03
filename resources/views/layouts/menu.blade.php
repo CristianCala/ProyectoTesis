@@ -50,10 +50,11 @@
 			<nav class="nav">
 				<div>
 					<div class="ms-2 mt-3 text-center invisibilidad" id="img-mayor">
-						<img src="img/IconoVive.svg" width="90" height="90" alt="Logo">
+						<img src="{{ asset('/img/IconoVive.svg') }}"width="90" height="90" alt="Logo">
 					</div>
 					<div class="mb-3 mt-1 ms-2" id="img-menor">
-						<img src="img/IconoViveR.svg" width="45" height="45" class="logo-image" alt="Logo">
+					
+						<img src="{{ asset('/img/IconoViveR.svg') }}" width="45" height="45" class="logo-image" alt="Logo">
 					</div>
 					<div class="nav_list mt-5">
 						<a href="{{url('admin/usuarios')}}" class="nav_link fw-bold">

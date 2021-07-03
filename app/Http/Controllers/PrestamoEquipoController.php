@@ -27,7 +27,7 @@ class PrestamoEquipoController extends Controller
     return datatables()->eloquent(
         PrestamoEquipo::with([
             //'users',
-            //'equipos',
+            //¿'equipos',
         ])->orderBy('id', 'asc')
     )->tojson();
     }

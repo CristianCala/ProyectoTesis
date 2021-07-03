@@ -13,9 +13,10 @@ $(document).ready( function () {
 					{data:"eq_tequid"},
 					{data:"eq_nbiennacional"},
 					{data:"eq_estatus"},
+					{data:"marcas.mar_nombre"},
 					{data:"modelos.mdl_nombre"},
-			  {data:"marcas.mar_nombre"},
 			  {data:"departamentos.dep_nombre"},
+			  
 			  ]
 		  }
 	);
