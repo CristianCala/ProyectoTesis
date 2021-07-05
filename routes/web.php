@@ -43,7 +43,7 @@ Route::delete('/usersDelete/{id}', [userController::class, 'destroy']);
 
 
 //Ruta principal de los equipos
-//Route::resource('admin/equipment', equiposController::class);
+Route::resource('admin/equipos', equiposController::class);
 
 //Comunicacion con el protocolo AJAX del equipo
 Route::get('/equipos', [EquipoController::class, 'selectAnidado'],function ()

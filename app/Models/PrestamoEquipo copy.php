@@ -14,11 +14,11 @@ class PrestamoEquipo extends Model
     ];
      public function users()
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->hasMany(User::class, 'usuarios_us_id');
     }
     public function equipos()
     {
-        return $this->hasMany(Equipo::class, 'id');
+        return $this->hasMany(Equipo::class, 'equipos_eq_id');
     }
         public function orden_salida()
     {

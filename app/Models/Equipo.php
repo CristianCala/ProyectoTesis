@@ -20,7 +20,7 @@ class Equipo extends Model
      ];
      public function tipo_equipos()
      {
-         return $this->belongsToMany(TipoEquipo::class,'eq_tequid', 'teq_id');
+         return $this->belongsTo(TipoEquipo::class,'eq_tequid', 'teq_id');
      }
  
      public function departamentos()
@@ -35,5 +35,9 @@ class Equipo extends Model
      public function marcas()
      {
          return $this->belongsTo(Marca::class, 'marcas_mar_id', 'marca_id');
+     }
+     public function pretamo_equipos()
+     {
+         return $this->hasMany(PrestamoEquipo::class, 'equipos_eq_id');
      }
 }

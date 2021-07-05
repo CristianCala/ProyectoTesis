@@ -28,7 +28,7 @@ class EquipoController extends Controller
          */ 
          return datatables()->eloquent(
             Equipo::with([
-                //'tipo_equipos',
+                'tipo_equipos',
                 'departamentos',
                 'modelos',
                 'marcas',

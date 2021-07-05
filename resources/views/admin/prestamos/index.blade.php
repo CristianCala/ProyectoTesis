@@ -22,9 +22,9 @@
       <th>Codigo de salida</th>
       <th>Fecha de prestamo salida</th>
       <th>Fecha de prestamo entrada</th>
-      <th>Estado</th>
       <th>Usuario</th>
       <th>Equipo</th>
+      <th>Estado</th>
       <th>Acciones</th>
     </tr>
   </thead>

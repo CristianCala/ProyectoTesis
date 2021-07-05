@@ -11,7 +11,6 @@ $(document).ready( function () {
 			  {data:"email"},
 			  {data:"usuario"},
 			  {data:"estatus"},
-			  {data:"acciones"},
 		]
     });
 } );

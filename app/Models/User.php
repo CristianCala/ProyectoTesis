@@ -82,5 +82,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Auditoria::class, 'au_us_id');
     }
-
+    public function prestamo_equipos()
+    {
+        return $this->hasMany(PrestamoEquipo::class, 'usuarios_us_id');
+    }
 }
