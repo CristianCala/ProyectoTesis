@@ -83,7 +83,7 @@ class EquipoController extends Controller
          {
             $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
             $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');    
-            $marca=Marca::all()->pluck('mar_nombre', 'marca_id');
+            $marca=Marca::pluck('mar_nombre', 'marca_id');
             $modelos=Modelo::all()->pluck('mdl_nombre', 'modelo_id');
             return view('admin.equipos.index', compact('marca','tipoEquipo','modelos', 'departamentos'));
             /*$datos['departamentos'] = Departamento::get();
@@ -92,4 +92,12 @@ class EquipoController extends Controller
             $datos['modelos'] = Modelo::get();
             return view('admin.equipos.index', $datos);*/
          }
+         public function getMarcas(Request $request, $id)
+         {
+             if ($request->ajax()) {
+                $models=Marca::modelos($id);
+                 return response()->json($models);
+             }
+         }
 }
+
