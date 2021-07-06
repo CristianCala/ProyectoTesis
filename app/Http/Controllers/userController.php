@@ -23,9 +23,9 @@ class userController extends Controller
          Tambien se pueden manejar consultas query como por ejemplo los Joins para relacionar tablas
          Por ejemplo "PrestamoEquipo::Join()", Tambien para generar variables que muestran los datos de una tabla
          */ 
-        $users=User::all();
-        $users = User::paginate(10);
-        return view('admin.usuarios.index', compact('users'));
+            $users=User::all();
+            $users = User::paginate(10);
+            return view('admin.usuarios.index', compact('users'));
          }
      
          public function store(Request $request)
