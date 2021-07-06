@@ -3,7 +3,7 @@ window.onload = function() {
 	var loader = document.getElementById('loading');
 
 	loader.style.visibility = 'hidden';
-	loader.style.opacity = '0'
+	loader.style.opacity = '0';
 }
 
 // Carga el dom cuando termina la carga de página

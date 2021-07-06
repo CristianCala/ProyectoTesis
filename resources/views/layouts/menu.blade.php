@@ -12,18 +12,17 @@
 		<!-- Google font -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
 	</head>
-	<div class="d-flex align-items-center vh-100" id="loading">
-		<div class="container text-center">
-			<img class="rotate" src="img/IconoVive.svg" alt="LogoLoader" width="100" height="100">
-			<div class="mt-3">
-				<div class="line-charger mx-auto">
-					<div class="indeterminate"></div>
+	<body id="body-pd">
+		<div id="loading">
+			<div class="text-center interior">
+				<img class="rotate" src="img/IconoVive.svg" alt="LogoLoader" width="100" height="100">
+				<div class="mt-3">
+					<div class="line-charger mx-auto">
+						<div class="indeterminate"></div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<body id="body-pd">
 		<header class="header shadow-lg" id="header">
 			<!-- boton menu -->
 			<div class="header_toggle"><i class='bx bx-menu fas fa-arrow-right' id="header-toggle"></i> </div>

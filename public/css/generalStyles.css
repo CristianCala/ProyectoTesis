@@ -122,11 +122,26 @@ a {
     border-radius: .2rem 1rem 1rem .2rem  !important;
 }
 
-
 /*Para el loader*/
-.loading {
-        z-index: 999;
-        background: #eee;
+#loading {
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #eee;
+    position: fixed;
+}
+.interior{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .rotate{
@@ -144,7 +159,7 @@ a {
 
 .line-charger{
     overflow: hidden;
-    width: 15%;
+    width: 100%;
     height: 5px;
     background-color: #B3E5FC;
 }
@@ -159,7 +174,7 @@ a {
     content: '';
     position: absolute;
     height: 100%;
-    width: 15%;
+    width: 10%;
     background-color: var(--secondary-blue);
     animation: indeterminate_first 1s infinite ease-out;
 }
@@ -169,7 +184,7 @@ a {
         left: 0%;
     }
     50%{
-        left: 85%;
+        left: 90%;
     }
     100% {
         left: 0%;
