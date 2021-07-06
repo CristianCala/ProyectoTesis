@@ -121,3 +121,57 @@ a {
 .modal-button-left{
     border-radius: .2rem 1rem 1rem .2rem  !important;
 }
+
+
+/*Para el loader*/
+.loading {
+        z-index: 999;
+        background: #eee;
+}
+
+.rotate{
+    animation-name: rotate;
+    animation-timing-function: all;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate{
+    0% { transform: rotate(-25deg); }
+    50% { transform: rotate(25deg); }
+    100% { transform: rotate(-25deg); }
+}
+
+.line-charger{
+    overflow: hidden;
+    width: 15%;
+    height: 5px;
+    background-color: #B3E5FC;
+}
+
+.indeterminate {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.indeterminate:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    background-color: var(--secondary-blue);
+    animation: indeterminate_first 1s infinite ease-out;
+}
+
+@keyframes indeterminate_first {
+    0% {
+        left: 0%;
+    }
+    50%{
+        left: 85%;
+    }
+    100% {
+        left: 0%;
+     }
+}
