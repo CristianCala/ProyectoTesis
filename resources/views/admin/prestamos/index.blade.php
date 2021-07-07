@@ -20,8 +20,8 @@
     <tr>
     <th>#</th>
       <th>Codigo de salida</th>
-      <th>Fecha de prestamo salida</th>
-      <th>Fecha de prestamo entrada</th>
+      <th>Fecha de prestamo</th>
+      <th>Fecha de devolucion</th>
       <th>Usuario</th>
       <th>Equipo</th>
       <th>Estado</th>

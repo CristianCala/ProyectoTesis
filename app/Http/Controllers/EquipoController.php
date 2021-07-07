@@ -55,7 +55,12 @@ class EquipoController extends Controller
        $equipment->eq_tequid = $request->eq_tequid;
        $equipment->eq_nbiennacional = $request->eq_nbiennacional;
        $equipment->departamentos_dep_id = $request->departamentos_dep_id;
+       if($request->estatus=1){
         $equipment->eq_estatus = $request->eq_estatus;
+       }else{
+        $equipment->eq_estatus = $request->eq_estatus = false;
+       }
+       
          $equipment->save();
          }
      

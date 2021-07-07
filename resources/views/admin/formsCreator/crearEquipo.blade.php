@@ -12,6 +12,22 @@
 					@csrf
 					<div class="container">
 						<div class="row row cols-2">
+						<div class="col-6 my-2">
+								@error('marcas_mar_id')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+								<label class="fw-normal" for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
+								<select class="form-select" name="marcas_mar_id"  id="marcas_mar_id">
+									<option value="">Seleccione Equipo
+									</option>
+									@foreach($marca as $key => $value)
+									<option value="{{$key}}">{{$value}}
+									</option>
+									@endforeach
+								</select>
+							</div>
 							<div class="col-6 my-2">
 								@error('modelos_mdl_id')
 								<br>
@@ -23,22 +39,6 @@
 									<option value="">Seleccione Modelo
 									</option>
 									@foreach($modelos as $key => $value)
-									<option value="{{$key}}">{{$value}}
-									</option>
-									@endforeach
-								</select>
-							</div>
-							<div class="col-6 my-2">
-								@error('marcas_mar_id')
-								<br>
-								<small>{{$message}}</small>
-								<br>
-								@enderror
-								<label class="fw-normal" for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
-								<select class="form-select" name="marcas_mar_id"  id="marcas_mar_id">
-									<option value="">Seleccione Equipo
-									</option>
-									@foreach($marca as $key => $value)
 									<option value="{{$key}}">{{$value}}
 									</option>
 									@endforeach
