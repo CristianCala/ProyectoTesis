@@ -6,8 +6,7 @@
 Este proyecto fue creado en base a Laravel en su version 8.32.1 en conjunto con varios componentes como:
 - [Laravel Jetsream](https://jetstream.laravel.com/2.x/installation.html)
 - [Laravel Livewire](https://laravel-livewire.com/docs/2.x/quickstart)
-- [Tailwind CSS](https://tailwindcss.com/docs/installation)
-- [Bootstrap(Para algunos detalles y el adminLTE)](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [NPM](https://www.npmjs.com/)
 - [Nodejs(Para traer el NPM)](https://nodejs.org/en/)
 

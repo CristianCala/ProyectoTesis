@@ -17,6 +17,7 @@ class CreateMarcasTable extends Migration
             $table->id('marca_id');
             $table->string('mar_nombre');
             $table->string('mar_descripcion');
+            //$table->foreignId('mdl_id');
             $table->timestamps();
         });
     }

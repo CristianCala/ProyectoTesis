@@ -118,7 +118,13 @@ $(document).ready(function() {
  
 	});
 });
+/*dropdowns
 
-//Mostrar equipos
-
-
+$("#modelos_mdl_id").change(event => {
+	$.get(`marcas/${event.target.value}`, function(res, sta){
+		$("#marcas_mar_id").empty();
+		res.forEach(element => {
+			$("#marcas_mar_id").append(`<option value=${element.marca_}> ${element.mar_nombre} </option>`);
+		});
+	});
+});*/
