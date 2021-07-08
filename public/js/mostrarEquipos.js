@@ -22,13 +22,28 @@ $(document).ready( function () {
 	);
 		
 } );
-
+/*
 $("#marcas_mar_id").change(function(){
 	$.ajax({
 		url: "{{ route('admin.equipos.list_modelos') }}?modelos=" + $(this).val(),
 		method: 'GET',
 		success: function(data) {
 			$('#modelos_mdl_id').html(data.html);
+		}
+	});
+});*/
+
+$(document).ready(function () {
+	$('#marcas_mar_id').on('change', function () {
+		var marca_id = $(this).val();
+		if ($.trim(marca_id) != '') {
+			$.get('list_modelos', {marca_mar_id: marca_id}, function(modelos) {
+				$('#modelos_mdl_id').empty();
+				$('#modelos_mdl_id').append("<option value=''>Selecciona un modelo</option>");
+				$.each(modelos, function (index, value) {
+				$('#modelos_mdl_id').append("<option value='"+index+"'>"+value+"</option>");
+				})
+			});
 		}
 	});
 });

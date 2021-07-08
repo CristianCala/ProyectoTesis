@@ -104,19 +104,13 @@ class EquipoController extends Controller
          }
          public function getModelo(Request $request)
          {
-     
-
-            if (!$request->country_id) {
-                $html = '<option value="">'.trans('global.pleaseSelect').'</option>';
-            } else {
-                $html = '';
-                $modelos = Modelo::where('marca_mar_id', $request->marca_mar_id)->get();
-                foreach ($modelos as $modelo) {
-                    $html .= '<option value="'.$modelo->id.'">'.$modelo->mdl_nombre.'</option>';
+            if ($request->ajax()) {
+                $modelos=Modelo::where('marca_mar_id', $request->marca_mar_id)->get();
+                foreach ($modelos as $model) {
+                    $modelArray=[$model->id] = $model->mdl_nombre;
                 }
+                return response()->json($modelArray);
             }
-        
-            return response()->json(['html' => $html]);
          }
 
 }
