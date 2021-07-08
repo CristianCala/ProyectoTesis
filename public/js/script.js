@@ -1,3 +1,16 @@
+// Para el loader
+window.onload = function() {
+
+    setTimeout(function(){
+    
+		var loader = document.getElementById('loading');
+
+		loader.style.visibility = 'hidden';
+		loader.style.opacity = '0';
+
+    },1000);
+}
+
 // Carga el dom cuando termina la carga de página
 document.addEventListener("DOMContentLoaded", function(event) {
 

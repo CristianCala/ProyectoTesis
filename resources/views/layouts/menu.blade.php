@@ -13,6 +13,16 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
 	</head>
 	<body id="body-pd">
+		<div id="loading">
+			<div class="text-center interior">
+				<img class="rotate" src="{{asset('img/IconoVive.svg')}}" alt="LogoLoader" width="100" height="100">
+				<div class="mt-3">
+					<div class="line-charger mx-auto">
+						<div class="indeterminate"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<header class="header shadow-lg" id="header">
 			<!-- boton menu -->
 			<div class="header_toggle"><i class='bx bx-menu fas fa-arrow-right' id="header-toggle"></i> </div>
@@ -35,15 +45,15 @@
 						<i class="fas fa-user fa-sm fa-fw ms-2 text-primary"></i>
 						Perfil
 					</a>
-                    <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-					<a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-						<i class="fas fa-sign-out-alt fa-sm fa-fw ms-2 text-primary"></i>
-						Cerrar Sesión
-					</a>
-                    </form>
+					<form method="POST" action="{{ route('logout') }}">
+						@csrf
+						<a class="dropdown-item" href="{{ route('logout') }}"
+							onclick="event.preventDefault();
+							this.closest('form').submit();">
+							<i class="fas fa-sign-out-alt fa-sm fa-fw ms-2 text-primary"></i>
+							Cerrar Sesión
+						</a>
+					</form>
 				</ul>
 			</div>
 		</header>
@@ -55,7 +65,7 @@
 						<img src="{{ asset('/img/IconoVive.svg') }}"width="90" height="90" alt="Logo">
 					</div>
 					<div class="mb-3 mt-1 ms-2" id="img-menor">
-					
+						
 						<img src="{{ asset('/img/IconoViveR.svg') }}" width="45" height="45" class="logo-image" alt="Logo">
 					</div>
 					<div class="nav_list mt-5">
@@ -90,7 +100,6 @@
 			@yield('content')
 		</main>
 		<script src="{{ asset('js/script.js') }}" defer></script>
-
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 	</body>
 </html>
