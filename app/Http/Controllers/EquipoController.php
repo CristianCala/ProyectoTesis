@@ -94,7 +94,7 @@ class EquipoController extends Controller
             $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
             $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');    
             $marca=Marca::all();
-            $modelos = Modelo::all()->pluck('id', 'mdl_nombre');
+            $modelos = Modelo::all();
             return view('admin.equipos.index', compact('marca','tipoEquipo','modelos', 'departamentos'));
             /*$datos['departamentos'] = Departamento::get();
             $datos['tipoEquipo'] = TipoEquipo::get();    
