@@ -22,3 +22,13 @@ $(document).ready( function () {
 	);
 		
 } );
+
+$("#marcas_mar_id").change(function(){
+	$.ajax({
+		url: "{{ route('admin.equipos.list_modelos') }}?modelos=" + $(this).val(),
+		method: 'GET',
+		success: function(data) {
+			$('#modelos_mdl_id').html(data.html);
+		}
+	});
+});

@@ -37,6 +37,8 @@ class EquipoController extends Controller
             ])->orderBy('id', 'asc')
         )->tojson();
          }
+
+         
      
          public function store(Request $request)
          {
@@ -92,7 +94,7 @@ class EquipoController extends Controller
             $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
             $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');    
             $marca=Marca::all();
-            $modelos=Modelo::pluck('id', 'mdl_nombre');
+            $modelos = Modelo::all()->pluck('id', 'mdl_nombre');
             return view('admin.equipos.index', compact('marca','tipoEquipo','modelos', 'departamentos'));
             /*$datos['departamentos'] = Departamento::get();
             $datos['tipoEquipo'] = TipoEquipo::get();    
@@ -102,13 +104,19 @@ class EquipoController extends Controller
          }
          public function getModelo(Request $request)
          {
-             if ($request->ajax()) {
-                $modelos=Modelo::where('marca_mar_id', $request->marca_mar_id)->get();
-                foreach ($modelos as $modelo ) {
-                    $modeloArray[$modelo->id] = $modelo->mdl_nombre;
+     
+
+            if (!$request->country_id) {
+                $html = '<option value="">'.trans('global.pleaseSelect').'</option>';
+            } else {
+                $html = '';
+                $modelos = Modelo::where('marca_mar_id', $request->marca_mar_id)->get();
+                foreach ($modelos as $modelo) {
+                    $html .= '<option value="'.$modelo->id.'">'.$modelo->mdl_nombre.'</option>';
                 }
-                return response()->json($modeloArray);
-             }
+            }
+        
+            return response()->json(['html' => $html]);
          }
 
 }

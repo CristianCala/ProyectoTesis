@@ -53,7 +53,7 @@ Route::get('/equipos', [EquipoController::class, 'selectAnidado'],function ()
     return view('admin/equipos/index');
 });
 
-Route::get('/modelo', [EquipoController::class, 'getModelo']);
+Route::get('/list_modelos', [EquipoController::class, 'getModelo']);
 
 Route::get('/list_equipos', [EquipoController::class, 'index']); 
 //Route::get('/equiposLoad', [EquipoController::class, 'selectAnidado']);

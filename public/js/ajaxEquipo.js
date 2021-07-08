@@ -119,17 +119,3 @@ $(document).ready(function() {
 	});
 });
 
-$(document).ready(function(){
-	$('#marcas_mar_id').on('change', function(){
-		var marca_id = $(this).val();
-		if($.trim(marca_id) != ''){
-			$get('modelo', {marca_mar_id: marca_id}, function(modelo){
-				$('modelos_mdl_id').empty();
-				$('modelos_mdl_id').append("<option value=''>Seleccione Modelo</option>");
-				$.each(modelo, function(index, value){
-				$('modelos_mdl_id').append("<option value='"+ index +"'>"+ value +"</option>");	
-				})
-			});
-		}
-	});
-});
