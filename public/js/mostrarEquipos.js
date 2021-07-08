@@ -1,10 +1,12 @@
 
 //Mostrar equipos
-
-
 $(document).ready( function () {
+
    tablaEquipos = $("#equiposTable").DataTable(
-		{
+			{
+        "language": {
+          "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+        },
 			"serverSide":true,
 				"ajax": '/list_equipos',
 				"columns":[
@@ -19,9 +21,11 @@ $(document).ready( function () {
 				{defaultContent: "<button class='btn btn-success btn-claro-success fw-bold' data-bs-toggle='modal' data-bs-target='#editEquipo'>Editar</button>"}
 			  ]	
 		  }
+
 	);
 		
 } );
+
 /*
 $("#marcas_mar_id").change(function(){
 	$.ajax({

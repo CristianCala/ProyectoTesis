@@ -1,4 +1,5 @@
-<button class="btn btn-success btn-claro-success fw-bold" data-bs-toggle="modal" data-bs-target="#equipoRegister">Registrar Equipo</button>
+<button class="btn btn-success btn-claro-success fw-bold container-fluid btn-without-border" data-bs-toggle="modal" data-bs-target="#equipoRegister" id="registroButtonPrimary"></i>Registrar</button>
+<button class="btn btn-success btn-claro-success invisible float-right" data-bs-toggle="modal" data-bs-target="#equipoRegister" id="registroButton"><i class="fas fa-plus"></i></button>
 <!-- Modal crear Equipo-->
 <div class="modal fade" id="equipoRegister" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
@@ -16,7 +17,7 @@
 							<div class="col-6 my-2">
 								<label class="fw-normal" for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
 								<select name="marcas" id="marcas_mar_id" class="form-select">
-									<option value="">Inrgese un modelo</option>
+									<option value="">Ingrese modelo</option>
 									@foreach($marca as $marcas)
 									<option value="{{$marcas->id}}">{{$marcas->mar_nombre}}
 									</option>

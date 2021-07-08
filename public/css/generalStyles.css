@@ -81,8 +81,20 @@ a {
     border: 2px solid var(--bs-green) !important;
 }
 
+.modal-button-rigth{
+    border-radius: 1rem .2rem .2rem 1rem !important;
+}
+
+.modal-button-left{
+    border-radius: .2rem 1rem 1rem .2rem  !important;
+}
+
 .btn-without-border{
     border-radius: 3px !important;
+}
+
+.invisible{
+    display: hide;
 }
 
 .h-divisor {
@@ -114,13 +126,6 @@ a {
     --bs-gutter-x: none !important;
 }
 
-.modal-button-rigth{
-    border-radius: 1rem .2rem .2rem 1rem !important;
-}
-
-.modal-button-left{
-    border-radius: .2rem 1rem 1rem .2rem  !important;
-}
 /*arreglos del modal en el centro*/
 
 .modal{

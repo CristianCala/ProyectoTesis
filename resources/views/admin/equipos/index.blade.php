@@ -7,20 +7,33 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" >
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js">/<script>
   <script src="{{ asset('js/ajaxEquipo.js') }}"></script>
   <script src="{{ asset('js/mostrarEquipos.js') }}"></script>
-  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js">/<script>
   <script src="{{ asset('js/script.js') }}" defer></script>
+  {{--   <script>
+  </script> --}}
+  {{-- Bootstrap 5 --}}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   
 </head>
 <div class="m-4">
-  <hgroup class="text-center mb-3">
-  <h1 class="fw-bold">EQUIPOS</h1>
-  <h2 class="fw-normal h5">Equipos listados</h2>
-  </hgroup>
+  <div class="row">
+    <div class="col-2">
+      <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro container-fluid btn-without-border fw-bold" id="volverButtonPrimary">Volver</a>
+      <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro invisible" id="volverButton"><i class="fas fa-backward"></i></a>
+    </div>
+    <div class="col-8">
+      <hgroup class="text-center mb-3">
+      <h1 class="fw-bold">EQUIPOS</h1>
+      <h2 class="fw-normal h5">Lista de Equipos</h2>
+      </hgroup>
+    </div>
+    <div class="col-2">
+        @include('admin.formsCreator.crearEquipo')
+    </div>
+  </div>
   <div class="text-center table-responsive">
-    @include('admin.formsCreator.crearEquipo')
     <table class="table table-striped table-hover" id="equiposTable">
       <thead>
         <tr class="bg-dark text-white">
@@ -53,15 +66,6 @@
         @endif
       </tbody>
     </table>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4">
-        <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro container-fluid fw-bold">Volver</a>
-      </div>
-      <div class="col-4"></div>
-    </div>
   </div>
 </div>
 @endsection
