@@ -12,24 +12,24 @@
 					@csrf
 					<div class="container">
 						<div class="row row cols-2">
- 
-    <div class="col-6 my-2">
-        <label class="fw-normal" for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
-        <select name="marcas" id="marcas_mar_id" class="form-select">
-        <option value="">Inrgese un modelo</option>
-        @foreach($marca as $marcas)
-        <option value="{{$marcas->id}}">{{$marcas->mar_nombre}}
+							
+							<div class="col-6 my-2">
+								<label class="fw-normal" for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
+								<select name="marcas" id="marcas_mar_id" class="form-select">
+									<option value="">Inrgese un modelo</option>
+									@foreach($marca as $marcas)
+									<option value="{{$marcas->id}}">{{$marcas->mar_nombre}}
 									</option>
 									@endforeach
-        </select>
-    </div>
-    <div class="col-6 my-2">
-    <label class="fw-normal" for="text" value="{{ __('modelos_mdl_id') }}">Modelo</label>
-        <select name="modelos" id="modelos_mdl_id" class="form-control">
-     
-        </select>
- 
-    </div>
+								</select>
+							</div>
+							<div class="col-6 my-2">
+								<label class="fw-normal" for="text" value="{{ __('modelos_mdl_id') }}">Modelo</label>
+								<select name="modelos" id="modelos_mdl_id" class="form-control">
+									
+								</select>
+								
+							</div>
 							<div class="col-6 mt-2">
 								<label class="fw-normal" for="text" value="{{ __('eq_tequid') }}">Tipo de Equipo</label>
 								<select class="form-select" name="eq_tequid"  id="eq_tequid">
@@ -92,7 +92,3 @@
 		</div>
 	</div>
 </div>
-
-
-
-  

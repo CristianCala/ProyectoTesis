@@ -9,6 +9,8 @@
 		<!-- Fontawesome -->
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<link rel="stylesheet" href= "{{ asset('css/stylesDashboard.css') }}">
+		<!-- Google font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
 	</head>
 	<body id="body-pd">
 		<header class="header shadow-lg" id="header">
@@ -17,7 +19,7 @@
 			<!-- input -->
 			<div class="input-group ms-5">
 				<div class="form-outline">
-					<input type="search" placeholder="Buscar..." class="form-control" />
+					<input type="search" placeholder="Buscar..." class="form-control form-search" />
 					<button type="button" class="btn bg-button">
 					<i class="fas fa-search"></i>
 					</button>
