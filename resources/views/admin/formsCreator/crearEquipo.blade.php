@@ -22,8 +22,8 @@
 								<select class="form-select" name="marcas_mar_id"  id="marcas_mar_id">
 									<option value="">Seleccione Equipo
 									</option>
-									@foreach($marca as $key => $value)
-									<option value="{{$key}}">{{$value}}
+									@foreach($marca as $marcas)
+									<option value="{{$marcas->marca_id}}">{{$marcas->mar_nombre}}
 									</option>
 									@endforeach
 								</select>
@@ -35,13 +35,8 @@
 								<br>
 								@enderror
 								<label class="fw-normal" for="text" value="{{ __('modelos_mdl_id') }}">Modelo</label>
-								<select class="form-select" name="modelos_mdl_id"  id="modelos_mdl_id">
-									<option value="">Seleccione Modelo
-									</option>
-									@foreach($modelos as $key => $value)
-									<option value="{{$key}}">{{$value}}
-									</option>
-									@endforeach
+								<select class="form-select" name="modelos_mdl_id" id="modelos_mdl_id">
+
 								</select>
 							</div>
 							<div class="col-6 mt-2">

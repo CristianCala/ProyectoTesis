@@ -20,7 +20,7 @@ class Marca extends Model
 
     public function modelos()
     {
-        return $this->belongsTo(Equipo::class, 'mdl_id');
+        return $this->belongsTo(Equipo::class, 'id');
     }
 
 

@@ -14,7 +14,7 @@ class CreateModelosTable extends Migration
     public function up()
     {
         Schema::create('modelos', function (Blueprint $table) {
-            $table->id('modelo_id');
+            $table->id();
             $table->string('mdl_nombre');
             $table->string('mdl_descripcion');
             $table->foreignId('marca_mar_id');

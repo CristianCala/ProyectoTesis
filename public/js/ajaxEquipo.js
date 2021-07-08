@@ -118,13 +118,18 @@ $(document).ready(function() {
  
 	});
 });
-/*dropdowns
 
-$("#modelos_mdl_id").change(event => {
-	$.get(`marcas/${event.target.value}`, function(res, sta){
-		$("#marcas_mar_id").empty();
-		res.forEach(element => {
-			$("#marcas_mar_id").append(`<option value=${element.marca_}> ${element.mar_nombre} </option>`);
-		});
+$(document).ready(function(){
+	$('#marcas_mar_id').on('change', function(){
+		var marca_id = $(this).val();
+		if($.trim(marca_id) != ''){
+			$get('modelo', {marca_mar_id: marca_id}, function(modelo){
+				$('modelos_mdl_id').empty();
+				$('modelos_mdl_id').append("<option value=''>Seleccione Modelo</option>");
+				$.each(modelo, function(index, value){
+				$('modelos_mdl_id').append("<option value='"+ index +"'>"+ value +"</option>");	
+				})
+			});
+		}
 	});
-});*/
+});

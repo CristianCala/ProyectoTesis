@@ -18,6 +18,6 @@ class Modelo extends Model
     }
     public function marcas()
     {
-        return $this->hasMany(Marca::class, 'marca_id');
+        return $this->hasMany(Marca::class, 'id');
     }
 }

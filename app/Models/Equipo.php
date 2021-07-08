@@ -30,13 +30,13 @@ class Equipo extends Model
  
      public function modelos()
      {
-         return $this->belongsTo(Modelo::class, 'modelos_mdl_id', 'modelo_id');
+         return $this->belongsTo(Modelo::class, 'modelos_mdl_id', 'id');
      }
      public function marcas()
      {
-         return $this->belongsTo(Marca::class, 'marcas_mar_id', 'marca_id');
+         return $this->belongsTo(Marca::class, 'marcas_mar_id', 'id');
      }
-     public function pretamo_equipos()
+     public function prestamo_equipos()
      {
          return $this->hasMany(PrestamoEquipo::class, 'equipos_eq_id');
      }

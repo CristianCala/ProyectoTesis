@@ -7,7 +7,9 @@ use App\Http\Controllers\PrestamoEquipoController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\configController;
 use App\Http\Controllers\ayudaController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\ModelotController;
+use App\Http\Controllers\selectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +52,8 @@ Route::get('/equipos', [EquipoController::class, 'selectAnidado'],function ()
 {
     return view('admin/equipos/index');
 });
+
+Route::get('/modelo', [EquipoController::class, 'getModelo']);
 
 Route::get('/list_equipos', [EquipoController::class, 'index']); 
 //Route::get('/equiposLoad', [EquipoController::class, 'selectAnidado']);

@@ -8,6 +8,8 @@ use App\Models\Departamento;
 use App\Models\TipoEquipo;
 use App\Models\Marca;
 use App\Models\Modelo;
+use Illuminate\Database\Eloquent\Model;
+
 class EquipoController extends Controller
 {
             //Constructor Auth
@@ -45,7 +47,9 @@ class EquipoController extends Controller
          $request->validate([
             'eq_serial' => 'required|integer|digits:6',
             'eq_nbiennacional' => 'required|integer|min:1|digits:5',
-            'eq_estatus' => 'required|accepted'
+            'eq_estatus' => 'required|accepted',
+            'modelos_mdl_id' => 'required|exists:modelos.id',
+            'marcas_mar_id' => 'required|exists:marcas.id'
         ]);
 
     $equipment = new Equipo;
@@ -83,13 +87,12 @@ class EquipoController extends Controller
             $equipment->delete();
             return $equipment; 
          }
-
          public function selectAnidado()
          {
             $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
             $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');    
-            $marca=Marca::pluck('mar_nombre', 'marca_id');
-            $modelos=Modelo::all()->pluck('mdl_nombre', 'modelo_id');
+            $marca=Marca::all();
+            $modelos=Modelo::pluck('id', 'mdl_nombre');
             return view('admin.equipos.index', compact('marca','tipoEquipo','modelos', 'departamentos'));
             /*$datos['departamentos'] = Departamento::get();
             $datos['tipoEquipo'] = TipoEquipo::get();    
@@ -97,12 +100,16 @@ class EquipoController extends Controller
             $datos['modelos'] = Modelo::get();
             return view('admin.equipos.index', $datos);*/
          }
-         public function getMarcas(Request $request, $id)
+         public function getModelo(Request $request)
          {
              if ($request->ajax()) {
-                $models=Marca::modelos($id);
-                 return response()->json($models);
+                $modelos=Modelo::where('marca_mar_id', $request->marca_mar_id)->get();
+                foreach ($modelos as $modelo ) {
+                    $modeloArray[$modelo->id] = $modelo->mdl_nombre;
+                }
+                return response()->json($modeloArray);
              }
          }
+
 }
 
