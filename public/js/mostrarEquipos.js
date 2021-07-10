@@ -37,7 +37,7 @@ $("#marcas_mar_id").change(function(){
 	});
 });*/
 
-$(document).ready(function () {
+/*$(document).ready(function () {
 	$('#marcas_mar_id').on('change', function () {
 		var marca_mar_id = $(this).val();
 		if ($.trim(marca_mar_id) != '') {
@@ -50,4 +50,29 @@ $(document).ready(function () {
 			});
 		}
 	});
-});
+});*/
+
+
+
+//Mostrar equipos
+
+ $(document).ready(function () {
+	 $('#marcas_mar_id').on('change', function () {
+		 let id = $(this).val();
+		 $('#modelos_mdl_id').empty();
+		 $('#modelos_mdl_id').append("<option value='0' disabled>Selecciona un modelo</option>");
+		 $.ajax({
+			 type: 'GET',
+			 url: 'list_modelos/' + id,
+			 success: function (response) {
+				 var response = JSON.parse(response);
+				 console.log(response);
+				 $('#modelos_mdl_id').empty();
+				 $('#modelos_mdl_id').append("<option value='0' disabled>Selecciona un modelo</option>");
+				 response.forEach(element =>{
+				 $('#modelos_mdl_id').append(`<option value="${element['id']}">${element['mdl_nombre']}</option>`);
+				 })
+			 }
+		 })
+	 })
+ })

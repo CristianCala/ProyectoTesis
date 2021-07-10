@@ -17,7 +17,7 @@
 							<div class="col-6 my-2">
 								<label class="fw-normal" for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
 								<select name="marcas" id="marcas_mar_id" class="form-select">
-									<option value="">Ingrese modelo</option>
+									<option value="">Ingrese la marca</option>
 									@foreach($marca as $marcas)
 									<option value="{{$marcas->id}}">{{$marcas->mar_nombre}}
 									</option>
@@ -74,8 +74,8 @@
 							<div class="col-6 mt-2">
 								<label class="fw-normal" for="text" value="{{ __('eq_estatus') }}">Estado</label>
 								<fieldset>
-									<input class="form-check-input" id="eq_estatus" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Activo
-									<input class="form-check-input" id="eq_estatus" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Inactivo
+									<input class="form-check-input" id="eq_estatus" type="radio" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Activo
+									<input class="form-check-input" id="eq_estatus" type="radio" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Inactivo
 								</fieldset>
 							</div>
 						</div>
