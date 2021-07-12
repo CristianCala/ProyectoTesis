@@ -37,7 +37,7 @@
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->email}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->usuario}}</td>
       <td class="border border-gray-400 px-4 py-2 text-gray-800">{{$key->estatus}}</td>
-      <td class="border border-gray-400 px-4 py-2 text-gray-800"></td>
+      <td class="border border-gray-400 px-4 py-2 text-gray-800">@include('admin.formsEditor.editarUsuario')</td>
     </tr>
     @endforeach
     @endif

@@ -49,7 +49,7 @@ class EquipoController extends Controller
          $request->validate([
             'eq_serial' => 'required|integer|digits:6',
             'eq_nbiennacional' => 'required|integer|min:1|digits:5',
-            'eq_estatus' => 'required|accepted',
+            'eq_estatus' => 'required|accepted|in:activo, inactivo',
             'modelos_mdl_id' => 'required|exists:modelos.id',
             'marcas_mar_id' => 'required|exists:marcas.id'
         ]);

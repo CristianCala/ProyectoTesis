@@ -11,6 +11,7 @@ $(document).ready( function () {
 			  {data:"email"},
 			  {data:"usuario"},
 			  {data:"estatus"},
+			  //{data:"rols.rol_nombre"},
 		]
     });
 } );

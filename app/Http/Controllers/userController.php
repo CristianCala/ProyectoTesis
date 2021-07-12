@@ -68,7 +68,6 @@ class userController extends Controller
             $users->usuario = $request->usuario;
             $users->email = $request->email;
             $users->estatus = $request->estatus;
-            $users->password = bcrypt($request->password);
             $users->save();
          }
          

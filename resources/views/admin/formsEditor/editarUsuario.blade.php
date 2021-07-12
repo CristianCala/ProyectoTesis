@@ -1,15 +1,17 @@
-<button class="btn btn-success btn-claro-success fw-bold" data-bs-toggle="modal" data-bs-target="#UserRegister">Registrar Usuario</button>
+<button class="btn btn-success btn-claro-success fw-bold" data-bs-toggle="modal" data-bs-target="#UserEdit">Editar Usuario</button>
 <!-- Modal crear Usuario-->
-<div class="modal fade" id="UserRegister" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="UserEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-rad">
             <div class="modal-header">
-                <h5 class="modal-title fw-bold" id="staticBackdropLabel">REGISTRO DE USUARIO</h5>
+                <h5 class="modal-title fw-bold" id="staticBackdropLabel">EDICION DE USUARIO</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form id="addFrm" method="post">
+            <form id="editFrmID">
                 <div class="modal-body p-4 text-center" >
                     @csrf
+                    @method('PUT')
+                    <input type="hidden" name="id" id="id">
                     <div class="container">
                         <div class="row row cols-2">
                             <div class="col-6 my-2">
@@ -37,7 +39,7 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="cedula" value="{{ __('cedula') }}">Cédula</label>
-                                <input id="cedula" placeholder="No. Cédula" class="form-control" type="number" name="cedula" min="500000" max="3200000" :value="old('cedula')" required />
+                                <input id="cedula" placeholder="No. Cédula" class="form-control" type="number" name="cedula" :value="old('cedula')" required />
                             </div>
                             <div class="col-6 mt-2">
                                 @error('email')
@@ -56,29 +58,11 @@
                                 @enderror
                                 <label class="fw-normal" for="usuario" value="{{ __('usuario') }}">Nombre de Usuario</label>
                                 <input id="usuario" placeholder="Nombre de Usuario" class="form-control" type="text" name="usuario" :value="old('usuario')" required />
-                            </div>
-                            <div class="col-6 mt-2">
-                                @error('password')
-                                <br>
-                                <small>{{$message}}</small>
-                                <br>
-                                @enderror
-                                <label class="fw-normal" for="password" value="{{ __('Password') }}">Su Contraseña</label>
-                                <input  id="password" placeholder="Contraseña" class="form-control" type="password" name="password" required autocomplete="new-password" />
-                            </div>
-                            <div class="col-12 mt-2">
-                                @error('password_confirmation')
-                                <br>
-                                <small>{{$message}}</small>
-                                <br>
-                                @enderror
-                                <label class="fw-normal" for="password_confirmation" value="{{ __('Confirm Password') }}">Confirmación de Contraseña</label>
-                                <input id="password_confirmation" placeholder="Confirmar Contraseña" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
+
                                 <div class="col-12 mt-2">
                                     <label class="fw-normal" for="text" value="{{ __('estatus') }}">Estado</label>
                                     <fieldset>
-                                        <input class="form-check-input" id="estatus" type="radio" name="estatus" :value="old('estatus')"  autofocus />Activo
-                                        <input class="form-check-input" id="estatus" type="radio" name="estatus" :value="old('estatus')"  autofocus />Inactivo
+                                    <input id="estatus" placeholder="estatus" class="form-control" type="text" name="estatus" :value="old('estatus')" required autocomplete="name">
                                     </fieldset>
                                 </div>
                             </div>
@@ -90,7 +74,7 @@
                         <button type="button" class="btn btn-outline-success w-100 modal-button-rigth fw-bold" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
                     </div>
                     <div class="col-8">
-                        <button type="submit" class="btn btn-success  w-100 modal-button-left ms-2 fw-bold"><span class="fas fa-save alt mx-2"></span>Registrar Usuario</button>
+                        <button type="submit" class="btn btn-success  w-100 modal-button-left ms-2 fw-bold"><span class="fas fa-save alt mx-2"></span>Editar Usuario</button>
                     </div>
                 </div>
             </form>

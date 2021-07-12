@@ -29,8 +29,7 @@ $(document).ready(function() {
 //Edicion
 
 $(document).ready(function() {
-$('.editBtn').on('click', function() {
-    $('#userEdit').modal('show');
+    $('#UserEdit').modal('show');
 
     //Recibir el value 
     $tr = $(this).closest('tr');
@@ -61,7 +60,7 @@ $('.editBtn').on('click', function() {
             data: $('#editFrmID').serialize(),
             success: function(response) {
                 console.log(response)
-                $('#userEdit').modal('hide')
+                $('#UserEdit').modal('hide')
                 alert('Data Updated');
                 //Recarga asincronica AJAX
                 location.reload();
@@ -72,10 +71,8 @@ $('.editBtn').on('click', function() {
             }
         });
     });
-
-
 });
-});
+
 
     $(document).ready(function() {
       $('#equiposTable').DataTable({
