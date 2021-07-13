@@ -23,12 +23,12 @@
 				<h1 class="text-center h2 fw-bold">Iniciar Sesión</h1>
 				<!-- input -->
 				<div class="container mb-3">
-					<input class="form-control" id="email" placeholder="Email" type="email" name="email" :value="old('email')" autofocus required>
+					<input class="form-control" id="email" placeholder="Email" type="email" name="email" :value="old('email')" required>
 					<i class="icon-move far fa-envelope fa-lg"></i>
 				</div>
 				<!-- input -->
 				<div class="container">
-					<input class="form-control" type="password"id="password" class="block mt-1 w-full" name="password" :value="old('password')" required autofocus>
+					<input class="form-control" type="password"id="password" name="password" :value="old('password')" placeholder="Contraseña" required>
 					<i class="icon-move fas fa-lock fa-lg"></i>
 				</div>
 				<!-- input -->

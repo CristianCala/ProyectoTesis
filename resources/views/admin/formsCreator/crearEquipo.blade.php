@@ -74,8 +74,8 @@
 							<div class="col-6 mt-2">
 								<label class="fw-normal" for="text" value="{{ __('eq_estatus') }}">Estado</label>
 								<fieldset>
-									<input class="form-check-input" id="eq_estatus" type="radio" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Activo
-									<input class="form-check-input" id="eq_estatus" type="radio" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Inactivo
+									<input class="form-check-input" type="radio" name="eq_estatus" :value="old('eq_estatus')" autofocus />Activo
+									<input class="form-check-input" type="radio" name="eq_estatus" :value="old('eq_estatus')" autofocus />Inactivo
 								</fieldset>
 							</div>
 						</div>

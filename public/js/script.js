@@ -1,4 +1,3 @@
-// Para el loader
 window.onload = function() {
 
     setTimeout(function(){
@@ -10,13 +9,11 @@ window.onload = function() {
 
     },1000);
 
-
 }
 
 window.addEventListener('resize', function(event){
 
 // Detecta cambio de resolución y cambia clases de boton
-	
 	var botonVolver = document.getElementById('volverButton');
 	var botonRegistro = document.getElementById('registroButton');
 
@@ -63,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 
-const buttonShow = document.getElementById('header-toggle');
+var buttonShow = document.getElementById('header-toggle');
 
 
 var imgMayor = document.getElementById('img-mayor');
@@ -91,7 +88,7 @@ buttonShow.addEventListener('click', function() {
 }, false);
 
 // Funcion focus link
-const colorEnlace = document.querySelectorAll('.nav_link');
+var colorEnlace = document.querySelectorAll('.nav_link');
 
 function colorLink(){
 	if(colorEnlace){
@@ -101,3 +98,4 @@ function colorLink(){
 	}
 }
 colorEnlace.forEach(I => I.addEventListener('click', colorLink));
+

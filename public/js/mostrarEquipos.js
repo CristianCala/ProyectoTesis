@@ -4,9 +4,9 @@ $(document).ready( function () {
 
    tablaEquipos = $("#equiposTable").DataTable(
 			{
-        "language": {
-          "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-        },
+        // "language": {
+        //   "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+        // },
 			"serverSide":true,
 				"ajax": '/list_equipos',
 				"columns":[
