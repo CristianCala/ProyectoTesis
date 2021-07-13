@@ -11,6 +11,7 @@ $(document).ready( function () {
 			  {data:"usuarios_us_id"},
 			  {data:"equipos_eq_id"},
         {data:"pres_estatus"},
+		{defaultContent: "<button class='btn btn-success btn-claro-success fw-bold editBtn' data-bs-toggle='modal'>Editar</button>"}
 		]
     });
 } );

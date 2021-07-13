@@ -1,7 +1,8 @@
-<button class="btn btn-success btn-claro-success fw-bold" data-bs-toggle="modal" data-bs-target="#UserEdit">Editar Usuario</button>
-<!-- Modal crear Usuario-->
+<button class="btn btn-success btn-claro-success fw-bold editBtn"  data-bs-toggle="modal" >Edicion</button>  
+
+
 <div class="modal fade" id="UserEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+<div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-rad">
             <div class="modal-header">
                 <h5 class="modal-title fw-bold" id="staticBackdropLabel">EDICION DE USUARIO</h5>
