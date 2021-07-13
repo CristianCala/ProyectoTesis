@@ -18,7 +18,7 @@ $(document).ready( function () {
 					{data:"marcas.mar_nombre"},
 					{data:"modelos.mdl_nombre"},
 			  {data:"departamentos.dep_nombre"},
-				{defaultContent: "<button class='btn btn-success btn-claro-success fw-bold' data-bs-toggle='modal' data-bs-target='#editEquipo'>Editar</button>"}
+				{defaultContent: "<button class='btn btn-success btn-claro-success fw-bold ed' data-bs-toggle='modal'>Editar</button>"}
 			  ]	
 		  }
 
