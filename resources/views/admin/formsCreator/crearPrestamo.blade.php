@@ -65,7 +65,7 @@
 								<label class="fw-normal" for="pres_estatus" value="{{ __('pres_estatus') }}">Estado</label>
 								<fieldset>
 									<input id="pres_estatus" type="checkbox" name="pres_estatus" :value="old('pres_estatus')"  autofocus />Activo
-									<input id="pres_estatus" type="checkbox" name="pres_estatus" :value="old('pres_estatus')"  autofocus />Inactivo
+									<input id="pres_estatus2" type="checkbox" name="pres_estatus" :value="old('pres_estatus')"  autofocus />Inactivo
 								</fieldset>
 							</div>
 						</div>

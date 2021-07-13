@@ -19,7 +19,7 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="nombre" value="{{ __('nombre') }}">Nombre</label>
-                                <input id="nombre" placeholder="Nombre" class="form-control" type="text" name="nombre" :value="old('nombre')" required autocomplete="name">
+                                <input id="nombreModalUserCreate" placeholder="Nombre" class="form-control" type="text" name="nombre" :value="old('nombre')" required autocomplete="name">
                             </div>
                             <div class="col-6 my-2">
                                 @error('apellido')
@@ -28,7 +28,7 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="apellido" value="{{ __('apellido') }}">Apellido</label>
-                                <input id="apellido" placeholder="Apellido" class="form-control" type="text" name="apellido" :value="old('apellido')" required autocomplete="apellido">
+                                <input id="apellidoModalUserCreate" placeholder="Apellido" class="form-control" type="text" name="apellido" :value="old('apellido')" required autocomplete="apellido">
                             </div>
                             <div class="col-6 mt-2">
                                 @error('cedula')
@@ -37,7 +37,7 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="cedula" value="{{ __('cedula') }}">Cédula</label>
-                                <input id="cedula" placeholder="No. Cédula" class="form-control" type="number" name="cedula" min="500000" max="3200000" :value="old('cedula')" required />
+                                <input id="cedulaModalUserCreate" placeholder="No. Cédula" class="form-control" type="number" name="cedula" min="500000" max="3200000" :value="old('cedula')" required />
                             </div>
                             <div class="col-6 mt-2">
                                 @error('email')
@@ -46,7 +46,7 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="email" value="{{ __('Email') }}">Email</label>
-                                <input id="email" placeholder="Correo" class="form-control" type="email" name="email" :value="old('email')" required />
+                                <input id="emailModalUserCreate" placeholder="Correo" class="form-control" type="email" name="email" :value="old('email')" required />
                             </div>
                             <div class="col-6 mt-2">
                                 @error('usuario')
@@ -55,7 +55,7 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="usuario" value="{{ __('usuario') }}">Nombre de Usuario</label>
-                                <input id="usuario" placeholder="Nombre de Usuario" class="form-control" type="text" name="usuario" :value="old('usuario')" required />
+                                <input id="usuarioModalUserCreate" placeholder="Nombre de Usuario" class="form-control" type="text" name="usuario" :value="old('usuario')" required />
                             </div>
                             <div class="col-6 mt-2">
                                 @error('password')
@@ -64,7 +64,7 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="password" value="{{ __('Password') }}">Su Contraseña</label>
-                                <input  id="password" placeholder="Contraseña" class="form-control" type="password" name="password" required autocomplete="new-password" />
+                                <input  id="passwordModalUserCreate" placeholder="Contraseña" class="form-control" type="password" name="password" required autocomplete="new-password" />
                             </div>
                             <div class="col-12 mt-2">
                                 @error('password_confirmation')
@@ -73,12 +73,12 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="password_confirmation" value="{{ __('Confirm Password') }}">Confirmación de Contraseña</label>
-                                <input id="password_confirmation" placeholder="Confirmar Contraseña" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
+                                <input id="password_confirmationCreate" placeholder="Confirmar Contraseña" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
                                 <div class="col-12 mt-2">
                                     <label class="fw-normal" for="text" value="{{ __('estatus') }}">Estado</label>
                                     <fieldset>
-                                        <input class="form-check-input" id="estatus" type="checkbox" name="estatus" :value="old('estatus')"  autofocus />Activo
-                                        <input class="form-check-input" id="estatus" type="checkbox" name="estatus" :value="old('estatus')"  autofocus />Inactivo
+                                        <input class="form-check-input" id="estatusModalUserCreate" type="checkbox" name="estatus" :value="old('estatus')"  autofocus />Activo
+                                        <input class="form-check-input" id="estatusModalUserCreate2" type="checkbox" name="estatus" :value="old('estatus')"  autofocus />Inactivo
                                     </fieldset>
                                 </div>
                             </div>
