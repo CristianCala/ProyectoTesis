@@ -38,7 +38,7 @@
 			<div class="dropdown">
 				<a type="button" class="dropdown-toggle nav-enlace" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
 					<span class="d-none d-lg-inline text-dark small me-2">Usuario</span>
-					<img class="img-profile rounded-circle"  src="{{ asset('public/img/imagen.jpg') }}" width="32" height="32" alt="user">
+					<img class="img-profile rounded-circle"  src="{{asset('img/prueba.jpg')}}" width="32" height="32" alt="user">
 				</a>
 				<ul class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuOffset">
 					<a class="dropdown-item" href="{{ route('profile.show') }}">

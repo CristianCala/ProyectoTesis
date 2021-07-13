@@ -1,5 +1,7 @@
-<button class="btn btn-success btn-claro-success fw-bold container-fluid btn-without-border" data-bs-toggle="modal" data-bs-target="#equipoRegister" id="registroButtonPrimary"></i>Registrar</button>
-<button class="btn btn-success btn-claro-success invisible float-right" data-bs-toggle="modal" data-bs-target="#equipoRegister" id="registroButton"><i class="fas fa-plus"></i></button>
+<button class="btn btn-success btn-claro-success fw-bold container-fluid button-responsive" data-bs-toggle="modal" data-bs-target="#equipoRegister" >
+	<i class="fas fa-plus mx-2"></i>
+	<label class="texto-button">Registrar</label>
+</button>
 <!-- Modal crear Equipo-->
 <div class="modal fade" id="equipoRegister" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">

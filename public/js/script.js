@@ -11,30 +11,6 @@ window.onload = function() {
 
 }
 
-window.addEventListener('resize', function(event){
-
-// Detecta cambio de resolución y cambia clases de boton
-	var botonVolver = document.getElementById('volverButton');
-	var botonRegistro = document.getElementById('registroButton');
-
-	var botonVolverPrimario = document.getElementById('volverButtonPrimary');
-	var botonRegistroPrimario = document.getElementById('registroButtonPrimary');
-
-	if (screen.width < 930){
-		botonVolver.classList.remove("invisible");
-		botonRegistro.classList.remove("invisible");
-		botonVolverPrimario.classList.add("invisible");
-		botonRegistroPrimario.classList.add("invisible");
-	}
-	else if (screen.width > 930){
-		botonVolver.classList.add("invisible");
-		botonRegistro.classList.add("invisible");
-		botonVolverPrimario.classList.remove("invisible");
-		botonRegistroPrimario.classList.remove("invisible");
-	}
-
-});
-
 // Carga el dom cuando termina la carga de página
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -98,4 +74,3 @@ function colorLink(){
 	}
 }
 colorEnlace.forEach(I => I.addEventListener('click', colorLink));
-

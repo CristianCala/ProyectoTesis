@@ -10,7 +10,7 @@
   <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
   <script src="{{ asset('js/ajaxEquipo.js') }}"></script>
   <script src="{{ asset('js/mostrarEquipos.js') }}"></script>
-  <script src="{{ asset('js/script.js') }}" defer></script>
+  <script src="{{ asset('js/script.js') }}"></script>
   {{-- Bootstrap 5 --}}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   
@@ -18,8 +18,10 @@
 <div class="m-4">
   <div class="row">
     <div class="col-2">
-      <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro container-fluid btn-without-border fw-bold" id="volverButtonPrimary">Volver</a>
-      <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro invisible" id="volverButton"><i class="fas fa-backward"></i></a>
+      <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro container-fluid fw-bold button-responsive">
+        <i class="fas fa-backward mx-2"></i>
+        <label class="texto-button">Volver</label>
+      </a>
     </div>
     <div class="col-8">
       <hgroup class="text-center mb-3">
