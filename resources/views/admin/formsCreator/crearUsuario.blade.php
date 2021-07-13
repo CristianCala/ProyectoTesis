@@ -77,8 +77,8 @@
                                 <div class="col-12 mt-2">
                                     <label class="fw-normal" for="text" value="{{ __('estatus') }}">Estado</label>
                                     <fieldset>
-                                        <input class="form-check-input" id="estatus" type="radio" name="estatus" :value="old('estatus')"  autofocus />Activo
-                                        <input class="form-check-input" id="estatus" type="radio" name="estatus" :value="old('estatus')"  autofocus />Inactivo
+                                        <input class="form-check-input" id="estatus" type="checkbox" name="estatus" :value="old('estatus')"  autofocus />Activo
+                                        <input class="form-check-input" id="estatus" type="checkbox" name="estatus" :value="old('estatus')"  autofocus />Inactivo
                                     </fieldset>
                                 </div>
                             </div>

@@ -18,10 +18,10 @@ class Marca extends Model
         return $this->hasMany(Equipo::class, 'marcas_mar_id');
     }
 
+
     public function modelos()
     {
-        return $this->belongsTo(Equipo::class, 'id');
+        return $this->hasMany(Modelo::class, 'id');
     }
-
 
 }

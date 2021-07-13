@@ -14,7 +14,7 @@ $(document).ready(function() {
             data: $('#addFrm').serialize(),
             success: function(response) {
                 console.log(response)
-                $('#userModal').modal('hide')
+                $('#UserRegister').modal('hide')
                 alert('Data Saved');
                 location.reload();
             },
