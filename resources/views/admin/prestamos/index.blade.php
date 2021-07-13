@@ -11,11 +11,26 @@
 	<script src="{{ asset('js/mostrarPrestamos.js') }}"></script>
 	<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 </head>
-<hgroup class="text-center">
-<h1 class="fw-bold">Préstamos</h1>
-<h2 class="fw-normal h5">Lista de préstamos</h2>
-</hgroup>
-@include('admin.formsCreator.crearPrestamo')
+  <div class="row">
+    <div class="col-4 col-xs-12">
+      <i class="fas fa-money-check-alt fa-2x marco-icono p-3" data-fa-transform="shrink-8"></i>
+    </div>
+    <div class="col-4 col-xs-12">
+      <hgroup class="text-center">
+        <h1 class="fw-bold">Préstamos</h1>
+        <h2 class="fw-normal h5 text-muted">Lista de Préstamos</h2>
+      </hgroup>    
+    </div>
+    <div class="col-4 col-xs-12">
+      <div class="d-grid gap-2 d-md-flex d-xs-flex d-sm-flex justify-content-md-end">
+       <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro fw-bold modal-button-rigth">
+          <i class="fas fa-backward mx-2"></i>
+          <label class="texto-button">Volver</label>
+        </a>
+        @include('admin.formsCreator.crearPrestamo')
+      </div>
+    </div>
+  </div>
 <div class="text-center table-responsive">
 	<table class="table table-striped table-hover" id="prestamosTable">
 		<thead>

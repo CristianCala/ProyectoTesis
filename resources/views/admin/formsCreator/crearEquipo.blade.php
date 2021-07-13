@@ -1,4 +1,4 @@
-<button class="btn btn-success btn-claro-success fw-bold container-fluid button-responsive" data-bs-toggle="modal" data-bs-target="#equipoRegister" >
+<button class="btn btn-success btn-claro-success fw-bold modal-button-left" data-bs-toggle="modal" data-bs-target="#equipoRegister" >
 	<i class="fas fa-plus mx-2"></i>
 	<label class="texto-button">Registrar</label>
 </button>

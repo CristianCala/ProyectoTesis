@@ -1,4 +1,6 @@
-<button class="btn btn-success btn-claro-success fw-bold" data-bs-toggle="modal" data-bs-target="#UserRegister">Registrar Usuario</button>
+<button class="btn btn-success btn-claro-success fw-bold modal-button-left" data-bs-toggle="modal" data-bs-target="#UserRegister">
+    <i class="fas fa-plus mx-2"></i>
+    <label class="texto-button">Registrar</label></button>
 <!-- Modal crear Usuario-->
 <div class="modal fade" id="UserRegister" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

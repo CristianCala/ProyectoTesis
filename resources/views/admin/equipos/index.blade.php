@@ -14,21 +14,26 @@
 </head>
 <div class="m-4">
   <div class="row">
-    <div class="col-2">
-      <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro container-fluid fw-bold button-responsive">
-        <i class="fas fa-backward mx-2"></i>
-        <label class="texto-button">Volver</label>
-      </a>
+    <div class="col-4 col-xs-12">
+      <i class="fas fa-desktop fa-2x marco-icono p-3" data-fa-transform="shrink-8"></i>
     </div>
-    <div class="col-8">
-      <hgroup class="text-center mb-3">
-      <h1 class="fw-bold">EQUIPOS</h1>
-      <h2 class="fw-normal h5">Lista de Equipos</h2>
-      </hgroup>
+    <div class="col-4 col-xs-12">
+      <hgroup class="text-center">
+        <h1 class="fw-bold">Equipos</h1>
+        <h2 class="fw-normal h5 text-muted">Lista de Equipos registrados</h2>
+      </hgroup>    
     </div>
-    <div class="col-2">
+    <div class="col-4 col-xs-12">
+      <div class="d-grid gap-2 d-md-flex d-xs-flex d-sm-flex justify-content-md-end">
+       <a href="{{url('/dashboard')}}" class="btn btn-primary btn-claro fw-bold modal-button-rigth">
+          <i class="fas fa-backward mx-2"></i>
+          <label class="texto-button">Volver</label>
+        </a>
         @include('admin.formsCreator.crearEquipo')
+      </div>
     </div>
+  </div>
+ 
   </div>
   <div class="text-center table-responsive">
     <table class="table table-striped table-hover" id="equiposTable">

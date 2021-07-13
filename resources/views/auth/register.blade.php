@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Register</title>
+		<title>Registro de Usuario</title>
 		<!-- estilos propios -->
 		<link rel="stylesheet" type="text/css" href="css/stylesRegister.css">
 		<!-- Bootstrap 5 -->
@@ -42,9 +42,7 @@
 									<div class="col">
 										<div class="mb-4">
 											@error('nombre')
-											<br>
-											<small>{{$message}}</small>
-											<br>
+											<label class="text-danger">{{$message}}</label>
 											@enderror
 											<input class="form-control" placeholder="Nombre* " type="text" type="text" name="nombre" id="nombre" :value="old('nombre')" required autofocus autocomplete="name">
 										</div>
@@ -52,9 +50,7 @@
 									<div class="col">
 										<div class="mb-4">
 											@error('apellido')
-											<br>
-											<small>{{$message}}</small>
-											<br>
+											<label class="text-danger">{{$message}}</label>
 											@enderror
 											<input class="form-control" placeholder="Apellido* " type="text" name="apellido" :value="old('apellido')" required autofocus autocomplete="apellido">
 										</div>
@@ -62,9 +58,7 @@
 									<div class="col">
 										<div class="mb-4">
 											@error('cedula')
-											<br>
-											<small>{{$message}}</small>
-											<br>
+											<label class="text-danger">{{$message}}</label>
 											@enderror
 											<input class="form-control" placeholder="Cedula* " type="number" id="cedula" name="cedula" :value="old('cedula')" required>
 										</div>
@@ -72,9 +66,7 @@
 									<div class="col">
 										<div class="mb-4">
 											@error('email')
-											<br>
-											<small>{{$message}}</small>
-											<br>
+											<label class="text-danger">{{$message}}</label>
 											@enderror
 											<input class="form-control" placeholder="Email*" id="email" type="email" name="email" :value="old('email')" required>
 										</div>
@@ -82,9 +74,7 @@
 									<div class="col">
 										<div class="mb-4">
 											@error('usuario')
-											<br>
-											<small>{{$message}}</small>
-											<br>
+											<label class="text-danger">{{$message}}</label>
 											@enderror
 											<input class="form-control" placeholder="Usuario* " id="usuario" type="text" name="usuario" :value="old('usuario')" required>
 										</div>
@@ -93,8 +83,7 @@
 										<div class="mb-4">
 											@error('password')
 											<br>
-											<small>{{$message}}</small>
-											<br>
+											<label class="text-danger">{{$message}}</label>
 											@enderror
 											<input class="form-control" placeholder="Contraseña*" id="password" type="password" name="password" required autocomplete="new-password">
 										</div>

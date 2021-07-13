@@ -1,4 +1,7 @@
-<button class="btn btn-success btn-claro-success fw-bold" data-bs-toggle="modal" data-bs-target="#teamRegister">Registrar Préstamos</button>
+<button class="btn btn-success btn-claro-success fw-bold modal-button-left" data-bs-toggle="modal" data-bs-target="#teamRegister">
+	<i class="fas fa-plus mx-2"></i>
+    <label class="texto-button">Registrar</label>
+</button>
 <!-- Modal crear Préstamo-->
 <div class="modal fade" id="teamRegister" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
