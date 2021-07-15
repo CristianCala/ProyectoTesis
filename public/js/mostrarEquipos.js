@@ -18,14 +18,26 @@ $(document).ready( function () {
 					{data:"marcas.mar_nombre"},
 					{data:"modelos.mdl_nombre"},
 			  {data:"departamentos.dep_nombre"},
-				{defaultContent: "<button class='btn btn-success btn-claro-success fw-bold ed' data-bs-toggle='modal'>Editar</button>"}
+				{"defaultContent": "<button class='btn btn-success btn-claro-success fw-bold editBtn' data-bs-toggle=modal' data-bs-target='#editEquipo'>Editar</button>"}
 			  ]	
 		  }
 
 	);
-		
+	obtenerData("#equiposTable tbody", tablaEquipos);
 } );
-
+var obtenerData = function(tbody, tablaEquipos){
+	$(tbody).on('click', 'button.editBtn', function () {
+		var data = tablaEquipos.row($(this).parents('tr')).data();
+		var id = $('#id').val(data.id),
+		eq_modelo= $('#eq_modelo').val(data.eq_modelo),
+		eq_marca=$('#eq_marca').val(data.eq_marca),
+		eq_serial=$('#eq_serial').val(data.eq_serial),
+		eq_nbiennacional=$('#eq_nbiennacional').val(data.eq_nbiennacional),
+        eq_estatus=$('#eq_estatus').val(data.eq_estatus),
+		eq_tequid=$('#eq_tequid').val(data.eq_tequid),
+        departamentos_dep_id=$('#departamentos_dep_id').val(data.departamentos_dep_id);
+	})
+}
 /*
 $("#marcas_mar_id").change(function(){
 	$.ajax({

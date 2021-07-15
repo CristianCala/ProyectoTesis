@@ -38,10 +38,7 @@
 								<select class="form-select" name="eq_tequid"  id="eq_tequid">
 									<option value="">Seleccione Equipo
 									</option>
-									@foreach($tipoEquipo as $key => $value)
-									<option value="{{$key}}">{{$value}}
-									</option>
-									@endforeach
+
 								</select>
 							</div>
 							<div class="col-6 mt-2">

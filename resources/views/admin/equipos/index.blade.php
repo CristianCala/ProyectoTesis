@@ -39,10 +39,10 @@
     <table class="table table-striped table-hover" id="equiposTable">
       <thead>
         <tr class="bg-dark text-white">
-          <th scope="col">No</th>
+          <th scope="col">N°</th>
           <th scope="col">Serial</th>
           <th scope="col">Tipo de Equipo</th>
-          <th scope="col">No Bien Nacional</th>
+          <th scope="col">N° Bien Nacional</th>
           <th scope="col">Estado</th>
           <th scope="col">Marca</th>
           <th scope="col">Modelo</th>
@@ -50,23 +50,7 @@
           <th scope="col">Acciones</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          @if(!empty($equipment) && $equipment->count())
-          @foreach($equipment as $key)
-          <td>{{$key->id}}</td>
-          <td>{{$key->marcas_mar_id}}</td>
-          <td>{{$key->modelos_mdl_id}}</td>
-          <td>{{$key->eq_serial}}</td>
-          <td>{{$key->eq_tequid}}</td>
-          <td>{{$key->eq_nbiennacional}}</td>
-          <td>{{$key->eq_estatus}}</td>
-          <td>{{$key->departamentos_dep_id}}</td>
-          <td>@include('admin.forms.editEquipo')</td>
-        </tr>
-        @endforeach
-        @endif
-      </tbody>
+
     </table>
   </div>
 </div>

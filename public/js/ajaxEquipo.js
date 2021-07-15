@@ -28,7 +28,7 @@ $(document).ready(function() {
 //Edicion del equipo
 $(document).ready(function() {
 	$('.editBtn').on('click', function() {
-		$('#editEquipo').modal('show');
+		$('#EquieditEquipopoEdit').modal('show');
 
 		//Recibir el value 
 		$tr = $(this).closest('tr');
