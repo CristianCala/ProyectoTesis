@@ -2,7 +2,7 @@
 //Mostrar equipos
 $(document).ready( function () {
 
-   tablaEquipos = $("#equiposTable").DataTable(
+   table = $("#equiposTable").DataTable(
 			{
         // "language": {
         //   "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
@@ -17,27 +17,29 @@ $(document).ready( function () {
 					{data:"eq_estatus"},
 					{data:"marcas.mar_nombre"},
 					{data:"modelos.mdl_nombre"},
-			  {data:"departamentos.dep_nombre"},
-				{"defaultContent": "<button class='btn btn-success btn-claro-success fw-bold editBtn' data-bs-toggle=modal' data-bs-target='#editEquipo'>Editar</button>"}
+			  		{data:"departamentos.dep_nombre"},
+					{"defaultContent": "<button class='btn btn-success btn-claro-success fw-bold editBtn' data-bs-toggle='modal' data-bs-target='#editEquipo'>Editar</button>"}
 			  ]	
 		  }
 
 	);
-	obtenerData("#equiposTable tbody", tablaEquipos);
+	obtener_data("#equiposTable tbody", table);
 } );
-var obtenerData = function(tbody, tablaEquipos){
-	$(tbody).on('click', 'button.editBtn', function () {
-		var data = tablaEquipos.row($(this).parents('tr')).data();
-		var id = $('#id').val(data.id),
-		eq_modelo= $('#eq_modelo').val(data.eq_modelo),
-		eq_marca=$('#eq_marca').val(data.eq_marca),
-		eq_serial=$('#eq_serial').val(data.eq_serial),
-		eq_nbiennacional=$('#eq_nbiennacional').val(data.eq_nbiennacional),
-        eq_estatus=$('#eq_estatus').val(data.eq_estatus),
-		eq_tequid=$('#eq_tequid').val(data.eq_tequid),
-        departamentos_dep_id=$('#departamentos_dep_id').val(data.departamentos_dep_id);
-	})
+var obtener_data = function(tbody, table){
+	$(tbody).on('click', 'button.editBtn', function(){
+		var data = table.row($(this).parents('tr')).data();
+		//console.log(data);
+		var id =$('#us_id').val(data.us_id),
+			modelos_mdl_id =$('#modelos_mdl_id').val(data.modelos_mdl_id),
+			marcas_mar_id =$('#marcas_mar_id').val(data.marcas_mar_id),
+			eq_tequid =$('#eq_tequid').val(data.eq_tequid),
+			eq_serial =$('#eq_serial').val(data.eq_serial),
+			eq_nbiennacional =$('#eq_nbiennacional').val(data.eq_nbiennacional),
+			eq_estatus =$('#eq_estatus').val(data.eq_estatus),
+			departamentos_dep_id =$('#departamentos_dep_id').val(data.departamentos_dep_id);
+	});
 }
+
 /*
 $("#marcas_mar_id").change(function(){
 	$.ajax({
@@ -68,7 +70,7 @@ $("#marcas_mar_id").change(function(){
 
 //Mostrar equipos
 
- $(document).ready(function () {
+/*$(document).ready(function () {
 	 $('#marcas_mar_id').on('change', function () {
 		 let id = $(this).val();
 		 $('#modelos_mdl_id').empty();
@@ -87,4 +89,4 @@ $("#marcas_mar_id").change(function(){
 			 }
 		 })
 	 })
- })
+ })*/

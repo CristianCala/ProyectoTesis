@@ -15,20 +15,20 @@
 						<div class="row row cols-2">
 							<div class="col-6 my-2">
 								<label  class="fw-normal">Modelo</label>
-								<input type="text" class="form-control" name="eq_modelo" placeholder="Modelo" id="eq_modelo">
+								<input type="text" class="form-control" name="eq_modelo" placeholder="Modelo" id="modelos_mdl_id">
 							</div>
 							<div class="col-6 my-2">
 								<label  class="fw-normal">Marca</label>
-								<input type="text" class="form-control" name="eq_marca" placeholder="Marca" id="eq_marca">
+								<input type="text" class="form-control" name="eq_marca" placeholder="Marca" id="marcas_mar_id">
 							</div>
 							<div class="col-6 mt-2">
 								<label class="fw-normal">Tipo de equipo</label>
 								<select class="form-select" name="eq_tequid" id="eq_tequid">
-									@foreach($tipoEquipo as $key => $value)
-									<option value="{{$key}}">
-										{{$value}}
+									
+									<option value="">
+										
 									</option>
-									@endofreach
+								
 								</select>
 							</div>
 							<div class="col-6 mt-2">
@@ -42,11 +42,11 @@
 							<div class="col-6 mt-2">
 								<label class="fw-normal">Departamento</label>
 								<select  class="form-select" name="departamentos_dep_id" id="departamentos_dep_id">
-									@foreach($departamentos as $key => $value)
-									<option value="{{$key}}">
-										{{$value}}
+									
+									<option value="">
+										
 									</option>
-									@endforeach
+									
 								</select>
 							</div>
 							<div class="col-12 mt-2">
