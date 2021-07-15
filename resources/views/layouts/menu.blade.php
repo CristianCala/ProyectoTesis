@@ -37,7 +37,7 @@
 			</div>
 			<div class="dropdown">
 				<a type="button" class="dropdown-toggle nav-enlace" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-					<span class="text-white d-none d-lg-inline me-2">Nombre de Usuario</span>
+					<span class="text-white d-none d-lg-inline me-2 fw-bold">{{Auth::user()->nombre}} {{Auth::user()->apellido}}</span>
 					<img class="img-profile rounded-circle"  src="{{asset('img/prueba.jpg')}}" width="32" height="32" alt="user">
 				</a>
 				<ul class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuOffset">
@@ -96,7 +96,7 @@
 				</div>
 			</nav>
 		</div>
-		<main class="height-100 bg-main  p-5">
+		<main class="height-100 bg-main p-5">				
 			@yield('content')
 		</main>
 		<script src="{{ asset('js/script.js') }}" defer></script>

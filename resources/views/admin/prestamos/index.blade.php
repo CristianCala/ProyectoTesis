@@ -63,9 +63,5 @@
 			@endif
 		</tbody>
 	</table>
-	<div class="mt-4">
-		
-		<a href="{{url('/dashboard')}}" class="btn bg-gray-100 rounded-md text-2xl">Volver</a>
-	</div>
 </div>
 @endsection

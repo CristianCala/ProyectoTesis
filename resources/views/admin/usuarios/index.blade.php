@@ -9,7 +9,7 @@
 </head>
   <div class="row">
     <div class="col-4 col-xs-12">
-      <i class="fas fa-user-plus fa-2x marco-icono p-3" data-fa-transform="shrink-8"></i>
+      <i class="fas fa-user fa-2x marco-icono p-3" data-fa-transform="shrink-8"></i>
     </div>
     <div class="col-4 col-xs-12">
       <hgroup class="text-center">
