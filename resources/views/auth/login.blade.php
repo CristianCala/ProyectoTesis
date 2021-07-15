@@ -40,10 +40,13 @@
 				<div class="container d-grid mt-3">
 					<input class="btn btn-primary" value="Aceptar" type="submit" name="submit">
 				</div>
-				<footer class="container mt-4 text-center">
+				<footer class="container mt-2 text-center">
 				@if (Route::has('password.request'))
-					<a href="{{ route('password.request') }}">Olvidaste tu contraseña?</a>
+					<a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
                 @endif
+                <div class="container mt">
+                	<a href="{{route('register')}}">¿No estás registrado?</a>
+                </div>
 				</footer>
 			</form>
 		</main>
