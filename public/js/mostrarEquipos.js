@@ -69,8 +69,7 @@ $("#marcas_mar_id").change(function(){
 
 
 //Mostrar equipos
-
-/*$(document).ready(function () {
+*$(document).ready(function () {
 	 $('#marcas_mar_id').on('change', function () {
 		 let id = $(this).val();
 		 $('#modelos_mdl_id').empty();
@@ -89,4 +88,4 @@ $("#marcas_mar_id").change(function(){
 			 }
 		 })
 	 })
- })*/
+ })

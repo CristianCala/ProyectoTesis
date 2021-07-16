@@ -54,10 +54,10 @@ Route::get('/equipos', [EquipoController::class, 'selectAnidado'],function ()
     return view('admin/equipos/index');
 });
 
-//Route::get('/list_modelos', [EquipoController::class, 'getModelo']);
+Route::get('/list_modelos/{id}', [EquipoController::class, 'getModelo']);
 
 Route::get('/list_equipos', [EquipoController::class, 'index']); 
-//Route::get('/equiposLoad', [EquipoController::class, 'selectAnidado']);
+Route::get('/equiposLoad', [EquipoController::class, 'selectAnidado']);
 Route::post('/equiposAdd', [EquipoController::class, 'store']);
 Route::put('/equiposUpdate/{id}', [EquipoController::class, 'update']);
 Route::delete('/equiposDelete/{id}', [EquipoController::class, 'destroy']);

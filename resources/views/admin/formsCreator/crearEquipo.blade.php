@@ -17,20 +17,17 @@
 						<div class="row row cols-2">
 							
 							<div class="col-6 my-2">
-								<label class="fw-normal" for="text" value="{{ __('marcas_mar_id') }}">Marca</label>
-								<select name="marcas" id="marcas_mar_id" class="form-select">
-									<option value="">Ingrese la marca</option>
-									@foreach($marca as $marcas)
-									<option value="{{$marcas->id}}">{{$marcas->mar_nombre}}
-									</option>
-									@endforeach
-								</select>
-							</div>
-							<div class="col-6 my-2">
-								<label class="fw-normal" for="text" value="{{ __('modelos_mdl_id') }}">Modelo</label>
-								<select name="modelos" id="modelos_mdl_id" class="form-control">
-									
-								</select>
+							<label class="fw-normal" for="marca" value="{{ __('marcas_mar_id') }}">Marca</label>
+	  <select id="marcas_mar_id" name="category_id" class="form-select">
+        <option value="" selected disabled>Select Country</option>
+         @foreach($marcas as $key => $marca)
+         <option value="{{$key}}"> {{$marca}}</option>
+         @endforeach
+         </select>
+    </div>
+	<div class="col-6 my-2">
+	<label class="fw-normal" for="modelo" value="{{ __('modelos_mdl_id') }}">Modelo</label>
+ <select name="modelos" id="modelos_mdl_id" class="form-control"></select>
 								
 							</div>
 							<div class="col-6 mt-2">
@@ -38,7 +35,10 @@
 								<select class="form-select" name="eq_tequid"  id="eq_tequid">
 									<option value="">Seleccione Equipo
 									</option>
-
+									@foreach($tipoEquipo as $key => $value)
+									<option value="{{$key}}">{{$value}}
+									</option>
+									@endforeach
 								</select>
 							</div>
 							<div class="col-6 mt-2">
@@ -73,9 +73,9 @@
 							<div class="col-6 mt-2">
 								<label class="fw-normal" for="text" value="{{ __('eq_estatus') }}">Estado</label>
 								<fieldset>
-									<input class="form-check-input" type="radio" name="eq_estatus" :value="old('eq_estatus')" autofocus />Activo
-									<input class="form-check-input" type="radio" name="eq_estatus" :value="old('eq_estatus')" autofocus />Inactivo
-								</fieldset>
+                                        <input class="form-check-input" id="estatusModalUserCreate" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Activo
+                                        <input class="form-check-input" id="estatusModalUserCreate2" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Inactivo
+                                    </fieldset>
 							</div>
 						</div>
 					</div>

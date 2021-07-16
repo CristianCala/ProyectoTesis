@@ -48,7 +48,7 @@ $(document).ready(function() {
 		$('#eq_tequid').val(data[6]);
         $('#departamentos_dep_id').val(data[7]);
 				//Comunicacion con el formulario
-		$('#editFormID').on('submit', function(e) {
+		/*$('#editFormID').on('submit', function(e) {
 			e.preventDefault();
 
 			var id = $('#id').val();
@@ -69,7 +69,7 @@ $(document).ready(function() {
 					alert('Data Not Updated');
 				}
 			});
-		});
+		});*/
 
 
 	});

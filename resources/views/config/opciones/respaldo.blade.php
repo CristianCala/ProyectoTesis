@@ -2,17 +2,17 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Fecha de respaldo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">descargar</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
+      <td>2021-07-06-01:22:58</td>
       <td>Otto</td>
-      <td>@mdo</td>
+      <td><a href=""></a></td>
     </tr>
     <tr>
       <th scope="row">2</th>

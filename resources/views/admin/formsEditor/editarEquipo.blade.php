@@ -24,11 +24,12 @@
 							<div class="col-6 mt-2">
 								<label class="fw-normal">Tipo de equipo</label>
 								<select class="form-select" name="eq_tequid" id="eq_tequid">
-									
-									<option value="">
-										
+								<option value="">Seleccione Equipo
 									</option>
-								
+									@foreach($tipoEquipo as $key => $value)
+									<option value="{{$key}}">{{$value}}
+									</option>
+									@endforeach
 								</select>
 							</div>
 							<div class="col-6 mt-2">
@@ -43,10 +44,12 @@
 								<label class="fw-normal">Departamento</label>
 								<select  class="form-select" name="departamentos_dep_id" id="departamentos_dep_id">
 									
-									<option value="">
-										
+								<option value="">Seleccione Departamento
 									</option>
-									
+									@foreach($departamentos as $key => $value)
+									<option value="{{$key}}">{{$value}}
+									</option>
+									@endforeach
 								</select>
 							</div>
 							<div class="col-12 mt-2">

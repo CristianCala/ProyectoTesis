@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Equipo;
 use App\Models\Departamento;
 use App\Models\TipoEquipo;
-use App\Models\Marca;
+use Illuminate\Support\Facades\DB;
 use App\Models\Modelo;
 use Illuminate\Database\Eloquent\Model;
 
@@ -49,9 +49,7 @@ class EquipoController extends Controller
          $request->validate([
             'eq_serial' => 'required|integer|digits:6',
             'eq_nbiennacional' => 'required|integer|min:1|digits:5',
-            'eq_estatus' => 'required|accepted|in:activo, inactivo',
-            'modelos_mdl_id' => 'required|exists:modelos.id',
-            'marcas_mar_id' => 'required|exists:marcas.id'
+            'eq_estatus' => 'required|accepted'
         ]);
 
     $equipment = new Equipo;
@@ -93,9 +91,8 @@ class EquipoController extends Controller
          {
             $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
             $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');    
-            $marca=Marca::all();
-            $modelos = Modelo::all();
-            return view('admin.equipos.index', compact('marca','tipoEquipo','modelos', 'departamentos'));
+            $marcas = DB::table("marcas")->pluck("mar_nombre","id");
+            return view('admin.equipos.index', compact('marcas','tipoEquipo', 'departamentos'));
             /*$datos['departamentos'] = Departamento::get();
             $datos['tipoEquipo'] = TipoEquipo::get();    
             $datos['marca'] = Marca::get();
@@ -104,13 +101,10 @@ class EquipoController extends Controller
          }
          public function getModelo(Request $request)
          {
-            if ($request->ajax()) {
-                $modelos=Modelo::where('marca_mar_id', $request->marca_mar_id)->get();
-                foreach ($modelos as $model) {
-                    $modelArray=[$model->id] = $model->mdl_nombre;
-                }
-                return response()->json($modelArray);
-            }
+            $modelos = DB::table("modelos")
+            ->where("marca_mar_id",$request->modelos)
+            ->pluck("mdl_nombre","id");
+            return response()->json($modelos);
          }
 
 }

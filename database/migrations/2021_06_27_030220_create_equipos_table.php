@@ -19,8 +19,8 @@ class CreateEquiposTable extends Migration
             $table->foreignId('eq_tequid');
             $table->string('eq_nbiennacional')->unique();
             $table->boolean('eq_estatus')->nullable();
-            $table->foreignId('modelos_mdl_id');
-            $table->foreignId('marcas_mar_id');
+            $table->foreignId('modelos_mdl_id')->nullable();
+            $table->foreignId('marcas_mar_id')->nullable();
             $table->foreignId('departamentos_dep_id');
             //$table->foreignId('ubicacion_equipo_ubeq');
             $table->timestamps();
