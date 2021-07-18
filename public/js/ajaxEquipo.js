@@ -26,9 +26,10 @@ $(document).ready(function() {
     });
 });
 //Edicion del equipo
+
 $(document).ready(function() {
 	$('.editBtn').on('click', function() {
-		$('#EquieditEquipopoEdit').modal('show');
+		$('#editEquipo').modal('show');
 
 		//Recibir el value 
 		$tr = $(this).closest('tr');
@@ -40,15 +41,15 @@ $(document).ready(function() {
 			console.log(data);
 		//validacion de data desde el ID
 		$('#id').val(data[0]);
-		$('#eq_modelo').val(data[1]);
-		$('#eq_marca').val(data[2]);
+		$('#modelos_mdl_id').val(data[1]);
+		$('#marcas_mar_id').val(data[2]);
 		$('#eq_serial').val(data[3]);
 		$('#eq_nbiennacional').val(data[4]);
         $('#eq_estatus').val(data[5]);
 		$('#eq_tequid').val(data[6]);
         $('#departamentos_dep_id').val(data[7]);
 				//Comunicacion con el formulario
-		/*$('#editFormID').on('submit', function(e) {
+		$('#editFormID').on('submit', function(e) {
 			e.preventDefault();
 
 			var id = $('#id').val();
@@ -69,11 +70,12 @@ $(document).ready(function() {
 					alert('Data Not Updated');
 				}
 			});
-		});*/
+		});
 
 
 	});
 });
+
 
 //Eliminacion del equipo (Funcion de prueba)
 

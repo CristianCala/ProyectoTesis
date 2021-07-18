@@ -18,7 +18,7 @@
 							
 							<div class="col-6 my-2">
 								<label class="fw-normal" for="marca" value="{{ __('marcas_mar_id') }}">Marca</label>
-								<select id="marcas_mar_id2" name="category_id" class="form-select">
+								<select id="marcas_mar_id" name="category_id" class="form-select">
 									<option value="" selected disabled>Select Country</option>
 									@foreach($marcas as $key => $marca)
 									<option value="{{$key}}"> {{$marca}}</option>
@@ -27,12 +27,12 @@
 							</div>
 							<div class="col-6 my-2">
 								<label class="fw-normal" for="modelo" value="{{ __('modelos_mdl_id') }}">Modelo</label>
-							<select name="modelos" id="modelos_mdl_id2" class="form-control"></select>
+							<select name="modelos" id="modelos_mdl_id" class="form-control"></select>
 							
 						</div>
 						<div class="col-6 mt-2">
 							<label class="fw-normal" for="text" value="{{ __('eq_tequid') }}">Tipo de Equipo</label>
-							<select class="form-select" name="eq_tequid"  id="eq_tequid2">
+							<select class="form-select" name="eq_tequid"  id="eq_tequid">
 								<option value="">Seleccione Equipo
 								</option>
 								@foreach($tipoEquipo as $key => $value)
@@ -48,7 +48,7 @@
 							<br>
 							@enderror
 							<label class="fw-normal" for="email" value="{{ __('eq_serial') }}">Numero</label>
-							<input type="text" id="eq_serial2" class="form-control" name="eq_serial" :value="old('eq_serial')"  autofocus required>
+							<input type="text" id="eq_serial" class="form-control" name="eq_serial" :value="old('eq_serial')"  autofocus required>
 						</div>
 						<div class="col-6 mt-2">
 							@error('eq_nbiennacional')
@@ -57,11 +57,11 @@
 							<br>
 							@enderror
 							<label class="fw-normal" for="email" value="{{ __('eq_nbiennacional') }}">Bien Nacional</label>
-							<input type="text"id="eq_nbiennacional2" class="form-control" name="eq_nbiennacional" :value="old('eq_nbiennacional')"  autofocus required>
+							<input type="text"id="eq_nbiennacional" class="form-control" name="eq_nbiennacional" :value="old('eq_nbiennacional')"  autofocus required>
 						</div>
 						<div class="col-6 mt-2">
 							<label class="fw-normal" for="text" value="{{ __('departamentos_dep_id') }}">Departamento</label>
-							<select class="form-select" name="departamentos_dep_id" id="departamentos_dep_id2">
+							<select class="form-select" name="departamentos_dep_id" id="departamentos_dep_id">
 								<option value="">Seleccione Departamento
 								</option>
 								@foreach($departamentos as $key => $value)
@@ -74,7 +74,7 @@
 							<label class="fw-normal" for="text" value="{{ __('eq_estatus') }}">Estado</label>
 							<fieldset>
 								<input class="form-check-input" id="estatusModalUserCreate" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Activo
-								<input class="form-check-input" id="estatusModalUserCreate2" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Inactivo
+								<input class="form-check-input" id="estatusModalUserCreate" type="checkbox" name="eq_estatus" :value="old('eq_estatus')"  autofocus />Inactivo
 							</fieldset>
 						</div>
 					</div>
