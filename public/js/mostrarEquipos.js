@@ -1,4 +1,17 @@
-
+var obtener_data = function(tbody, table){
+	$(tbody).on('click', 'button.editBtn', function(){
+		var data = table.row($(this).parents('tr')).data();
+		//console.log(data);
+		var id =$('#us_id').val(data.us_id),
+			modelos_mdl_id =$('#modelos_mdl_id').val(data.modelos_mdl_id),
+			marcas_mar_id =$('#marcas_mar_id').val(data.marcas_mar_id),
+			eq_tequid =$('#eq_tequid').val(data.eq_tequid),
+			eq_serial =$('#eq_serial').val(data.eq_serial),
+			eq_nbiennacional =$('#eq_nbiennacional').val(data.eq_nbiennacional),
+			eq_estatus =$('#eq_estatus').val(data.eq_estatus),
+			departamentos_dep_id =$('#departamentos_dep_id').val(data.departamentos_dep_id);
+	});
+}
 //Mostrar equipos
 $(document).ready( function () {
 
@@ -25,20 +38,7 @@ $(document).ready( function () {
 	);
 	obtener_data("#equiposTable tbody", table);
 } );
-var obtener_data = function(tbody, table){
-	$(tbody).on('click', 'button.editBtn', function(){
-		var data = table.row($(this).parents('tr')).data();
-		//console.log(data);
-		var id =$('#us_id').val(data.us_id),
-			modelos_mdl_id =$('#modelos_mdl_id').val(data.modelos_mdl_id),
-			marcas_mar_id =$('#marcas_mar_id').val(data.marcas_mar_id),
-			eq_tequid =$('#eq_tequid').val(data.eq_tequid),
-			eq_serial =$('#eq_serial').val(data.eq_serial),
-			eq_nbiennacional =$('#eq_nbiennacional').val(data.eq_nbiennacional),
-			eq_estatus =$('#eq_estatus').val(data.eq_estatus),
-			departamentos_dep_id =$('#departamentos_dep_id').val(data.departamentos_dep_id);
-	});
-}
+
 
 /*
 $("#marcas_mar_id").change(function(){
@@ -69,7 +69,7 @@ $("#marcas_mar_id").change(function(){
 
 
 //Mostrar equipos
-*$(document).ready(function () {
+$(document).ready(function () {
 	 $('#marcas_mar_id').on('change', function () {
 		 let id = $(this).val();
 		 $('#modelos_mdl_id').empty();
