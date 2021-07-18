@@ -26,7 +26,7 @@ $(document).ready(function() {
     });
 });
 //Edicion del equipo
-
+/*
 $(document).ready(function() {
 	$('.editBtn').on('click', function() {
 		$('#editEquipo').modal('show');
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 	});
 });
-
+*/
 
 //Eliminacion del equipo (Funcion de prueba)
 

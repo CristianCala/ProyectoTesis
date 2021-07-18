@@ -2,7 +2,7 @@ var obtener_data = function(tbody, table){
 	$(tbody).on('click', 'button.editBtn', function(){
 		var data = table.row($(this).parents('tr')).data();
 		//console.log(data);
-		var id =$('#us_id').val(data.us_id),
+		var id =$('#id').val(data.id),
 			modelos_mdl_id =$('#modelos_mdl_id').val(data.modelos_mdl_id),
 			marcas_mar_id =$('#marcas_mar_id').val(data.marcas_mar_id),
 			eq_tequid =$('#eq_tequid').val(data.eq_tequid),
@@ -83,7 +83,7 @@ $(document).ready(function () {
 				 $('#modelos_mdl_id').empty();
 				 $('#modelos_mdl_id').append("<option value='0' disabled>Selecciona un modelo</option>");
 				 response.forEach(element =>{
-				 $('#modelos_mdl_id').append(`<option value="${element['id']}">${element['mdl_nombre']}</option>`);
+				 $('#modelos_mdl_id').append(`<option value="${element['marca_mar_id']}">${element['mdl_nombre']}</option>`);
 				 })
 			 }
 		 })

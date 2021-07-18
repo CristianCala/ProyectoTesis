@@ -44,7 +44,9 @@ $(document).ready(function() {
 		$('#pres_salida').val(data[1]);
 		$('#pres_fecha_salida').val(data[2]);
 		$('#pres_fecha_entrada').val(data[3]);
-		$('#pres_estatus').val(data[4]);
+		$('#usuarios_us_id').val(data[4]);
+		$('#equipos_eq_id').val(data[5]);
+		$('#pres_estatus').val(data[6]);
 
 				//Comunicacion con el formulario
 		$('#prestamoEdit').on('submit', function(e) {

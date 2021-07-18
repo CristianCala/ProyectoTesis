@@ -19,7 +19,7 @@
 							<div class="col-6 my-2">
 								<label class="fw-normal" for="marca" value="{{ __('marcas_mar_id') }}">Marca</label>
 								<select id="marcas_mar_id" name="category_id" class="form-select">
-									<option value="" selected disabled>Select Country</option>
+									<option value="" selected disabled>Seleccione un equipoy</option>
 									@foreach($marcas as $key => $marca)
 									<option value="{{$key}}"> {{$marca}}</option>
 									@endforeach

@@ -16,8 +16,8 @@ class Modelo extends Model
     {
         return $this->belongsTo(Equipo::class, 'modelos_mdl_id');
     }
-    /*public function marcas()
+    public function marcas()
     {
         return $this->hasMany(Marca::class, 'id');
-    }*/
+    }
 }

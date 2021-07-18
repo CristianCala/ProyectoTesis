@@ -1,6 +1,20 @@
+/*
+var obtener_data = function(tbody, table){
+	$(tbody).on('click', 'button.editBtn', function(){
+		var data = table.row($(this).parents('tr')).data();
+		//console.log(data);
+		var id =$('#id').val(data.id),
+		pres_salida =$('#pres_salida').val(data.pres_salida),
+		pres_fecha_salida =$('#pres_fecha_salida').val(data.pres_fecha_salida),
+		pres_fecha_entrada =$('#pres_fecha_entrada').val(data.pres_fecha_entrada),
+		usuarios_us_id =$('#usuarios_us_id').val(data.usuarios_us_id),
+		equipos_eq_id =$('#equipos_eq_id').val(data.equipos_eq_id),
+		pres_estatus =$('#pres_estatus').val(data.pres_estatus);
+	});
+}
 
 $(document).ready( function () {
-    $('#prestamosTable').DataTable({
+    table = $('#prestamosTable').DataTable({
       "serverSide":true,
 		  "ajax": '/list_prestamos',
 		  "columns":[
@@ -14,4 +28,41 @@ $(document).ready( function () {
 		{defaultContent: "<button class='btn btn-success btn-claro-success fw-bold editBtn' data-bs-toggle='modal'>Editar</button>"}
 		]
     });
+	obtener_data("#prestamosTable tbody", table);
+} );*/
+
+
+//Mostrar equipos
+
+$(document).ready( function () {
+    table = $('#prestamosTable').DataTable({
+      "serverSide":true,
+		  "ajax": '/list_prestamos',
+		  "columns":[
+			  {data:"id"},
+			  {data:"pres_salida"},
+			  {data:"pres_fecha_salida"},
+			  {data:"pres_fecha_entrada"},
+			  {data:"usuarios_us_id"},
+			  {data:"equipos_eq_id"},
+        {data:"pres_estatus"},
+		{defaultContent: "<button class='btn btn-success btn-claro-success fw-bold editBtn' data-bs-toggle='modal'>Editar</button>"}
+		]
+    });
+	obtener_data("#prestamosTable tbody", table);
 } );
+
+
+var obtener_data = function(tbody, table){
+	$(tbody).on('click', 'button.editBtn', function(){
+		var data = table.row($(this).parents('tr')).data();
+		//console.log(data);
+		var id =$('#id').val(data.id),
+		pres_salida =$('#pres_salida').val(data.pres_salida),
+		pres_fecha_salida =$('#pres_fecha_salida').val(data.pres_fecha_salida),
+		pres_fecha_entrada =$('#pres_fecha_entrada').val(data.pres_fecha_entrada),
+		usuarios_us_id =$('#usuarios_us_id').val(data.usuarios_us_id),
+		equipos_eq_id =$('#equipos_eq_id').val(data.equipos_eq_id),
+		pres_estatus =$('#pres_estatus').val(data.pres_estatus);
+	});
+}

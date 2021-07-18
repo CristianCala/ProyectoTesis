@@ -15,13 +15,13 @@ class Marca extends Model
    
     public function equipos()
     {
-        return $this->hasMany(Equipo::class, 'marcas_mar_id');
+        return $this->belongsTo(Equipo::class, 'marcas_mar_id');
     }
 
-
+/*
     public function modelos()
     {
-        return $this->hasMany(Modelo::class, 'id');
-    }
+        return $this->hasMany(Modelo::class, 'id', 'marca_mar_id');
+    }*/
 
 }

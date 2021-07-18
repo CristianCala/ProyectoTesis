@@ -17,8 +17,9 @@ class CreateModelosTable extends Migration
             $table->id();
             $table->string('mdl_nombre');
             $table->string('mdl_descripcion');
-            $table->foreignId('marca_mar_id');
+            $table->unsignedBigInteger('marca_mar_id');
             $table->timestamps();
+            $table->foreign('marca_mar_id')->references('id')->on('marcas');
         });
     }
 

@@ -103,9 +103,10 @@ class EquipoController extends Controller
          {
             $modelos = DB::table("modelos")
             ->where("marca_mar_id",$request->modelos)
-            ->pluck("mdl_nombre","id");
+            ->pluck("mdl_nombre","marca_mar_id");
             return response()->json($modelos);
          }
 
 }
 
+/**/

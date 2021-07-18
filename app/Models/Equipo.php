@@ -28,7 +28,7 @@ class Equipo extends Model
          return $this->belongsTo(Departamento::class, 'departamentos_dep_id', 'dep_id');
      }
  
-     public function modelos()
+    public function modelos()
      {
          return $this->belongsTo(Modelo::class, 'modelos_mdl_id', 'id');
      }
