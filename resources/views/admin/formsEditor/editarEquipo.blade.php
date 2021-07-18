@@ -37,7 +37,7 @@
 								<input type="text" class="form-control" name="eq_serial" placeholder="Serial" id="eq_serial">
 							</div>
 							<div class="col-6 mt-2">
-								<label class="fw-normal">No. Bien Nacional</label>
+								<label class="fw-normal">N°. Bien Nacional</label>
 								<input type="text" class="form-control" name="eq_nbiennacional" placeholder="N° Bien Nacional" id="eq_nbiennacional">
 							</div>
 							<div class="col-6 mt-2">
@@ -53,7 +53,7 @@
 								</select>
 							</div>
 							<div class="col-12 mt-2">
-								<label class="fw-normal">No. Estado</label>
+								<label class="fw-normal">Estado</label>
 								<input type="text" class="form-control" name="eq_estatus" placeholder="N° Estado" id="eq_estatus">
 							</div>
 						</div>
