@@ -69,21 +69,29 @@
 						<img src="{{ asset('/img/IconoViveR.svg') }}" width="45" height="45" class="logo-image" alt="Logo">
 					</div>
 					<div class="nav_list mt-5">
+					@if(Auth::User()->us_rol_id==1)
 						<a href="{{url('admin/usuarios')}}" class="nav_link fw-bold">
 							<i class='fas fa-user-plus'></i> <span class="nav_name">Registrar Usuarios</span>
 						</a>
+						@endif
+						
 						<a href="{{url('/equipos')}}" class="nav_link fw-bold">
 							<i class='fas fa-desktop'></i> <span class="nav_name">Registrar Equipo</span>
 						</a>
+				
 						<a href="{{url('/prestamos')}}" class="nav_link fw-bold">
 							<i class='fas fa-money-check-alt '></i> <span class="nav_name">Préstamos</span>
 						</a>
+						@if(Auth::User()->us_rol_id==1)
 						<a href="#" class="nav_link fw-bold">
 							<i class='fas fa-user-tie'></i> <span class="nav_name">Auditoría</span>
 						</a>
+						@endif
+						@if(Auth::User()->us_rol_id!=3)
 						<a href="{{url('admin/departamentos')}}"  class="nav_link fw-bold">
 							<i class='fas fa-hotel'></i> <span class="nav_name">Departamentos</span>
 						</a>
+						@endif
 					</div>
 				</div>
 				<div>

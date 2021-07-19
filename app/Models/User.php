@@ -62,7 +62,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Departamento::class, 'usuario_x_departamentos' , 'usxdp_uscedula', 'usxdp_dpid');
     }
 
-        public function role()
+        public function rols()
     {
         return $this->belongsTo(rol::class, 'us_rol_id');
     }

@@ -54,5 +54,6 @@
     </table>
   </div>
 </div>
+
 @include('admin.formsEditor.editarEquipo')
 @endsection

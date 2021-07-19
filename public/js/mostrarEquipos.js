@@ -83,7 +83,7 @@ $(document).ready(function () {
 				 $('#modelos_mdl_id').empty();
 				 $('#modelos_mdl_id').append("<option value='0' disabled>Selecciona un modelo</option>");
 				 response.forEach(element =>{
-				 $('#modelos_mdl_id').append(`<option value="${element['marca_mar_id']}">${element['mdl_nombre']}</option>`);
+				 $('#modelos_mdl_id').append(`<option value="${element['id']}">${element['mdl_nombre']}</option>`);
 				 })
 			 }
 		 })

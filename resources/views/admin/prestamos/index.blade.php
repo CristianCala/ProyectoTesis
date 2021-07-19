@@ -45,23 +45,8 @@
 				<th scope="col">Acciones</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				@if(!empty($equipment) && $equipment->count())
-				@foreach($equipment as $key)
-				<td>{{$key->id}}</td>
-				<td>{{$key->marcas_mar_id}}</td>
-				<td>{{$key->modelos_mdl_id}}</td>
-				<td>{{$key->eq_serial}}</td>
-				<td>{{$key->eq_tequid}}</td>
-				<td>{{$key->eq_nbiennacional}}</td>
-				<td>{{$key->eq_estatus}}</td>
-				<td>{{$key->departamentos_dep_id}}</td>
-				<td>@include('admin.forms.editEquipo')</td>
-			</tr>
-			@endforeach
-			@endif
-		</tbody>
+
 	</table>
 </div>
+@include('admin.formsEditor.editPrestamo')
 @endsection

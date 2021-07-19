@@ -26,7 +26,7 @@ $(document).ready(function() {
     });
 });
 //Edicion del equipo
-/*
+
 $(document).ready(function() {
 	$('.editBtn').on('click', function() {
 		$('#editEquipo').modal('show');
@@ -49,7 +49,7 @@ $(document).ready(function() {
 		$('#eq_tequid').val(data[6]);
         $('#departamentos_dep_id').val(data[7]);
 				//Comunicacion con el formulario
-		$('#editFormID').on('submit', function(e) {
+		$('#editFrmID').on('submit', function(e) {
 			e.preventDefault();
 
 			var id = $('#id').val();
@@ -57,7 +57,7 @@ $(document).ready(function() {
 			$.ajax({
 				type: "PUT",
 				url: "/equiposUpdate/"+id,
-				data: $('#editFormID').serialize(),
+				data: $('#editFrmID').serialize(),
 				success: function(response) {
 					console.log(response)
 					$('#editEquipo').modal('hide')
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 	});
 });
-*/
+
 
 //Eliminacion del equipo (Funcion de prueba)
 
