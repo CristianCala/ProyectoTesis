@@ -64,5 +64,29 @@ var obtener_data = function(tbody, table){
 		usuarios_us_id =$('#usuarios_us_id').val(data.usuarios_us_id),
 		equipos_eq_id =$('#equipos_eq_id').val(data.equipos_eq_id),
 		pres_estatus =$('#pres_estatus').val(data.pres_estatus);
+
+		$('#prestamoEdit').on('submit', function(e) {
+			e.preventDefault();
+
+			var id = $('#id').val();
+			//Ajax con la informacion para crear
+			$.ajax({
+				type: "PUT",
+				url: "/prestamosUpdate/"+id,
+				data: $('#prestamoEdit').serialize(),
+				success: function(response) {
+					console.log(response)
+					$('#editPrestamo').modal('hide')
+					alert('Data Updated');
+					//Recarga asincronica AJAX
+					location.reload();
+				},
+				error: function(error) {
+					console.log(error)
+					alert('Data Not Updated');
+				}
+			});
+		});
+
 	});
 }

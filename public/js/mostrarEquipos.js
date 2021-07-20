@@ -1,17 +1,4 @@
-var obtener_data = function(tbody, table){
-	$(tbody).on('click', 'button.editBtn', function(){
-		var data = table.row($(this).parents('tr')).data();
-		//console.log(data);
-		var id =$('#id').val(data.id),
-			modelos_mdl_id =$('#modelos_mdl_id').val(data.modelos_mdl_id),
-			marcas_mar_id =$('#marcas_mar_id').val(data.marcas_mar_id),
-			eq_tequid =$('#eq_tequid').val(data.eq_tequid),
-			eq_serial =$('#eq_serial').val(data.eq_serial),
-			eq_nbiennacional =$('#eq_nbiennacional').val(data.eq_nbiennacional),
-			eq_estatus =$('#eq_estatus').val(data.eq_estatus),
-			departamentos_dep_id =$('#departamentos_dep_id').val(data.departamentos_dep_id);
-	});
-}
+
 //Mostrar equipos
 $(document).ready( function () {
 
@@ -28,8 +15,8 @@ $(document).ready( function () {
 					{data:"tipo_equipos.teq_nombre"},
 					{data:"eq_nbiennacional"},
 					{data:"eq_estatus"},
-					{data:"marcas.mar_nombre"},
-					{data:"modelos.mdl_nombre"},
+					{data:"eq_marca"},
+					{data:"eq_modelo"},
 			  		{data:"departamentos.dep_nombre"},
 					{"defaultContent": "<button class='btn btn-success btn-claro-success fw-bold editBtn' data-bs-toggle='modal' data-bs-target='#editEquipo'>Editar</button>"}
 			  ]	
@@ -39,7 +26,44 @@ $(document).ready( function () {
 	obtener_data("#equiposTable tbody", table);
 } );
 
+var obtener_data = function(tbody, table){
+	$(tbody).on('click', 'button.editBtn', function(){
+		var data = table.row($(this).parents('tr')).data();
+		//console.log(data);
+		var id =$('#id').val(data.id),
+		eq_modelo =$('#eq_modelo').val(data.eq_modelo),
+		eq_marca =$('#eq_marca').val(data.eq_marca),
+			eq_tequid =$('#eq_tequid').val(data.eq_tequid),
+			eq_serial =$('#eq_serial').val(data.eq_serial),
+			eq_nbiennacional =$('#eq_nbiennacional').val(data.eq_nbiennacional),
+			eq_estatus =$('#eq_estatus').val(data.eq_estatus),
+			departamentos_dep_id =$('#departamentos_dep_id').val(data.departamentos_dep_id);
 
+			$('#editFrmID').on('submit', function(e) {
+				e.preventDefault();
+	
+				var id = $('#id').val();
+				//Ajax con la informacion para crear
+				$.ajax({
+					type: "PUT",
+					url: "/equiposUpdate/"+id,
+					data: $('#editFrmID').serialize(),
+					success: function(response) {
+						console.log(response)
+						$('#editEquipo').modal('hide')
+						alert('Data Updated');
+						//Recarga asincronica AJAX
+						location.reload();
+					},
+					error: function(error) {
+						console.log(error)
+						alert('Data Not Updated');
+					}
+				});
+			});
+
+	});
+}
 /*
 $("#marcas_mar_id").change(function(){
 	$.ajax({
@@ -69,7 +93,7 @@ $("#marcas_mar_id").change(function(){
 
 
 //Mostrar equipos
-$(document).ready(function () {
+/*$(document).ready(function () {
 	 $('#marcas_mar_id').on('change', function () {
 		 let id = $(this).val();
 		 $('#modelos_mdl_id').empty();
@@ -88,4 +112,4 @@ $(document).ready(function () {
 			 }
 		 })
 	 })
- })
+ })*/

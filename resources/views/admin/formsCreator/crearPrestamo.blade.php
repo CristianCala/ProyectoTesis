@@ -38,8 +38,8 @@
 								<select class="form-select " name="usuarios_us_id" required>
 									<option value="">Seleccione usuario
 									</option>
-									@foreach($users as $key)
-									<option value="{{$key->id}}">{{$key->user}}
+									@foreach($users as $key => $value)
+									<option value="{{$value->id}}">{{$value->usuario}}
 									</option>
 									@endforeach
 								</select>

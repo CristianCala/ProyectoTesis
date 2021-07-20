@@ -39,7 +39,7 @@
                                 <br>
                                 @enderror
                                 <label class="fw-normal" for="cedula" value="{{ __('cedula') }}">Cédula</label>
-                                <input id="cedulaModalUserCreate" placeholder="No. Cédula" class="form-control" type="number" name="cedula" min="500000" max="3200000" :value="old('cedula')" required />
+                                <input id="cedulaModalUserCreate" placeholder="No. Cédula" class="form-control" type="number" name="cedula" min="500000" max="32000000" :value="old('cedula')" required />
                             </div>
                             <div class="col-6 mt-2">
                                 @error('email')

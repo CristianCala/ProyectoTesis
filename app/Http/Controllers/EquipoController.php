@@ -32,8 +32,6 @@ class EquipoController extends Controller
             Equipo::with([
                 'tipo_equipos',
                 'departamentos',
-                'modelos',
-                'marcas',
             ])->orderBy('id', 'asc')
         )->tojson();
          }
@@ -46,33 +44,29 @@ class EquipoController extends Controller
          /*Esta funcion nos permite hacer las form requests para almacenar datos o bien validarlos
          Se emplea la funcion validate paraque estos sean validados sin inconvenientes
          */ 
-         $request->validate([
-            'eq_serial' => 'required|integer|digits:6',
-            'eq_nbiennacional' => 'required|integer|min:1|digits:5',
-            'eq_estatus' => 'required|accepted'
-        ]);
+        $request->validate([
+         'eq_serial' => 'required|integer|digits:6',
+         'eq_nbiennacional' => 'required|integer|min:1|digits:5',
+         'eq_estatus' => 'required|accepted'
+     ]);
 
-    $equipment = new Equipo;
-       $equipment->modelos_mdl_id = $request->modelos_mdl_id;
-       $equipment->marcas_mar_id = $request->marcas_mar_id;
-       $equipment->eq_serial = $request->eq_serial;
-       $equipment->eq_tequid = $request->eq_tequid;
-       $equipment->eq_nbiennacional = $request->eq_nbiennacional;
-       $equipment->departamentos_dep_id = $request->departamentos_dep_id;
-       if($request->estatus=1){
-        $equipment->eq_estatus = $request->eq_estatus;
-       }else{
-        $equipment->eq_estatus = $request->eq_estatus = false;
-       }
-       
-         $equipment->save();
-         }
+      $equipment = new Equipo;
+         $equipment->eq_marca = $request->eq_marca;
+         $equipment->eq_modelo = $request->eq_modelo;
+         $equipment->eq_serial = $request->eq_serial;
+         $equipment->eq_tequid = $request->eq_tequid;
+         $equipment->eq_nbiennacional = $request->eq_nbiennacional;
+         $equipment->departamentos_dep_id = $request->departamentos_dep_id;
+         $equipment->eq_estatus = $request->eq_estatus;
+            $equipment->save();
+      }
+         
      
          public function update(Request $request, $id)
          {
             $equipment=Equipo::findOrFail($id);
-            $equipment->modelos_mdl_id = $request->modelos_mdl_id;
-            $equipment->marcas_mar_id = $request->marcas_mar_id;
+            $equipment->eq_marca = $request->eq_marca;
+            $equipment->eq_modelo = $request->eq_modelo;
             $equipment->eq_serial = $request->eq_serial;
             $equipment->eq_tequid = $request->eq_tequid;
             $equipment->eq_nbiennacional = $request->eq_nbiennacional;
@@ -91,22 +85,22 @@ class EquipoController extends Controller
          {
             $departamentos=Departamento::all()->pluck('dep_nombre', 'dep_id');
             $tipoEquipo=TipoEquipo::all()->pluck('teq_nombre', 'teq_id');    
-            $marcas = DB::table("marcas")->pluck("mar_nombre","id");
-            return view('admin.equipos.index', compact('marcas','tipoEquipo', 'departamentos'));
+            //$marcas = DB::table("marcas")->pluck("mar_nombre","id");
+            return view('admin.equipos.index', compact('tipoEquipo', 'departamentos'));
             /*$datos['departamentos'] = Departamento::get();
             $datos['tipoEquipo'] = TipoEquipo::get();    
             $datos['marca'] = Marca::get();
             $datos['modelos'] = Modelo::get();
-            return view('admin.equipos.index', $datos);*/
+            return view('admin.equipos.index', $datos);*
          }
-         public function getModelo(Request $request)
+         /*public function getModelo(Request $request)
          {
             $modelos = DB::table("modelos")
             ->where("marca_mar_id",$request->modelos)
             ->pluck("mdl_nombre","id");
             return response()->json($modelos);
-         }
-
+         }*/
+      }
 }
 
 /**/

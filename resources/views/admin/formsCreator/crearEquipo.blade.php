@@ -1,3 +1,4 @@
+
 <button class="btn btn-success btn-claro-success fw-bold modal-button-left" data-bs-toggle="modal" data-bs-target="#equipoRegister" >
 <i class="fas fa-plus mx-2"></i>
 <label class="texto-button">Registrar</label>
@@ -17,17 +18,24 @@
 						<div class="row row cols-2">
 							
 							<div class="col-6 my-2">
-								<label class="fw-normal" for="marca" value="{{ __('marcas_mar_id') }}">Marca</label>
-								<select id="marcas_mar_id" name="category_id" class="form-select">
-									<option value="" selected disabled>Seleccione un equipoy</option>
-									@foreach($marcas as $key => $marca)
-									<option value="{{$key}}"> {{$marca}}</option>
-									@endforeach
-								</select>
+								<label class="fw-normal" for="marca" value="{{ __('eq_marca') }}">Marca</label>
+								@error('eq_marca')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+      					<label for="text" value="{{ __('eq_marca') }}">Marca</label>
+         				<input id="eq_marca" class="form-control" type="text" name="eq_marca" :value="old('eq_modelo')"  autofocus>
+     
 							</div>
 							<div class="col-6 my-2">
-								<label class="fw-normal" for="modelo" value="{{ __('modelos_mdl_id') }}">Modelo</label>
-							<select name="modelos" id="modelos_mdl_id" class="form-control"></select>
+							@error('eq_modelo')
+								<br>
+								<small>{{$message}}</small>
+								<br>
+								@enderror
+								<label class="fw-normal" for="modelo" value="{{ __('eq_modelo') }}">Modelo</label>
+						        <input id="eq_modelo" class="form-control" type="text" name="eq_modelo" :value="old('eq_modelo')"  autofocus>
 							
 						</div>
 						<div class="col-6 mt-2">

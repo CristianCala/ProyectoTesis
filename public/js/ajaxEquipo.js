@@ -41,8 +41,8 @@ $(document).ready(function() {
 			console.log(data);
 		//validacion de data desde el ID
 		$('#id').val(data[0]);
-		$('#modelos_mdl_id').val(data[1]);
-		$('#marcas_mar_id').val(data[2]);
+		$('#eq_modelo').val(data[1]);
+		$('#eq_marca').val(data[2]);
 		$('#eq_serial').val(data[3]);
 		$('#eq_nbiennacional').val(data[4]);
         $('#eq_estatus').val(data[5]);
