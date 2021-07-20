@@ -83,7 +83,7 @@
 							<i class='fas fa-money-check-alt '></i> <span class="nav_name">Préstamos</span>
 						</a>
 						@if(Auth::User()->us_rol_id==1)
-						<a href="#" class="nav_link fw-bold">
+						<a href="{{url('admin/auditoria')}}" class="nav_link fw-bold">
 							<i class='fas fa-user-tie'></i> <span class="nav_name">Auditoría</span>
 						</a>
 						@endif

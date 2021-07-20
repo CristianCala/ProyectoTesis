@@ -7,7 +7,7 @@ use App\Http\Controllers\PrestamoEquipoController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\configController;
 use App\Http\Controllers\ayudaController;
-use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\AuditoriaController;
 use App\Http\Controllers\ModelotController;
 use App\Http\Controllers\selectController;
 
@@ -78,8 +78,8 @@ Route::post('/prestamosAdd', [PrestamoEquipoController::class, 'store']);
 Route::put('/prestamosUpdate/{id}', [PrestamoEquipoController::class, 'update']);
 Route::delete('/prestamosDelete/{id}', [PrestamoEquipoController::class, 'destroy']);
 
-/*
-Route::resource('admin/auditoria', auditoriaController::class);*/
+
+Route::resource('admin/auditoria', AuditoriaController::class);
 Route::resource('admin/departamentos', DepartamentoController::class);
 Route::put('/departamentosUpdate/{id}', [DepartamentoController::class, 'update']);
 

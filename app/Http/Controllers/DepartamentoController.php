@@ -17,4 +17,12 @@ class DepartamentoController extends Controller
         $departamentos = Departamento::paginate(10);
         return view('admin.departamentos.index', compact('departamentos'));
     }
+    
+
+    public function update(Request $request, $id)
+    {
+       $departamentos=Departamento::findOrFail($id);
+       $departamentos->dep_nombre = $request->dep_nombre;   
+       $departamentos->save();
+    }
 }
